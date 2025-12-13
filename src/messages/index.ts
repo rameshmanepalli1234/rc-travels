@@ -85,7 +85,7 @@ const messages = defineMessages({
   },
   OPENING_HOURS: {
     id: "infobar.opening-hours",
-    defaultMessage: "Mon - Sat: 9:00 - 20:00",
+    defaultMessage: "Mon - Sat: 8:00 - 20:00",
   },
 });
 
