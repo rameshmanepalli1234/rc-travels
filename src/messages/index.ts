@@ -3,7 +3,7 @@ import { defineMessages } from "react-intl";
 const messages = defineMessages({
   ADITYA_CAR_ZONE: {
     id: "app.name",
-    defaultMessage: "Aditya Car Zone",
+    defaultMessage: "RC Travels",
   },
   HOME: {
     id: "nav.home",
@@ -77,11 +77,11 @@ const messages = defineMessages({
   },
   PHONE_NUMBER: {
     id: "infobar.phone",
-    defaultMessage: "+91 9849199569",
+    defaultMessage: "+91 6300133869",
   },
   EMAIL: {
     id: "infobar.email",
-    defaultMessage: "adityacarzone@gmail.com",
+    defaultMessage: "rctravels@gmail.com",
   },
   OPENING_HOURS: {
     id: "infobar.opening-hours",

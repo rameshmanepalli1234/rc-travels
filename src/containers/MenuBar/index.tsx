@@ -10,7 +10,7 @@ const MenuBar: React.FC = () => {
   };
 
   return (
-    <StyledMenuBar>
+    <StyledMenuBar data-testid="section-menu-bar">
       {menuBarUtils.map((item, index) => (
         <div
           key={index}

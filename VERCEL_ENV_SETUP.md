@@ -35,7 +35,7 @@ After setting the environment variable:
 
 1. Redeploy your application
 2. Check that the app loads properly (not a blank page)
-3. You should see the Aditya Car Zone application
+3. You should see the RC Travels application
 
 ## Troubleshooting
 

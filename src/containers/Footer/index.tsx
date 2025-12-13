@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div>
-            <div className="footer-top-title">Aditya Car Zone</div>
+            <div className="footer-top-title">RC Travels</div>
             <div className="footer-top-title-description">
               Professional carbon cleaning services delivering exceptional
               results. Trust our expertise for optimal engine performance.
@@ -94,7 +94,7 @@ const Footer = () => {
                 <div>
                   Call Us:
                   <div className="footer-top-section-contact-info-phone-number">
-                    +91 9849199569
+                    +91 6300133869
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@ const Footer = () => {
                 <div>
                   Email Us:
                   <div className="footer-top-section-contact-info-phone-number">
-                    adityacarzone@gmail.com
+                    rctravels@gmail.com
                   </div>
                 </div>
               </div>
@@ -125,12 +125,11 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-copyright-info">
-            © 2025 Aditya Car Zone All rights reserved.
+            © 2025 RC Travels All rights reserved.
           </div>
           <div className="footer-bottom-copyright-text">
             Design and Developed by{" "}
-            <span className="footer-copyright-link">Aditya Car Zone</span> Pvt
-            Ltd.
+            <span className="footer-copyright-link">RC Travels</span> Pvt Ltd.
           </div>
         </div>
       </div>

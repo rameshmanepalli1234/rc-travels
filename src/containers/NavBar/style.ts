@@ -13,6 +13,8 @@ export const StyledNavBar = styled.div`
   z-index: 1000;
   min-width: 0;
   overflow: hidden;
+  position: sticky;
+  top: 40px;
 
   h3 {
     margin: 0;

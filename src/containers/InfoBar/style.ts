@@ -12,6 +12,9 @@ export const StyledInfoBar = styled.div`
   gap: 20px;
   overflow: hidden;
   padding: 0 50px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 
   @media (max-width: 1024px) {
     padding: 0 20px;
