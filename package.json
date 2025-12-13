@@ -1,0 +1,88 @@
+{
+  "name": "aditya-car-zone",
+  "version": "1.0.0",
+  "description": "A modern React TypeScript car marketplace application",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development --open",
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,json}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,css,json}\"",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"No tests specified\" && exit 0",
+    "prepare": "husky install",
+    "vercel-build": "webpack --mode production --env production",
+    "test-build": "yarn build && node test-build.js"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "webpack",
+    "car-marketplace",
+    "modern-ui"
+  ],
+  "author": "Ramesh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/aditya-car-zone.git"
+  },
+  "dependencies": {
+    "@types/styled-components": "^5.1.34",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-intl": "^7.1.11",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^8.2.0",
+    "@typescript-eslint/parser": "^8.2.0",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.10.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.0.11",
+    "ini": "^5.0.0",
+    "jest-styled-components": "^7.2.0",
+    "lint-staged": "^15.2.2",
+    "path-browserify": "^1.0.1",
+    "prettier": "^3.2.5",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "url": "^0.11.4",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,json}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "yarn@3.1.1"
+}

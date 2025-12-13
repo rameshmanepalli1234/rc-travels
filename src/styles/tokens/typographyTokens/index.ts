@@ -1,0 +1,26 @@
+export const typography = {
+  FONT_SIZE_4XL: "2.5rem",
+  FONT_SIZE_3XL: "2rem",
+  FONT_SIZE_2XL: "1.5rem",
+  FONT_SIZE_XL: "1.25rem",
+  FONT_SIZE_L: "1rem",
+  FONT_SIZE_M: "0.875rem",
+  FONT_SIZE_S: "0.75rem",
+  FONT_SIZE_XS: "0.625rem",
+
+  LINE_HEIGHT_3XL: "3rem",
+  LINE_HEIGHT_2XL: "2.5rem",
+  LINE_HEIGHT_XL: "2rem",
+  LINE_HEIGHT_L: "1.5rem",
+  LINE_HEIGHT_M: "1.25rem",
+  LINE_HEIGHT_S: "1rem",
+  LINE_HEIGHT_XS: "0.875rem",
+
+  FONT_WEIGHT_LIGHT: "300",
+  FONT_WEIGHT_REGULAR: "400",
+  FONT_WEIGHT_MEDIUM: "500",
+  FONT_WEIGHT_SEMIBOLD: "600",
+  FONT_WEIGHT_BOLD: "700",
+  FONT_WEIGHT_EXTRA_BOLD: "800",
+  FONT_WEIGHT_BLACK: "900",
+};
