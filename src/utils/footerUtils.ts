@@ -1,15 +1,15 @@
 export const footerUtils = [
   {
+    name: "Travel Services",
+    href: "#",
+  },
+  {
     name: "Driving School",
     href: "#",
   },
   {
-    name: "Carbon Cleaning",
+    name: "Rented Cars",
     href: "#",
   },
-  {
-    name: "Renting Cars",
-    href: "#",
-  },
-  { name: "Selling Cars", href: "#" },
+  { name: "Premium Car Sales", href: "#" },
 ];

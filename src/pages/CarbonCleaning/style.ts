@@ -63,7 +63,7 @@ export const StyledCarbonCleaning = styled.div`
   }
 
   .carbon-cleaning-process {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 700;
     color: white;
     text-transform: uppercase;

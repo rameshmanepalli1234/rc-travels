@@ -15,6 +15,7 @@ export const StyledProcessCard = styled.div`
   align-items: center;
   justify-content: center;
   width: 300px;
+  height: 320px;
 
   &:hover {
     transform: translateY(-10px);

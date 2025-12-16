@@ -22,8 +22,9 @@ const Footer = () => {
           <div>
             <div className="footer-top-title">RC Travels</div>
             <div className="footer-top-title-description">
-              Professional carbon cleaning services delivering exceptional
-              results. Trust our expertise for optimal engine performance.
+              Professional travel services designed for comfort and convenience.
+              Experienced drivers and clean vehicles you can trust. Making every
+              journey stress-free and memorable.
             </div>
             <div className="footer-top-title-icons">
               {infoIconUtils.map((item: InfoBarItem, index: number) => (

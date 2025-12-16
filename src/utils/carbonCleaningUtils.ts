@@ -3,32 +3,32 @@ import { FaTools } from "react-icons/fa";
 import { BiSolidShower } from "react-icons/bi";
 import { FaCheckCircle } from "react-icons/fa";
 
-export const carbonCleaningList = [
+export const travelServiceList = [
   {
-    title: "Diagnostic Check",
+    title: "Trip Consultation",
     description:
-      "Complete engine inspection and performance analysis using advanced diagnostic tools.",
+      "Discuss your travel preferences and destinations with our expert team to plan the perfect journey.",
     Icon: IoSearch,
     id: 1,
   },
   {
-    title: "Setup Proces",
+    title: "Booking & Preparation",
     description:
-      "Preparation of hydrogen cleaning equipment and connection to the engine system.",
+      "Confirm your travel dates, vehicle, and itinerary, ensuring everything is ready for a smooth trip.",
     Icon: FaTools,
     id: 2,
   },
   {
-    title: "Deep Cleaning",
+    title: "Guided Travel",
     description:
-      "Advanced hydrogen technology removes carbon deposits from engine components.",
+      "Enjoy a comfortable journey with our experienced drivers, exploring destinations safely and efficiently.",
     Icon: BiSolidShower,
     id: 3,
   },
   {
-    title: "Final Testing",
+    title: "Trip Review",
     description:
-      "Comprehensive performance check to ensure optimal engine efficiency.",
+      "We follow up after your journey to gather feedback and ensure your travel experience was memorable.",
     Icon: FaCheckCircle,
     id: 4,
   },

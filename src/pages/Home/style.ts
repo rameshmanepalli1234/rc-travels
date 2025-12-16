@@ -65,7 +65,7 @@ export const StyledHome = styled.div`
 
   .home-container-carbon-clearning-left-section:hover
     .home-carbon-cleaning-background-image {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
   }
 
   .home-carbon-cleaning-floating-image-container {

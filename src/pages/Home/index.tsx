@@ -12,7 +12,7 @@ const Home = () => {
           className="home-carbon-cleaning-background-image"
         />
         <div className="experience-badge">
-          <span className="years">15+</span>
+          <span className="years">2+</span>
           Years Experience
         </div>
         <div className="home-carbon-cleaning-floating-image-container">
@@ -26,28 +26,28 @@ const Home = () => {
       <div>
         <div>
           <h2 className="home-carbon-cleaning-title">
-            Leading Carbon Cleaning Specialists Since 2008
+            Leading Tourism & Travel Specialists Since 2023
           </h2>
           <p className="home-carbon-cleaning-description">
-            We&apos;re dedicated to restoring and maintaining your engine&apos;s
-            peak performance through advanced carbon cleaning technology.
+            We ensure comfortable travel experiences with well-maintained
+            vehicles and professional service with every trip smooth, and
+            enjoyable for our customers
             <br />
             <br />
-            Our team of certified technicians combines years of experience with
-            cutting-edge hydrogen cleaning technology to deliver exceptional
-            results. We&apos;ve successfully serviced over 3,000 vehicles,
-            helping our clients achieve better fuel efficiency and reduced
-            emissions.
+            Our skilled team brings together driving expertise and
+            customer-focused service to provide dependable transportation.
+            We&apos;ve successfully completed thousands of trips, earning the
+            trust of our travelers.
           </p>
         </div>
         <div className="home-carbon-cleaning-services-container">
           <div className="feature-item">
             <FaCarAlt className="feature-icon" />
-            Premium Driving School
+            Premium Travel & Driving Services
           </div>
           <div className="feature-item">
             <FaWind className="feature-icon" />
-            Advanced Carbon Cleaning
+            Reliable & Efficient Travel Service
           </div>
         </div>
       </div>

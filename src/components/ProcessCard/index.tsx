@@ -3,7 +3,7 @@ import { ProcessCardProps } from "./types";
 
 const ProcessCard = ({ item }: ProcessCardProps) => {
   return (
-    <StyledProcessCard>
+    <StyledProcessCard data-testid="process-card">
       <div className="process-card-icon">
         <item.Icon className="process-card-icon-image" />
         <span className="process-card-icon-step-number">0{item.id}</span>

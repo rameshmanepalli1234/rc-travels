@@ -1,5 +1,5 @@
 import { StyledCarbonCleaning } from "./style";
-import { carbonCleaningList } from "@utils";
+import { travelServiceList } from "@utils";
 import ProcessCard from "@components/ProcessCard";
 
 const CarbonCleaning = () => {
@@ -7,13 +7,15 @@ const CarbonCleaning = () => {
     <StyledCarbonCleaning>
       <div className="carbon-cleaning-container-top">
         <div className="carbon-cleaning-our-specialty">Our Specialty</div>
-        <div className="carbon-cleaning-process">Carbon Cleaning Process</div>
+        <div className="carbon-cleaning-process">
+          Premium Travel & Driving Services
+        </div>
         <div className="carbon-cleaning-advanced-technology">
-          Advanced Technology for Superior Engine Performance
+          Reliable & Efficient Travel Service
         </div>
       </div>
       <div className="carbon-cleaning-container-bottom">
-        {carbonCleaningList.map((item) => (
+        {travelServiceList.map((item) => (
           <ProcessCard key={item.title} item={item} />
         ))}
       </div>
