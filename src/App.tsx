@@ -6,8 +6,10 @@ import InfoBar from "@containers/InfoBar";
 import MenuBar from "@containers/MenuBar";
 import Home from "@pages/Home";
 import Footer from "@containers/Footer";
+import Testimonials from "@containers/Testimonials";
 import { StyledMainContainer } from "./style";
 import CarbonCleaning from "@pages/CarbonCleaning";
+import Gallery from "@/pages/Gallery";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +21,8 @@ const App: React.FC = () => {
           <NavBar />
           <CarbonCleaning />
           <Home />
+          <Testimonials />
+          <Gallery />
           <Footer />
         </StyledMainContainer>
       </AccessControl>

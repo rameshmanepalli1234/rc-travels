@@ -14,7 +14,8 @@ const AccessContainer = styled.div`
   justify-content: center;
   min-height: 100vh;
   padding: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: white;
+  /* background: linear-gradient(135deg, #ee1aee 0%, #04dfb7 100%); */
   color: white;
   text-align: center;
 `;
@@ -39,14 +40,20 @@ const AccessMessage = styled.p`
   line-height: 1.6;
 `;
 
-const LoadingSpinner = styled.div`
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-top: 4px solid white;
+const LoaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+`;
+
+const AnimatedLoader = styled.div`
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(79, 189, 57, 0.2);
+  border-top: 5px solid #4fbd39;
   border-radius: 50%;
   animation: spin 1s linear infinite;
-  margin: 0 auto 1rem;
 
   @keyframes spin {
     0% {
@@ -54,6 +61,32 @@ const LoadingSpinner = styled.div`
     }
     100% {
       transform: rotate(360deg);
+    }
+  }
+`;
+
+const LoadingText = styled.div`
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4fbd39;
+  letter-spacing: 2px;
+
+  &::after {
+    content: "...";
+    animation: dots 1.5s steps(4, end) infinite;
+  }
+
+  @keyframes dots {
+    0%,
+    20% {
+      content: ".";
+    }
+    40% {
+      content: "..";
+    }
+    60%,
+    100% {
+      content: "...";
     }
   }
 `;
@@ -90,14 +123,20 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
 
   if (isLoading) {
     return (
+      //  <AccessContainer>
+      //   <LoadingSpinner />
+      //   <AccessTitle>
+      //     <FormattedMessage {...messages.VALIDATING_ACCESS} />
+      //   </AccessTitle>
+      //   <AccessMessage>
+      //     <FormattedMessage {...messages.VALIDATING_ACCESS_MESSAGE} />
+      //   </AccessMessage>
+      // </AccessContainer>
       <AccessContainer>
-        <LoadingSpinner />
-        <AccessTitle>
-          <FormattedMessage {...messages.VALIDATING_ACCESS} />
-        </AccessTitle>
-        <AccessMessage>
-          <FormattedMessage {...messages.VALIDATING_ACCESS_MESSAGE} />
-        </AccessMessage>
+        <LoaderContainer>
+          <AnimatedLoader />
+          <LoadingText>Loading</LoadingText>
+        </LoaderContainer>
       </AccessContainer>
     );
   }
