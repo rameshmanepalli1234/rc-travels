@@ -14,7 +14,7 @@ export const StyledAboutUs = styled.div`
     margin-right: 100px;
 
     @media (max-width: 450px) {
-      width: 80%;
+      width: 86%;
       height: 400px;
       margin: 20px auto 0 auto;
     }
@@ -42,7 +42,7 @@ export const StyledAboutUs = styled.div`
     color: white;
 
     @media (max-width: 450px) {
-      font-size: 30px;
+      font-size: 24px;
     }
   }
 
@@ -66,12 +66,17 @@ export const StyledAboutUs = styled.div`
 
     @media (max-width: 450px) {
       padding: 0 10px;
+      gap: 0;
     }
   }
 
   .about-us-description {
     padding: 0 40px;
     text-align: justify;
+
+    @media (max-width: 450px) {
+      padding: 0 20px;
+    }
   }
 
   .about-us-contact-us {
