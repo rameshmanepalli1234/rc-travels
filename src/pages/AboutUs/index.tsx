@@ -1,5 +1,5 @@
 import { StyledAboutUs } from "./styles";
-import AboutUsImage from "@assets/AboutUsImage.jpg";
+import AboutUsImage from "@assets/aboutUsImage.jpg";
 import VisionImage from "@assets/vision.jpg";
 import MissionImage from "@assets/mission.jpg";
 
