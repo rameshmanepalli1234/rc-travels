@@ -3,7 +3,7 @@ import { defineMessages } from "react-intl";
 const messages = defineMessages({
   ADITYA_CAR_ZONE: {
     id: "app.name",
-    defaultMessage: "RC Travels",
+    defaultMessage: "RC Tours & Travels",
   },
   HOME: {
     id: "nav.home",

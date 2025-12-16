@@ -73,5 +73,10 @@ export const StyledGallery = styled.div`
     object-fit: cover;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+
+    @media (max-width: 500px) {
+      width: 320px;
+      height: 250px;
+    }
   }
 `;

@@ -43,7 +43,7 @@ const Home = () => {
         <div className="home-carbon-cleaning-services-container">
           <div className="feature-item">
             <FaCarAlt className="feature-icon" />
-            Premium Travel & Driving Services
+            Premium Tours and Travel Services
           </div>
           <div className="feature-item">
             <FaWind className="feature-icon" />

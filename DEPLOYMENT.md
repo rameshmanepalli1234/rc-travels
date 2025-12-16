@@ -1,4 +1,4 @@
-# Deployment Guide for RC Travels
+# Deployment Guide for RC Tours & Travels
 
 ## Vercel Deployment
 

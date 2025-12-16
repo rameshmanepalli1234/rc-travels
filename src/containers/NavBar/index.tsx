@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
   return (
     <>
       <StyledNavBar data-testid="section-navbar">
-        <h3 data-testid="text-navbar-brand">RC Travels</h3>
+        <h3 data-testid="text-navbar-brand">RC Tours & Travels</h3>
 
         {/* Desktop Navigation */}
         <StyledNavLinks>
@@ -70,7 +70,7 @@ const NavBar: React.FC = () => {
       <StyledDrawer isOpen={isDrawerOpen}>
         <StyledDrawerContent>
           <StyledDrawerHeader>
-            <h3 data-testid="text-drawer-brand">RC Travels</h3>
+            <h3 data-testid="text-drawer-brand">RC Tours & Travels</h3>
             <StyledDrawerClose
               onClick={closeDrawer}
               data-testid="button-drawer-close"

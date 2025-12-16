@@ -9,7 +9,8 @@ import Footer from "@containers/Footer";
 import Testimonials from "@containers/Testimonials";
 import { StyledMainContainer } from "./style";
 import CarbonCleaning from "@pages/CarbonCleaning";
-import Gallery from "@/pages/Gallery";
+import Gallery from "@pages/Gallery";
+import AboutUs from "@pages/AboutUs";
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <Home />
           <Testimonials />
           <Gallery />
+          <AboutUs />
           <Footer />
         </StyledMainContainer>
       </AccessControl>

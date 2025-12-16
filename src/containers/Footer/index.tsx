@@ -20,7 +20,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div>
-            <div className="footer-top-title">RC Travels</div>
+            <div className="footer-top-title">RC Tours & Travels</div>
             <div className="footer-top-title-description">
               Professional travel services designed for comfort and convenience.
               Experienced drivers and clean vehicles you can trust. Making every
@@ -126,11 +126,12 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-copyright-info">
-            © 2025 RC Travels All rights reserved.
+            © 2025 RC Tours & Travels All rights reserved.
           </div>
           <div className="footer-bottom-copyright-text">
             Design and Developed by{" "}
-            <span className="footer-copyright-link">RC Travels</span> Pvt Ltd.
+            <span className="footer-copyright-link">RC Tours & Travels</span>{" "}
+            Pvt Ltd.
           </div>
         </div>
       </div>
