@@ -16,7 +16,7 @@ const AccessContainer = styled.div`
   padding: 2rem;
   background-color: white;
   /* background: linear-gradient(135deg, #ee1aee 0%, #04dfb7 100%); */
-  color: white;
+  color: black;
   text-align: center;
 `;
 
@@ -100,7 +100,7 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
       try {
         // Get the access key from environment variables
         const accessKey = process.env["ACCESS_KEY"] || "";
-        const expectedKey = "u34kkfe993943kkjerufj3343334h";
+        const expectedKey = "u34kkfe993943kkjerufj3343334hss";
 
         // Simulate a small delay for better UX
         await new Promise((resolve) => setTimeout(resolve, 1000));
