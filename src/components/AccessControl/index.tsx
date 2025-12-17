@@ -100,7 +100,7 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
       try {
         // Get the access key from environment variables
         const accessKey = process.env["ACCESS_KEY"] || "";
-        const expectedKey = "u34kkfe993943kkjerufj3343334hss";
+        const expectedKey = "u34kkfe993943kkjerufj3343334h";
 
         // Simulate a small delay for better UX
         await new Promise((resolve) => setTimeout(resolve, 1000));
