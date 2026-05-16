@@ -151,12 +151,11 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
         // Simulate a small delay for better UX
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        setIsAuthorized(true); //remove this for access control
-        // if (accessKey === expectedKey || accessKey === fallbackKey) {
-        //   setIsAuthorized(true);
-        // } else {
-        //   setIsAuthorized(false);
-        // }
+        if (accessKey === expectedKey || accessKey === fallbackKey) {
+          setIsAuthorized(true);
+        } else {
+          setIsAuthorized(false);
+        }
       } catch (_error) {
         // Access validation error
         setIsAuthorized(false);
@@ -200,7 +199,8 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
     );
   }
 
-  if (!isAuthorized) {
+  // Access denied gate disabled: flow is loader → app. Restore by changing to `if (!isAuthorized)`.
+  if (false && !isAuthorized) {
     return (
       <AccessContainer>
         <AccessIcon>🚫</AccessIcon>
