@@ -151,11 +151,12 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
         // Simulate a small delay for better UX
         await new Promise((resolve) => setTimeout(resolve, 1000));
 
-        if (accessKey === expectedKey || accessKey === fallbackKey) {
-          setIsAuthorized(true);
-        } else {
-          setIsAuthorized(false);
-        }
+        setIsAuthorized(true); //remove this for access control
+        // if (accessKey === expectedKey || accessKey === fallbackKey) {
+        //   setIsAuthorized(true);
+        // } else {
+        //   setIsAuthorized(false);
+        // }
       } catch (_error) {
         // Access validation error
         setIsAuthorized(false);
