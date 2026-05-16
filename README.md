@@ -2,6 +2,9 @@
 
 A modern React TypeScript car marketplace application built with Webpack, featuring a beautiful UI and comprehensive car listings.
 
+- 🌐 Live Demo: https://rc-travels.netlify.app/
+- 🚀 Deployment Status: [![Netlify Status](https://api.netlify.com/api/v1/badges/05bec6b6-4cf1-4d09-a4d0-f3525ef96e8c/deploy-status)](https://app.netlify.com/projects/rc-travels/deploys)
+
 ## ✨ Features
 
 - **Modern React 19** with TypeScript for type safety
