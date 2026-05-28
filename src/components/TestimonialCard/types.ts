@@ -1,7 +1,10 @@
+export type TestimonialItem = {
+  id: number;
+  name: string;
+  summary: string;
+  fullText: string;
+};
+
 export type TestimonialCardProps = {
-  item: {
-    id: number;
-    name: string;
-    summary: string;
-  };
+  item: TestimonialItem;
 };
