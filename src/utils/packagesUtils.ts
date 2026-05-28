@@ -1,9 +1,5 @@
-import gallery1 from "@assets/gallery1.jpg";
-import gallery2 from "@assets/gallery2.jpg";
-import gallery3 from "@assets/gallery3.jpg";
-import gallery4 from "@assets/gallery4.jpg";
-import gallery5 from "@assets/gallery5.jpg";
-import gallery6 from "@assets/gallery6.jpg";
+import { TOUR_IMAGES } from "./tourImages";
+import { extendedIndiaPackages } from "./indiaTourPackagesData";
 
 export type TravelPackage = {
   id: number;
@@ -16,6 +12,23 @@ export type TravelPackage = {
   badge?: string;
 };
 
+export type TableTravelPackage = TravelPackage & {
+  available: boolean;
+};
+
+/** Fixed subset of tours shown as unavailable in the comparison table */
+const UNAVAILABLE_PACKAGE_IDS = new Set([
+  2, 5, 9, 13, 17, 20, 24, 27, 31, 35,
+]);
+
+const withTableAvailability = (
+  packages: TravelPackage[],
+): TableTravelPackage[] =>
+  packages.map((pkg) => ({
+    ...pkg,
+    available: !UNAVAILABLE_PACKAGE_IDS.has(pkg.id),
+  }));
+
 export const packagesUtils: TravelPackage[] = [
   {
     id: 1,
@@ -23,7 +36,7 @@ export const packagesUtils: TravelPackage[] = [
     location: "Tirupati, Andhra Pradesh",
     duration: "2 Days / 1 Night",
     price: 4000,
-    image: gallery1,
+    image: TOUR_IMAGES.tirumala,
     badge: "Most Popular",
     highlights: [
       "AC transport from Rajamahendravaram",
@@ -38,7 +51,7 @@ export const packagesUtils: TravelPackage[] = [
     location: "Visakhapatnam, Andhra Pradesh",
     duration: "3 Days / 2 Nights",
     price: 5000,
-    image: gallery2,
+    image: TOUR_IMAGES.vizag,
     badge: "Best Value",
     highlights: [
       "Beach-side hotel accommodation",
@@ -53,7 +66,7 @@ export const packagesUtils: TravelPackage[] = [
     location: "Araku, Andhra Pradesh",
     duration: "2 Days / 1 Night",
     price: 4500,
-    image: gallery3,
+    image: TOUR_IMAGES.araku,
     highlights: [
       "Scenic train / road journey options",
       "Resort or cottage stay",
@@ -67,7 +80,7 @@ export const packagesUtils: TravelPackage[] = [
     location: "Rajamahendravaram",
     duration: "1 Day Trip",
     price: 3200,
-    image: gallery4,
+    image: TOUR_IMAGES.godavari,
     highlights: [
       "Godavari river boat cruise",
       "Traditional lunch on board",
@@ -81,7 +94,7 @@ export const packagesUtils: TravelPackage[] = [
     location: "Hyderabad, Telangana",
     duration: "3 Days / 2 Nights",
     price: 6500,
-    image: gallery5,
+    image: TOUR_IMAGES.hyderabad,
     highlights: [
       "3-star hotel near city centre",
       "Charminar, Golconda & Hussain Sagar tour",
@@ -95,7 +108,7 @@ export const packagesUtils: TravelPackage[] = [
     location: "Papikondalu, Andhra Pradesh",
     duration: "2 Days / 1 Night",
     price: 4800,
-    image: gallery6,
+    image: TOUR_IMAGES.papikondalu,
     highlights: [
       "Resort stay amid lush hills",
       "Jeep safari & nature trails",
@@ -104,6 +117,14 @@ export const packagesUtils: TravelPackage[] = [
     ],
   },
 ];
+
+export { extendedIndiaPackages };
+
+/** Featured cards (6) + extended all-India destinations (30) for comparison table */
+export const packagesTableUtils: TableTravelPackage[] = withTableAvailability([
+  ...packagesUtils,
+  ...extendedIndiaPackages,
+]);
 
 export const formatPackagePrice = (price: number): string =>
   new Intl.NumberFormat("en-IN", {

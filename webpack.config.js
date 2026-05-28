@@ -92,7 +92,7 @@ module.exports = (env, argv) => {
           use: ["style-loader", "css-loader"],
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif|avif)$/i,
+          test: /\.(png|svg|jpg|jpeg|gif|avif|webp)$/i,
           type: "asset/resource",
         },
         {

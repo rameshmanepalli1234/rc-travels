@@ -1,4 +1,5 @@
 import {
+  SECTION_IDS,
   SectionId,
   hashForSection,
 } from "@/constants/sectionIds";
@@ -6,16 +7,35 @@ import {
 /** Approximate height of sticky InfoBar + NavBar for scroll offset */
 const SCROLL_OFFSET_PX = 120;
 
+const scrollToElement = (element: HTMLElement): void => {
+  const top =
+    element.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET_PX;
+
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+};
+
 export const scrollToSection = (sectionId: SectionId): void => {
   const element = document.getElementById(sectionId);
   if (!element) {
     return;
   }
 
-  const top =
-    element.getBoundingClientRect().top + window.scrollY - SCROLL_OFFSET_PX;
+  scrollToElement(element);
+};
 
-  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+/** Scroll to an in-page anchor (e.g. packages table within #packages section) */
+export const scrollToAnchor = (anchorId: string): void => {
+  const element = document.getElementById(anchorId);
+  if (!element) {
+    return;
+  }
+
+  scrollToElement(element);
+};
+
+export const navigateToPackagesTable = (): void => {
+  window.history.pushState(null, "", hashForSection(SECTION_IDS.PACKAGES));
+  scrollToAnchor("packages-table");
 };
 
 export const navigateToSection = (sectionId: SectionId): void => {

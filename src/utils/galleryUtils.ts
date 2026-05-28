@@ -1,9 +1,4 @@
-import gallery1 from "@assets/gallery1.jpg";
-import gallery2 from "@assets/gallery2.jpg";
-import gallery3 from "@assets/gallery3.jpg";
-import gallery4 from "@assets/gallery4.jpg";
-import gallery5 from "@assets/gallery5.jpg";
-import gallery6 from "@assets/gallery6.jpg";
+import { TOUR_IMAGES } from "./tourImages";
 
 export type GalleryVideo = {
   id: number;
@@ -27,32 +22,32 @@ export const galleryVideosUtils: GalleryVideo[] = [
 export const galleryUtils = [
   {
     id: 1,
-    image: gallery1,
-    name: "Gallery 1",
+    image: TOUR_IMAGES.tirumala,
+    name: "Tirumala Pilgrimage Tour",
   },
   {
     id: 2,
-    image: gallery2,
-    name: "Gallery 2",
+    image: TOUR_IMAGES.vizag,
+    name: "Vizag Beach & City Tour",
   },
   {
     id: 3,
-    image: gallery3,
-    name: "Gallery 3",
+    image: TOUR_IMAGES.araku,
+    name: "Araku Valley Scenic Escape",
   },
   {
     id: 4,
-    image: gallery4,
-    name: "Gallery 4",
+    image: TOUR_IMAGES.godavari,
+    name: "Rajahmundry Godavari Cruise",
   },
   {
     id: 5,
-    image: gallery5,
-    name: "Gallery 5",
+    image: TOUR_IMAGES.hyderabad,
+    name: "Hyderabad Heritage Weekend",
   },
   {
     id: 6,
-    image: gallery6,
-    name: "Gallery 6",
+    image: TOUR_IMAGES.papikondalu,
+    name: "Papikondalu Hill & River Tour",
   },
 ];

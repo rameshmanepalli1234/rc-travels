@@ -4,6 +4,7 @@ import {
   formatPackagePrice,
   type TravelPackage,
 } from "@utils";
+import PackagesTable from "@components/PackagesTable";
 import { hashForSection, SECTION_IDS } from "@/constants/sectionIds";
 import { StyledPackages, StyledPackageCard } from "./style";
 
@@ -66,6 +67,8 @@ const Packages = () => {
           </StyledPackageCard>
         ))}
       </div>
+
+      <PackagesTable />
     </StyledPackages>
   );
 };

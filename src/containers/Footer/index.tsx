@@ -66,6 +66,7 @@ const Footer = () => {
                       event.preventDefault();
                       navigateToSection(item.sectionId);
                     }}
+                    className="footer-top-section-links-list-item-link"
                   >
                     {item.name}
                   </a>

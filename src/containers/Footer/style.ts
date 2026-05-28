@@ -137,6 +137,11 @@ export const StyledFooter = styled.div`
     gap: 6px;
   }
 
+  .footer-top-section-links-list-item-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+  }
+
   .footer-top-section-links-quick-links {
     display: flex;
     flex-direction: column;
