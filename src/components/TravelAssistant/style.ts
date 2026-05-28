@@ -192,4 +192,13 @@ export const StyledPoweredBy = styled.p`
   color: #888;
   text-align: center;
   background: #fff;
+
+  .assistant-brand-highlight {
+    font-weight: 700;
+    color: #2d8a47;
+    background: linear-gradient(90deg, #4fbd39 0%, #2d8a47 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;

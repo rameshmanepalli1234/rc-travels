@@ -183,7 +183,8 @@ const TravelAssistant = () => {
           </StyledInputRow>
 
           <StyledPoweredBy>
-            Powered by Google Gemini · {BRAND_NAME}
+            Powered by Google Gemini ·{" "}
+            <span className="assistant-brand-highlight">{BRAND_NAME}</span>
           </StyledPoweredBy>
         </StyledPanel>
       ) : null}
