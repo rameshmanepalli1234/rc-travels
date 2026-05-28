@@ -109,6 +109,14 @@ export const mapGeminiError = (error: unknown): { status: number; message: strin
     };
   }
 
+  if (/leaked|403 Forbidden|PERMISSION_DENIED/i.test(message)) {
+    return {
+      status: 403,
+      message:
+        "Your Gemini API key was disabled (often after it was exposed publicly). Create a new key at aistudio.google.com/apikey, update GEMINI_API_KEY in Netlify, then redeploy.",
+    };
+  }
+
   if (/quota|RESOURCE_EXHAUSTED|429|Too Many Requests/i.test(message)) {
     const modelHint = /limit: 0/i.test(message)
       ? " Set GEMINI_MODEL=gemini-2.5-flash in .env and restart yarn start."
