@@ -1,5 +1,10 @@
 import { FormEvent, useState } from "react";
-import { contactInfoUtils, type ContactInfoItem } from "@utils";
+import {
+  contactInfoUtils,
+  sanitizeNameInput,
+  sanitizePhoneInput,
+  type ContactInfoItem,
+} from "@utils";
 import {
   StyledContactUs,
   StyledContactInfoCard,
@@ -95,8 +100,12 @@ const ContactUs = () => {
                 type="text"
                 placeholder="Your name"
                 required
+                minLength={2}
+                title="Use letters only, e.g. Ramesh Manepalli"
                 value={form.name}
-                onChange={(e) => handleChange("name", e.target.value)}
+                onChange={(e) =>
+                  handleChange("name", sanitizeNameInput(e.target.value))
+                }
               />
             </div>
             <div className="contact-form-field">
@@ -107,10 +116,16 @@ const ContactUs = () => {
                 id="contact-phone"
                 className="contact-form-input"
                 type="tel"
-                placeholder="+91 98765 43210"
+                inputMode="tel"
+                autoComplete="tel"
+                placeholder="+91 6363620044"
                 required
+                pattern="\+?[\d\s]{8,}"
+                title="Use numbers and + only, e.g. +91 6363620044"
                 value={form.phone}
-                onChange={(e) => handleChange("phone", e.target.value)}
+                onChange={(e) =>
+                  handleChange("phone", sanitizePhoneInput(e.target.value))
+                }
               />
             </div>
           </div>

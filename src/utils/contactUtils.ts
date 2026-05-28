@@ -16,6 +16,18 @@ export const CONTACT_ADDRESS =
   "Near Vartha Office, Morampudi, Rajamahendravaram, Andhra Pradesh, 533107";
 export const CONTACT_HOURS = "Mon - Sat: 9:00 AM - 9:00 PM";
 
+/** Allows letters and spaces only (e.g. Ramesh Manepalli) */
+export const sanitizeNameInput = (value: string): string =>
+  value.replace(/[^\p{L}\s]/gu, "").replace(/\s{2,}/g, " ");
+
+/** Allows digits, spaces, and a single leading + (e.g. +91 6363620044) */
+export const sanitizePhoneInput = (value: string): string => {
+  const cleaned = value.replace(/[^\d+\s]/g, "");
+  const hasLeadingPlus = cleaned.trimStart().startsWith("+");
+  const withoutPlus = cleaned.replace(/\+/g, "");
+  return hasLeadingPlus ? `+${withoutPlus}` : withoutPlus;
+};
+
 export type ContactInfoItem = {
   id: string;
   title: string;

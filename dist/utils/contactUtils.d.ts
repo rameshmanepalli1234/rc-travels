@@ -6,6 +6,8 @@ export declare const CONTACT_EMAIL = "rameshtravelszone@gmail.com";
 export declare const CONTACT_EMAIL_MAILTO = "mailto:rameshtravelszone@gmail.com";
 export declare const CONTACT_ADDRESS = "Near Vartha Office, Morampudi, Rajamahendravaram, Andhra Pradesh, 533107";
 export declare const CONTACT_HOURS = "Mon - Sat: 9:00 AM - 9:00 PM";
+export declare const sanitizeNameInput: (value: string) => string;
+export declare const sanitizePhoneInput: (value: string) => string;
 export type ContactInfoItem = {
     id: string;
     title: string;

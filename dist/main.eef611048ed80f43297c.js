@@ -1,4 +1,4 @@
-(()=>{"use strict";var e,a={1535:(e,a,i)=>{e.exports=i.p+"b6b264147d1993a3b7f4.png"},2741:(e,a,i)=>{e.exports=i.p+"c754b89086c58a705a5d.png"},9298:(e,a,i)=>{var t=i(4848),o=i(6540),r=i(5338),n=i(7581);const s=(0,i(6730).defineMessages)({ADITYA_CAR_ZONE:{id:"app.name",defaultMessage:"Ramesh Tours & Travels"},HOME:{id:"nav.home",defaultMessage:"Home"},ABOUT_US:{id:"nav.about",defaultMessage:"About Us"},DRIVING_SCHOOL:{id:"nav.driving-school",defaultMessage:"Driving School"},CARBON_CLEANING:{id:"nav.carbon-cleaning",defaultMessage:"Carbon Cleaning"},SERVICES:{id:"nav.services",defaultMessage:"Services"},PACKAGES:{id:"nav.packages",defaultMessage:"Packages"},GALLERY:{id:"nav.gallery",defaultMessage:"Gallery"},CONTACT_US:{id:"nav.contact",defaultMessage:"Contact Us"},TESTIMONIALS:{id:"nav.testimonials",defaultMessage:"Testimonials"},VALIDATING_ACCESS:{id:"access.validating",defaultMessage:"Validating Access..."},VALIDATING_ACCESS_MESSAGE:{id:"access.validating.message",defaultMessage:"Please wait while we verify your access credentials."},ACCESS_DENIED:{id:"access.denied",defaultMessage:"Access Denied"},ACCESS_DENIED_DESCRIPTION:{id:"access.denied.description",defaultMessage:"You dont have permission to access this application. Please check your access key and try again."},ACCESS_DENIED_MESSAGE:{id:"access.denied.message",defaultMessage:"You dont have permission to access this application. Please check your access key and try again."},RETRY_ACCESS:{id:"access.retry",defaultMessage:"Retry Access"},SOMETHING_WENT_WRONG:{id:"error.something.wrong",defaultMessage:"Something went wrong"},UNEXPECTED_ERROR:{id:"error.unexpected",defaultMessage:"An unexpected error occurred. Please try again."},TRY_AGAIN:{id:"error.try.again",defaultMessage:"Try Again"},PHONE_NUMBER:{id:"infobar.phone",defaultMessage:"+91 6363620044"},EMAIL:{id:"infobar.email",defaultMessage:"rameshtravelszone@gmail.com"},OPENING_HOURS:{id:"infobar.opening-hours",defaultMessage:"Mon - Sat: 8:00 - 20:00"}}),{FormattedMessage:d}=i(6730),c=n.Ay.div`
+(()=>{"use strict";var e,a={1535:(e,a,i)=>{e.exports=i.p+"b6b264147d1993a3b7f4.png"},2741:(e,a,i)=>{e.exports=i.p+"c754b89086c58a705a5d.png"},9298:(e,a,i)=>{var t=i(4848),r=i(6540),o=i(5338),n=i(7581);const s=(0,i(6730).defineMessages)({ADITYA_CAR_ZONE:{id:"app.name",defaultMessage:"Ramesh Tours & Travels"},HOME:{id:"nav.home",defaultMessage:"Home"},ABOUT_US:{id:"nav.about",defaultMessage:"About Us"},DRIVING_SCHOOL:{id:"nav.driving-school",defaultMessage:"Driving School"},CARBON_CLEANING:{id:"nav.carbon-cleaning",defaultMessage:"Carbon Cleaning"},SERVICES:{id:"nav.services",defaultMessage:"Services"},PACKAGES:{id:"nav.packages",defaultMessage:"Packages"},GALLERY:{id:"nav.gallery",defaultMessage:"Gallery"},CONTACT_US:{id:"nav.contact",defaultMessage:"Contact Us"},TESTIMONIALS:{id:"nav.testimonials",defaultMessage:"Testimonials"},VALIDATING_ACCESS:{id:"access.validating",defaultMessage:"Validating Access..."},VALIDATING_ACCESS_MESSAGE:{id:"access.validating.message",defaultMessage:"Please wait while we verify your access credentials."},ACCESS_DENIED:{id:"access.denied",defaultMessage:"Access Denied"},ACCESS_DENIED_DESCRIPTION:{id:"access.denied.description",defaultMessage:"You dont have permission to access this application. Please check your access key and try again."},ACCESS_DENIED_MESSAGE:{id:"access.denied.message",defaultMessage:"You dont have permission to access this application. Please check your access key and try again."},RETRY_ACCESS:{id:"access.retry",defaultMessage:"Retry Access"},SOMETHING_WENT_WRONG:{id:"error.something.wrong",defaultMessage:"Something went wrong"},UNEXPECTED_ERROR:{id:"error.unexpected",defaultMessage:"An unexpected error occurred. Please try again."},TRY_AGAIN:{id:"error.try.again",defaultMessage:"Try Again"},PHONE_NUMBER:{id:"infobar.phone",defaultMessage:"+91 6363620044"},EMAIL:{id:"infobar.email",defaultMessage:"rameshtravelszone@gmail.com"},OPENING_HOURS:{id:"infobar.opening-hours",defaultMessage:"Mon - Sat: 8:00 - 20:00"}}),{FormattedMessage:d}=i(6730),l=n.Ay.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@
   /* background: linear-gradient(135deg, #ee1aee 0%, #04dfb7 100%); */
   color: black;
   text-align: center;
-`,l=(n.Ay.div`
+`,c=(n.Ay.div`
   font-size: 4rem;
   margin-bottom: 1rem;
   opacity: 0.8;
@@ -108,9 +108,9 @@
   &:active {
     transform: scale(0.98);
   }
-`,({children:e})=>{const[a,i]=(0,o.useState)(null),[r,n]=(0,o.useState)(!0),[s,d]=(0,o.useState)("");return(0,o.useEffect)(()=>{(async()=>{try{const e="u34kkfe993943kkjerufj3343334h",a="u34kkfe993943kkjerufj3343334hss",t="4444";await new Promise(e=>setTimeout(e,1e3)),i(e===a||e===t)}catch(e){i(!1)}finally{n(!1)}})()},[]),r?(0,t.jsx)(c,{children:(0,t.jsxs)(l,{children:[(0,t.jsx)(p,{}),(0,t.jsx)(x,{children:"Loading"})]})}):(0,t.jsx)(t.Fragment,{children:e})}),h=n.Ay.section`
+`,({children:e})=>{const[a,i]=(0,r.useState)(null),[o,n]=(0,r.useState)(!0),[s,d]=(0,r.useState)("");return(0,r.useEffect)(()=>{(async()=>{try{const e="u34kkfe993943kkjerufj3343334h",a="u34kkfe993943kkjerufj3343334hss",t="4444";await new Promise(e=>setTimeout(e,1e3)),i(e===a||e===t)}catch(e){i(!1)}finally{n(!1)}})()},[]),o?(0,t.jsx)(l,{children:(0,t.jsxs)(c,{children:[(0,t.jsx)(p,{}),(0,t.jsx)(x,{children:"Loading"})]})}):(0,t.jsx)(t.Fragment,{children:e})}),g=n.Ay.section`
   scroll-margin-top: 120px;
-`,g=({id:e,children:a})=>(0,t.jsx)(h,{id:e,children:a}),f=n.Ay.div`
+`,h=({id:e,children:a})=>(0,t.jsx)(g,{id:e,children:a}),f=n.Ay.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -159,7 +159,7 @@
       line-height: 1.2;
     }
   }
-`,u=n.Ay.div`
+`,b=n.Ay.div`
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -179,7 +179,7 @@
   @media (max-width: 768px) {
     display: none;
   }
-`,b=n.Ay.button`
+`,u=n.Ay.button`
   display: none;
   background: none;
   border: none;
@@ -324,7 +324,7 @@
       font-size: 0.875rem;
     }
   }
-`;var z=i(9197),A=i(1223),S=i(8027);const E="home",I="aboutus",C="services",T="packages",M="gallery",O="contactus",R="testimonials",P=e=>`#${e}`,_=e=>[{name:e.formatMessage(s.HOME),href:P(E),sectionId:E,Icon:S.rQ8},{name:e.formatMessage(s.ABOUT_US),href:P(I),sectionId:I,Icon:S.x$1},{name:e.formatMessage(s.SERVICES),href:P(C),sectionId:C,Icon:S.xdT},{name:e.formatMessage(s.PACKAGES),href:P(T),sectionId:T,Icon:z.APk},{name:e.formatMessage(s.GALLERY),href:P(M),sectionId:M,Icon:S.kQE},{name:e.formatMessage(s.TESTIMONIALS),href:P(R),sectionId:R,Icon:S.x$1},{name:e.formatMessage(s.CONTACT_US),href:P(O),sectionId:O,Icon:A.OB9}],D=e=>{const a=document.getElementById(e);if(!a)return;const i=a.getBoundingClientRect().top+window.scrollY-120;window.scrollTo({top:Math.max(0,i),behavior:"smooth"})},G=e=>{window.history.pushState(null,"",P(e)),D(e)};var Y=i(6512);const $="Ramesh Tours & Travels",U="+91 6363620044",L="tel:+916363620044",F="rameshtravelszone@gmail.com",H="mailto:rameshtravelszone@gmail.com",B="Near Vartha Office, Morampudi, Rajamahendravaram, Andhra Pradesh, 533107",W="Mon - Sat: 9:00 AM - 9:00 PM",q=[{id:"phone",title:"Call Us",value:U,href:L,Icon:S.Cab},{id:"email",title:"Email Us",value:F,href:H,Icon:S.maD},{id:"address",title:"Visit Us",value:B,Icon:S.vq8},{id:"hours",title:"Working Hours",value:W,Icon:S.w_X}],V=[{name:"Facebook",Icon:S.iYk,href:"https://www.facebook.com/ramesh.manepalli.560?mibextid=wwXIfr&mibextid=wwXIfr"},{name:"Instagram",Icon:S.ao$,href:"https://www.instagram.com/__.rammy_?igsh=NmttcXQwMjlvc2Rx&utm_source=qr"},{name:"LinkedIn",Icon:S.QEs,href:"https://www.linkedin.com/in/ramesh-manepalli-180901289/"},{name:"Youtube",Icon:Y.Jvf,href:"https://youtube.com/@rameshmanepalli0?si=TSA9k5PqGsQnbO8l"}],X=[{name:"Travel Services",href:"#"},{name:"Driving School",href:"#"},{name:"Rented Cars",href:"#"},{name:"Premium Car Sales",href:"#"}];var Q=i(1351),K=i(1735);const J=[{title:"Trip Consultation",description:"Discuss your travel preferences and destinations with our expert team to plan the perfect journey.",Icon:Q.zfp,id:1},{title:"Booking & Preparation",description:"Confirm your travel dates, vehicle, and itinerary, ensuring everything is ready for a smooth trip.",Icon:S.xdT,id:2},{title:"Guided Travel",description:"Enjoy a comfortable journey with our experienced drivers, exploring destinations safely and efficiently.",Icon:K.Lzr,id:3},{title:"Trip Review",description:"We follow up after your journey to gather feedback and ensure your travel experience was memorable.",Icon:S.A7C,id:4}],Z=[{id:1,name:"Sunita",summary:"I had a fantastic journey with this company. The drivers were punctual and professional, making every part of the trip smooth. Highly recommended for hassle-free travel."},{id:2,name:"Meghana",summary:"Excellent travel experience! The vehicles were extremely comfortable and well-maintained. The itinerary was perfectly planned, making our sightseeing enjoyable and stress-free."},{id:3,name:"Priya",summary:"Highly recommend their services. The staff was courteous, attentive, and always ready to help. They made our travel experience truly memorable and worry-free."},{id:4,name:"Lalitha",summary:"Wonderful experience! From booking to the end of the journey, everything was seamless. The drivers were friendly and the trips were safe and comfortable throughout."},{id:5,name:"Kavya",summary:"I loved the personalized attention we received during our trip. Every detail, from vehicle cleanliness to route planning, was taken care of. It made our vacation stress-free and enjoyable."},{id:6,name:"Mounika",summary:"Safe, comfortable, and hassle-free travel. The team ensured we reached every destination on time and made the journey fun and relaxing. I will definitely use their services again."}],ee=i.p+"124017ce71a24cb59930.jpg",ae=i.p+"2448d8753b69430bb034.jpg",ie=i.p+"e3ff67b7efd1415dfead.jpg",te=i.p+"9e866d5cd7fcc755249b.jpg",oe=i.p+"4ce71eac1b59e98513dd.jpg",re=i.p+"e0e81912c1f22ecd93f6.jpg",ne=[{id:1,image:ee,name:"Gallery 1"},{id:2,image:ae,name:"Gallery 2"},{id:3,image:ie,name:"Gallery 3"},{id:4,image:te,name:"Gallery 4"},{id:5,image:oe,name:"Gallery 5"},{id:6,image:re,name:"Gallery 6"}],se=[{id:1,title:"Tirumala Pilgrimage Package",location:"Tirupati, Andhra Pradesh",duration:"2 Days / 1 Night",price:4e3,image:ee,badge:"Most Popular",highlights:["AC transport from Rajamahendravaram","Hotel stay with breakfast","Tirumala darshan assistance","Local temple visits included"]},{id:2,title:"Vizag Beach & City Tour",location:"Visakhapatnam, Andhra Pradesh",duration:"3 Days / 2 Nights",price:5e3,image:ae,badge:"Best Value",highlights:["Beach-side hotel accommodation","RK Beach & Kailasagiri sightseeing","Breakfast & dinner included","Private cab for entire trip"]},{id:3,title:"Araku Valley Scenic Escape",location:"Araku, Andhra Pradesh",duration:"2 Days / 1 Night",price:4500,image:ie,highlights:["Scenic train / road journey options","Resort or cottage stay","Coffee plantation & Borra Caves visit","All meals & local guide included"]},{id:4,title:"Rajahmundry Godavari Cruise",location:"Rajamahendravaram",duration:"1 Day Trip",price:3200,image:te,highlights:["Godavari river boat cruise","Traditional lunch on board","Pickup & drop within city","Papikondalu viewpoint stop"]},{id:5,title:"Hyderabad Heritage Weekend",location:"Hyderabad, Telangana",duration:"3 Days / 2 Nights",price:6500,image:oe,highlights:["3-star hotel near city centre","Charminar, Golconda & Hussain Sagar tour","Breakfast included daily","Monument entry tickets covered"]},{id:6,title:"Papikondalu Hill & River Tour",location:"Papikondalu, Andhra Pradesh",duration:"2 Days / 1 Night",price:4800,image:re,highlights:["Resort stay amid lush hills","Jeep safari & nature trails","All meals included","River cruise & photography spots"]}],de=()=>{const[e,a]=(0,o.useState)(!1),i=()=>{a(!1)},r=_({formatMessage:e=>e.defaultMessage}),n=(e,a)=>{e.preventDefault(),G(a),i()};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(f,{"data-testid":"section-navbar",children:[(0,t.jsx)("h3",{"data-testid":"text-navbar-brand",children:"Ramesh Tours & Travels"}),(0,t.jsx)(u,{children:r.map((e,a)=>(0,t.jsx)("a",{href:e.href,onClick:a=>n(a,e.sectionId),"data-testid":`link-nav-${e.name.toLowerCase().replace(/\s+/g,"-")}`,children:e.name},a))}),(0,t.jsx)(b,{onClick:()=>{a(!e)},"data-testid":"button-navbar-menu",children:(0,t.jsx)(S.OXb,{})})]}),e&&(0,t.jsx)(w,{onClick:i,"data-testid":"overlay-navbar-drawer"}),(0,t.jsx)(v,{isOpen:e,children:(0,t.jsxs)(y,{children:[(0,t.jsxs)(j,{children:[(0,t.jsx)("h3",{"data-testid":"text-drawer-brand",children:"Ramesh Tours & Travels"}),(0,t.jsx)(k,{onClick:i,"data-testid":"button-drawer-close",children:(0,t.jsx)(S.QCr,{})})]}),(0,t.jsx)(N,{children:r.map((e,a)=>(0,t.jsx)("a",{href:e.href,onClick:a=>n(a,e.sectionId),"data-testid":`link-drawer-${e.name.toLowerCase().replace(/\s+/g,"-")}`,children:e.name},a))})]})})]})};var ce=i(6442);const le="1.25rem",pe="600",xe="\n  text-transform: inherit;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n      sans-serif",me=`\n  ${xe};\n  font-size: 0.875rem;\n  font-weight: ${pe};\n  line-height: ${le};`,he=`\n  ${xe};\n  font-size: 1rem;\n  font-weight: ${pe};\n  line-height: ${le};`,ge=`\n  ${xe};\n  font-size: 0.75rem;\n  font-weight: ${pe};\n  line-height: 1rem;`,fe=n.Ay.div`
+`;var z=i(9197),A=i(1223),S=i(8027);const E="home",I="aboutus",C="services",T="packages",M="gallery",R="contactus",O="testimonials",P=e=>`#${e}`,_=e=>[{name:e.formatMessage(s.HOME),href:P(E),sectionId:E,Icon:S.rQ8},{name:e.formatMessage(s.ABOUT_US),href:P(I),sectionId:I,Icon:S.x$1},{name:e.formatMessage(s.SERVICES),href:P(C),sectionId:C,Icon:S.xdT},{name:e.formatMessage(s.PACKAGES),href:P(T),sectionId:T,Icon:z.APk},{name:e.formatMessage(s.GALLERY),href:P(M),sectionId:M,Icon:S.kQE},{name:e.formatMessage(s.TESTIMONIALS),href:P(O),sectionId:O,Icon:S.x$1},{name:e.formatMessage(s.CONTACT_US),href:P(R),sectionId:R,Icon:A.OB9}],D=e=>{const a=document.getElementById(e);if(!a)return;const i=a.getBoundingClientRect().top+window.scrollY-120;window.scrollTo({top:Math.max(0,i),behavior:"smooth"})},G=e=>{window.history.pushState(null,"",P(e)),D(e)};var U=i(6512);const Y="Ramesh Tours & Travels",$="+91 6363620044",L="tel:+916363620044",F="rameshtravelszone@gmail.com",H="mailto:rameshtravelszone@gmail.com",B="Near Vartha Office, Morampudi, Rajamahendravaram, Andhra Pradesh, 533107",W="Mon - Sat: 9:00 AM - 9:00 PM",q=[{id:"phone",title:"Call Us",value:$,href:L,Icon:S.Cab},{id:"email",title:"Email Us",value:F,href:H,Icon:S.maD},{id:"address",title:"Visit Us",value:B,Icon:S.vq8},{id:"hours",title:"Working Hours",value:W,Icon:S.w_X}],V=[{name:"Facebook",Icon:S.iYk,href:"https://www.facebook.com/ramesh.manepalli.560?mibextid=wwXIfr&mibextid=wwXIfr"},{name:"Instagram",Icon:S.ao$,href:"https://www.instagram.com/__.rammy_?igsh=NmttcXQwMjlvc2Rx&utm_source=qr"},{name:"LinkedIn",Icon:S.QEs,href:"https://www.linkedin.com/in/ramesh-manepalli-180901289/"},{name:"Youtube",Icon:U.Jvf,href:"https://youtube.com/@rameshmanepalli0?si=TSA9k5PqGsQnbO8l"}],X=[{name:"Travel Services",href:"#"},{name:"Driving School",href:"#"},{name:"Rented Cars",href:"#"},{name:"Premium Car Sales",href:"#"}];var Q=i(1351),K=i(1735);const J=[{title:"Trip Consultation",description:"Discuss your travel preferences and destinations with our expert team to plan the perfect journey.",Icon:Q.zfp,id:1},{title:"Booking & Preparation",description:"Confirm your travel dates, vehicle, and itinerary, ensuring everything is ready for a smooth trip.",Icon:S.xdT,id:2},{title:"Guided Travel",description:"Enjoy a comfortable journey with our experienced drivers, exploring destinations safely and efficiently.",Icon:K.Lzr,id:3},{title:"Trip Review",description:"We follow up after your journey to gather feedback and ensure your travel experience was memorable.",Icon:S.A7C,id:4}],Z=[{id:1,name:"Sunita",summary:"I had a fantastic journey with this company. The drivers were punctual and professional, making every part of the trip smooth. Highly recommended for hassle-free travel."},{id:2,name:"Meghana",summary:"Excellent travel experience! The vehicles were extremely comfortable and well-maintained. The itinerary was perfectly planned, making our sightseeing enjoyable and stress-free."},{id:3,name:"Priya",summary:"Highly recommend their services. The staff was courteous, attentive, and always ready to help. They made our travel experience truly memorable and worry-free."},{id:4,name:"Lalitha",summary:"Wonderful experience! From booking to the end of the journey, everything was seamless. The drivers were friendly and the trips were safe and comfortable throughout."},{id:5,name:"Kavya",summary:"I loved the personalized attention we received during our trip. Every detail, from vehicle cleanliness to route planning, was taken care of. It made our vacation stress-free and enjoyable."},{id:6,name:"Mounika",summary:"Safe, comfortable, and hassle-free travel. The team ensured we reached every destination on time and made the journey fun and relaxing. I will definitely use their services again."}],ee=i.p+"124017ce71a24cb59930.jpg",ae=i.p+"2448d8753b69430bb034.jpg",ie=i.p+"e3ff67b7efd1415dfead.jpg",te=i.p+"9e866d5cd7fcc755249b.jpg",re=i.p+"4ce71eac1b59e98513dd.jpg",oe=i.p+"e0e81912c1f22ecd93f6.jpg",ne=[{id:1,title:"Travel Highlights",embedUrl:"https://www.youtube.com/embed/5OKl1rAx8a8"},{id:2,title:"Journey Experience",embedUrl:"https://www.youtube.com/embed/pmZ0RFTdlG0"}],se=[{id:1,image:ee,name:"Gallery 1"},{id:2,image:ae,name:"Gallery 2"},{id:3,image:ie,name:"Gallery 3"},{id:4,image:te,name:"Gallery 4"},{id:5,image:re,name:"Gallery 5"},{id:6,image:oe,name:"Gallery 6"}],de=[{id:1,title:"Tirumala Pilgrimage Package",location:"Tirupati, Andhra Pradesh",duration:"2 Days / 1 Night",price:4e3,image:ee,badge:"Most Popular",highlights:["AC transport from Rajamahendravaram","Hotel stay with breakfast","Tirumala darshan assistance","Local temple visits included"]},{id:2,title:"Vizag Beach & City Tour",location:"Visakhapatnam, Andhra Pradesh",duration:"3 Days / 2 Nights",price:5e3,image:ae,badge:"Best Value",highlights:["Beach-side hotel accommodation","RK Beach & Kailasagiri sightseeing","Breakfast & dinner included","Private cab for entire trip"]},{id:3,title:"Araku Valley Scenic Escape",location:"Araku, Andhra Pradesh",duration:"2 Days / 1 Night",price:4500,image:ie,highlights:["Scenic train / road journey options","Resort or cottage stay","Coffee plantation & Borra Caves visit","All meals & local guide included"]},{id:4,title:"Rajahmundry Godavari Cruise",location:"Rajamahendravaram",duration:"1 Day Trip",price:3200,image:te,highlights:["Godavari river boat cruise","Traditional lunch on board","Pickup & drop within city","Papikondalu viewpoint stop"]},{id:5,title:"Hyderabad Heritage Weekend",location:"Hyderabad, Telangana",duration:"3 Days / 2 Nights",price:6500,image:re,highlights:["3-star hotel near city centre","Charminar, Golconda & Hussain Sagar tour","Breakfast included daily","Monument entry tickets covered"]},{id:6,title:"Papikondalu Hill & River Tour",location:"Papikondalu, Andhra Pradesh",duration:"2 Days / 1 Night",price:4800,image:oe,highlights:["Resort stay amid lush hills","Jeep safari & nature trails","All meals included","River cruise & photography spots"]}],le=()=>{const[e,a]=(0,r.useState)(!1),i=()=>{a(!1)},o=_({formatMessage:e=>e.defaultMessage}),n=(e,a)=>{e.preventDefault(),G(a),i()};return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(f,{"data-testid":"section-navbar",children:[(0,t.jsx)("h3",{"data-testid":"text-navbar-brand",children:"Ramesh Tours & Travels"}),(0,t.jsx)(b,{children:o.map((e,a)=>(0,t.jsx)("a",{href:e.href,onClick:a=>n(a,e.sectionId),"data-testid":`link-nav-${e.name.toLowerCase().replace(/\s+/g,"-")}`,children:e.name},a))}),(0,t.jsx)(u,{onClick:()=>{a(!e)},"data-testid":"button-navbar-menu",children:(0,t.jsx)(S.OXb,{})})]}),e&&(0,t.jsx)(w,{onClick:i,"data-testid":"overlay-navbar-drawer"}),(0,t.jsx)(v,{isOpen:e,children:(0,t.jsxs)(y,{children:[(0,t.jsxs)(j,{children:[(0,t.jsx)("h3",{"data-testid":"text-drawer-brand",children:"Ramesh Tours & Travels"}),(0,t.jsx)(k,{onClick:i,"data-testid":"button-drawer-close",children:(0,t.jsx)(S.QCr,{})})]}),(0,t.jsx)(N,{children:o.map((e,a)=>(0,t.jsx)("a",{href:e.href,onClick:a=>n(a,e.sectionId),"data-testid":`link-drawer-${e.name.toLowerCase().replace(/\s+/g,"-")}`,children:e.name},a))})]})})]})};var ce=i(6442);const pe="1.25rem",xe="600",me="\n  text-transform: inherit;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n      sans-serif",ge=`\n  ${me};\n  font-size: 0.875rem;\n  font-weight: ${xe};\n  line-height: ${pe};`,he=`\n  ${me};\n  font-size: 1rem;\n  font-weight: ${xe};\n  line-height: ${pe};`,fe=`\n  ${me};\n  font-size: 0.75rem;\n  font-weight: ${xe};\n  line-height: 1rem;`,be=n.Ay.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -357,7 +357,7 @@
       flex-direction: row;
       align-items: center;
       gap: 8px;
-      ${me};
+      ${ge};
     }
 
     .info-bar-item-link {
@@ -372,11 +372,11 @@
     .info-bar-item {
 
       @media (max-width: 1024px) {
-        ${ge};
+        ${fe};
       }
 
       @media (max-width: 700px) {
-        ${me};
+        ${ge};
       }
 
       //not recommended to use this, but it's a workaround to hide the text on mobile
@@ -409,14 +409,14 @@
     }
 
     @media (max-width: 1024px) {
-      ${me};
+      ${ge};
     }
 
     @media (max-width: 700px) {
       ${he};
     }
   }
-`,ue=()=>{const e=[{name:(a=(0,ce.A)()).formatMessage(s.PHONE_NUMBER),Icon:S.Cab,href:L},{name:a.formatMessage(s.EMAIL),Icon:S.maD,href:H},{name:a.formatMessage(s.OPENING_HOURS),Icon:z.w_X}];var a;return(0,t.jsxs)(fe,{"data-testid":"section-infobar",children:[(0,t.jsx)("div",{className:"info-bar-left-container",children:e.map((e,a)=>{const i=(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(e.Icon,{}),(0,t.jsx)("span",{className:"info-bar-item-text",children:e.name})]});return e.href?(0,t.jsx)("a",{href:e.href,className:"info-bar-item info-bar-item-link",children:i},a):(0,t.jsx)("div",{className:"info-bar-item",children:i},a)})}),(0,t.jsx)("div",{className:"info-bar-right-container",children:V.map((e,a)=>(0,t.jsx)("a",{href:e.href,className:"info-bar-social-link",target:"_blank",rel:"noopener noreferrer","aria-label":e.name,children:(0,t.jsx)(e.Icon,{})},a))})]})},be=[{name:"Driving School"},{name:"Cars"},{name:"Carbon Cleaning"}],we=n.Ay.div`
+`,ue=()=>{const e=[{name:(a=(0,ce.A)()).formatMessage(s.PHONE_NUMBER),Icon:S.Cab,href:L},{name:a.formatMessage(s.EMAIL),Icon:S.maD,href:H},{name:a.formatMessage(s.OPENING_HOURS),Icon:z.w_X}];var a;return(0,t.jsxs)(be,{"data-testid":"section-infobar",children:[(0,t.jsx)("div",{className:"info-bar-left-container",children:e.map((e,a)=>{const i=(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)(e.Icon,{}),(0,t.jsx)("span",{className:"info-bar-item-text",children:e.name})]});return e.href?(0,t.jsx)("a",{href:e.href,className:"info-bar-item info-bar-item-link",children:i},a):(0,t.jsx)("div",{className:"info-bar-item",children:i},a)})}),(0,t.jsx)("div",{className:"info-bar-right-container",children:V.map((e,a)=>(0,t.jsx)("a",{href:e.href,className:"info-bar-social-link",target:"_blank",rel:"noopener noreferrer","aria-label":e.name,children:(0,t.jsx)(e.Icon,{})},a))})]})},we=[{name:"Driving School"},{name:"Cars"},{name:"Carbon Cleaning"}],ve=n.Ay.div`
   display: flex;
   align-items: center;
   /* background: grey; */
@@ -579,7 +579,7 @@
     margin: 6px;
     padding: 3px;
   }
-`,ve=()=>{const[e,a]=(0,o.useState)(0);return(0,t.jsx)(we,{"data-testid":"section-menu-bar",children:be.map((i,o)=>(0,t.jsxs)("div",{className:"menu-bar-item "+(e===o?"active":""),onClick:()=>(e=>{a(e)})(o),"data-testid":`tab-company-${o+1}`,children:[(0,t.jsxs)("span",{className:"tab-icon",children:[0===o&&"🚗",1===o&&"🏎️",2===o&&"🧹"]}),(0,t.jsx)("span",{className:"tab-text",children:i.name})]},o))})},ye=n.Ay.div`
+`,ye=()=>{const[e,a]=(0,r.useState)(0);return(0,t.jsx)(ve,{"data-testid":"section-menu-bar",children:we.map((i,r)=>(0,t.jsxs)("div",{className:"menu-bar-item "+(e===r?"active":""),onClick:()=>(e=>{a(e)})(r),"data-testid":`tab-company-${r+1}`,children:[(0,t.jsxs)("span",{className:"tab-icon",children:[0===r&&"🚗",1===r&&"🏎️",2===r&&"🧹"]}),(0,t.jsx)("span",{className:"tab-text",children:i.name})]},r))})},je=n.Ay.div`
   height: 100%;
   width: 100%;
   background: rgb(255, 255, 255);
@@ -752,10 +752,10 @@
     font-size: 26px;
     color: #4fbd39;
   }
-`,je=i.p+"4a480150a4b054694722.png",ke=()=>(0,t.jsxs)(ye,{children:[(0,t.jsxs)("div",{className:"home-container-carbon-clearning-left-section",children:[(0,t.jsx)("img",{src:je,alt:"Carbon Cleaning Background",className:"home-carbon-cleaning-background-image"}),(0,t.jsxs)("div",{className:"experience-badge",children:[(0,t.jsx)("span",{className:"years",children:"2+"}),"Years Experience"]}),(0,t.jsx)("div",{className:"home-carbon-cleaning-floating-image-container",children:(0,t.jsx)("img",{src:i(2741),alt:"Carbon Cleaning Floating Image",className:"home-carbon-cleaning-floating-image"})})]}),(0,t.jsxs)("div",{children:[(0,t.jsxs)("div",{children:[(0,t.jsx)("h2",{className:"home-carbon-cleaning-title",children:"Leading Tourism & Travel Specialists Since 2023"}),(0,t.jsxs)("p",{className:"home-carbon-cleaning-description",children:["We ensure comfortable travel experiences with well-maintained vehicles and professional service with every trip smooth, and enjoyable for our customers",(0,t.jsx)("br",{}),(0,t.jsx)("br",{}),"Our skilled team brings together driving expertise and customer-focused service to provide dependable transportation. We've successfully completed thousands of trips, earning the trust of our travelers."]})]}),(0,t.jsxs)("div",{className:"home-carbon-cleaning-services-container",children:[(0,t.jsxs)("div",{className:"feature-item",children:[(0,t.jsx)(S.x4q,{className:"feature-icon"}),"Premium Tours and Travel Services"]}),(0,t.jsxs)("div",{className:"feature-item",children:[(0,t.jsx)(S.YiW,{className:"feature-icon"}),"Reliable & Efficient Travel Service"]})]})]})]}),Ne=i.p+"fbf443079cef2c2bbda9.jpg",ze=n.Ay.div`
+`,ke=i.p+"4a480150a4b054694722.png",Ne=()=>(0,t.jsxs)(je,{children:[(0,t.jsxs)("div",{className:"home-container-carbon-clearning-left-section",children:[(0,t.jsx)("img",{src:ke,alt:"Carbon Cleaning Background",className:"home-carbon-cleaning-background-image"}),(0,t.jsxs)("div",{className:"experience-badge",children:[(0,t.jsx)("span",{className:"years",children:"2+"}),"Years Experience"]}),(0,t.jsx)("div",{className:"home-carbon-cleaning-floating-image-container",children:(0,t.jsx)("img",{src:i(2741),alt:"Carbon Cleaning Floating Image",className:"home-carbon-cleaning-floating-image"})})]}),(0,t.jsxs)("div",{children:[(0,t.jsxs)("div",{children:[(0,t.jsx)("h2",{className:"home-carbon-cleaning-title",children:"Leading Tourism & Travel Specialists Since 2023"}),(0,t.jsxs)("p",{className:"home-carbon-cleaning-description",children:["We ensure comfortable travel experiences with well-maintained vehicles and professional service with every trip smooth, and enjoyable for our customers",(0,t.jsx)("br",{}),(0,t.jsx)("br",{}),"Our skilled team brings together driving expertise and customer-focused service to provide dependable transportation. We've successfully completed thousands of trips, earning the trust of our travelers."]})]}),(0,t.jsxs)("div",{className:"home-carbon-cleaning-services-container",children:[(0,t.jsxs)("div",{className:"feature-item",children:[(0,t.jsx)(S.x4q,{className:"feature-icon"}),"Premium Tours and Travel Services"]}),(0,t.jsxs)("div",{className:"feature-item",children:[(0,t.jsx)(S.YiW,{className:"feature-icon"}),"Reliable & Efficient Travel Service"]})]})]})]}),ze=i.p+"fbf443079cef2c2bbda9.jpg",Ae=n.Ay.div`
   /* height: 600px;
   width: 100%;
-  background-image: url(${Ne});
+  background-image: url(${ze});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; */
@@ -763,7 +763,7 @@
   /* position: relative; */
   min-height: 400px;
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${Ne});
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${ze});
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -919,8 +919,14 @@
     margin-top: 4px;
   }
 
-  .footer-top-section-contact-info-phone-number {
+  .footer-top-section-contact-info-phone-number,
+  a.footer-top-section-contact-info-phone-number {
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+
+    &:hover {
+      color: #4fbd39;
+    }
   }
 
   .footer-bottom-copyright-text {
@@ -932,7 +938,7 @@
     text-align: center;
     word-break: break-word;
   }
-`;var Ae=i(9879);const Se=()=>{const e=_({formatMessage:e=>e.defaultMessage});return(0,t.jsx)(ze,{children:(0,t.jsxs)("div",{className:"footer-container",children:[(0,t.jsxs)("div",{className:"footer-top",children:[(0,t.jsxs)("div",{children:[(0,t.jsx)("div",{className:"footer-top-title",children:$}),(0,t.jsx)("div",{className:"footer-top-title-description",children:"Professional travel services designed for comfort and convenience. Experienced drivers and clean vehicles you can trust. Making every journey stress-free and memorable."}),(0,t.jsx)("div",{className:"footer-top-title-icons",children:V.map((e,a)=>(0,t.jsx)("a",{href:e.href,className:"footer-top-title-icon",target:"_blank",rel:"noopener noreferrer","aria-label":e.name,children:(0,t.jsx)(e.Icon,{})},a))})]}),(0,t.jsxs)("div",{className:"footer-top-section-links-quick-links",children:[(0,t.jsxs)("div",{className:"footer-top-section-title",children:[(0,t.jsx)("span",{className:"footer-top-section-title-span",children:" Quick "}),"Links"]}),(0,t.jsx)("ul",{className:"footer-top-section-links-list",children:e.map((e,a)=>(0,t.jsxs)("li",{className:"footer-top-section-links-list-item",children:[(0,t.jsx)(Ae.mf,{className:"footer-top-section-links-list-icon"}),(0,t.jsx)("a",{href:e.href,onClick:a=>{a.preventDefault(),G(e.sectionId)},children:e.name})]},a))})]}),(0,t.jsxs)("div",{className:"footer-top-section-links",children:[(0,t.jsxs)("div",{className:"footer-top-section-title",children:[(0,t.jsx)("span",{className:"footer-top-section-title-span",children:" Our S"}),"ervices"]}),(0,t.jsx)("ul",{className:"footer-top-section-links-list",children:X.map((e,a)=>(0,t.jsxs)("li",{className:"footer-top-section-links-list-item",children:[(0,t.jsx)(Ae.mf,{className:"footer-top-section-links-list-icon"}),(0,t.jsxs)("div",{children:[" ",e.name," "]})]},a))})]}),(0,t.jsxs)("div",{children:[(0,t.jsxs)("div",{className:"footer-top-section-title",children:[(0,t.jsx)("span",{className:"footer-top-section-title-span",children:" Conta"}),"ct Info"]}),(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.sIY,{className:"footer-top-section-contact-info-address-icon"}),B]}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column"},children:(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.Cab,{className:"footer-top-section-contact-info-phone-icon"}),(0,t.jsxs)("div",{children:["Call Us:",(0,t.jsx)("a",{href:L,className:"footer-top-section-contact-info-phone-number",children:U})]})]})}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column"},children:(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.maD,{className:"footer-top-section-contact-info-phone-icon"}),(0,t.jsxs)("div",{children:["Email Us:",(0,t.jsx)("a",{href:H,className:"footer-top-section-contact-info-phone-number",children:F})]})]})}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column"},children:(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.w_X,{className:"footer-top-section-contact-info-phone-icon"}),(0,t.jsxs)("div",{children:["Working Hours:",(0,t.jsx)("div",{className:"footer-top-section-contact-info-phone-number",children:W})]})]})})]})]}),(0,t.jsxs)("div",{className:"footer-bottom",children:[(0,t.jsxs)("div",{className:"footer-bottom-copyright-info",children:["© 2025 ",$," All rights reserved."]}),(0,t.jsxs)("div",{className:"footer-bottom-copyright-text",children:["Design and Developed by"," ",(0,t.jsx)("span",{className:"footer-copyright-link",children:$})," ","Pvt Ltd."]})]})]})})},Ee=n.Ay.div`
+`;var Se=i(9879);const Ee=()=>{const e=_({formatMessage:e=>e.defaultMessage});return(0,t.jsx)(Ae,{children:(0,t.jsxs)("div",{className:"footer-container",children:[(0,t.jsxs)("div",{className:"footer-top",children:[(0,t.jsxs)("div",{children:[(0,t.jsx)("div",{className:"footer-top-title",children:Y}),(0,t.jsx)("div",{className:"footer-top-title-description",children:"Professional travel services designed for comfort and convenience. Experienced drivers and clean vehicles you can trust. Making every journey stress-free and memorable."}),(0,t.jsx)("div",{className:"footer-top-title-icons",children:V.map((e,a)=>(0,t.jsx)("a",{href:e.href,className:"footer-top-title-icon",target:"_blank",rel:"noopener noreferrer","aria-label":e.name,children:(0,t.jsx)(e.Icon,{})},a))})]}),(0,t.jsxs)("div",{className:"footer-top-section-links-quick-links",children:[(0,t.jsxs)("div",{className:"footer-top-section-title",children:[(0,t.jsx)("span",{className:"footer-top-section-title-span",children:" Quick "}),"Links"]}),(0,t.jsx)("ul",{className:"footer-top-section-links-list",children:e.map((e,a)=>(0,t.jsxs)("li",{className:"footer-top-section-links-list-item",children:[(0,t.jsx)(Se.mf,{className:"footer-top-section-links-list-icon"}),(0,t.jsx)("a",{href:e.href,onClick:a=>{a.preventDefault(),G(e.sectionId)},children:e.name})]},a))})]}),(0,t.jsxs)("div",{className:"footer-top-section-links",children:[(0,t.jsxs)("div",{className:"footer-top-section-title",children:[(0,t.jsx)("span",{className:"footer-top-section-title-span",children:" Our S"}),"ervices"]}),(0,t.jsx)("ul",{className:"footer-top-section-links-list",children:X.map((e,a)=>(0,t.jsxs)("li",{className:"footer-top-section-links-list-item",children:[(0,t.jsx)(Se.mf,{className:"footer-top-section-links-list-icon"}),(0,t.jsxs)("div",{children:[" ",e.name," "]})]},a))})]}),(0,t.jsxs)("div",{children:[(0,t.jsxs)("div",{className:"footer-top-section-title",children:[(0,t.jsx)("span",{className:"footer-top-section-title-span",children:" Conta"}),"ct Info"]}),(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.sIY,{className:"footer-top-section-contact-info-address-icon"}),B]}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column"},children:(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.Cab,{className:"footer-top-section-contact-info-phone-icon"}),(0,t.jsxs)("div",{children:["Call Us:",(0,t.jsx)("a",{href:L,className:"footer-top-section-contact-info-phone-number",children:$})]})]})}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column"},children:(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.maD,{className:"footer-top-section-contact-info-phone-icon"}),(0,t.jsxs)("div",{children:["Email Us:",(0,t.jsx)("a",{href:H,className:"footer-top-section-contact-info-phone-number",children:F})]})]})}),(0,t.jsx)("div",{style:{display:"flex",flexDirection:"column"},children:(0,t.jsxs)("div",{className:"footer-top-section-contact-info-address",children:[(0,t.jsx)(z.w_X,{className:"footer-top-section-contact-info-phone-icon"}),(0,t.jsxs)("div",{children:["Working Hours:",(0,t.jsx)("div",{className:"footer-top-section-contact-info-phone-number",children:W})]})]})})]})]}),(0,t.jsxs)("div",{className:"footer-bottom",children:[(0,t.jsxs)("div",{className:"footer-bottom-copyright-info",children:["© 2025 ",Y," All rights reserved."]}),(0,t.jsxs)("div",{className:"footer-bottom-copyright-text",children:["Design and Developed by"," ",(0,t.jsx)("span",{className:"footer-copyright-link",children:Y})," ","Pvt Ltd."]})]})]})})},Ie=n.Ay.div`
   background: white;
   padding: 20px;
   min-height: 250px;
@@ -961,13 +967,13 @@
     font-weight: 500;
     color: #000000;
   }
-`,Ie=i.p+"22b59ae4f2f037fb1503.png",Ce=({item:e})=>(0,t.jsxs)(Ee,{"data-testid":"testimonial-card",children:[(0,t.jsxs)("div",{className:"testimonial-card-summary",children:['"',e.summary,'"']}),(0,t.jsxs)("div",{className:"testimonial-card-user-info",children:[(0,t.jsx)("img",{src:Ie,alt:e.name,className:"testimonial-card-image"}),(0,t.jsx)("h4",{className:"testimonial-card-name",children:e.name})]})]}),Te=i.p+"01f81e560b79049ddc77.avif",Me=n.Ay.section`
+`,Ce=i.p+"22b59ae4f2f037fb1503.png",Te=({item:e})=>(0,t.jsxs)(Ie,{"data-testid":"testimonial-card",children:[(0,t.jsxs)("div",{className:"testimonial-card-summary",children:['"',e.summary,'"']}),(0,t.jsxs)("div",{className:"testimonial-card-user-info",children:[(0,t.jsx)("img",{src:Ce,alt:e.name,className:"testimonial-card-image"}),(0,t.jsx)("h4",{className:"testimonial-card-name",children:e.name})]})]}),Me=i.p+"01f81e560b79049ddc77.avif",Re=n.Ay.section`
   padding: 60px 0 70px;
   background-color: #4fbd39;
   color: black;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(${Te});
+    url(${Me});
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1006,19 +1012,19 @@
       justify-content: center;
     }
   }
-`,Oe=()=>(0,t.jsxs)(Me,{"data-testid":"testimonials",children:[(0,t.jsx)("h1",{className:"testimonials-title",children:"TESTIMONIALS"}),(0,t.jsx)("label",{className:"testimonials-label",children:"What Our Customers Say"}),(0,t.jsx)("div",{className:"testimonials-cards-container",children:Z.map(e=>(0,t.jsx)(Ce,{item:e},e.id))})]}),Re=n.Ay.div`
+`,Oe=()=>(0,t.jsxs)(Re,{"data-testid":"testimonials",children:[(0,t.jsx)("h1",{className:"testimonials-title",children:"TESTIMONIALS"}),(0,t.jsx)("label",{className:"testimonials-label",children:"What Our Customers Say"}),(0,t.jsx)("div",{className:"testimonials-cards-container",children:Z.map(e=>(0,t.jsx)(Te,{item:e},e.id))})]}),Pe=n.Ay.div`
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
-`,Pe=i(1535),_e=n.Ay.div`
+`,_e=i(1535),De=n.Ay.div`
   width: 100%;
   height: 100%;
-  background: url(${Pe}) no-repeat center / cover;
+  background: url(${_e}) no-repeat center / cover;
   color: white;
   background:
     linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
-    url(${Pe}) no-repeat center / cover;
+    url(${_e}) no-repeat center / cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1111,7 +1117,7 @@
       word-break: break-word;
     }
   }
-`,De=n.Ay.div`
+`,Ge=n.Ay.div`
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   padding: 30px;
@@ -1190,7 +1196,7 @@
     text-align: center;
     font-weight: 600;
   }
-`,Ge=({item:e})=>(0,t.jsxs)(De,{"data-testid":"process-card",children:[(0,t.jsxs)("div",{className:"process-card-icon",children:[(0,t.jsx)(e.Icon,{className:"process-card-icon-image"}),(0,t.jsxs)("span",{className:"process-card-icon-step-number",children:["0",e.id]})]}),(0,t.jsx)("h3",{className:"process-card-title",children:e.title}),(0,t.jsx)("div",{className:"process-card-description",children:e.description})]}),Ye=()=>(0,t.jsxs)(_e,{children:[(0,t.jsxs)("div",{className:"carbon-cleaning-container-top",children:[(0,t.jsx)("div",{className:"carbon-cleaning-our-specialty",children:"Our Specialty"}),(0,t.jsx)("div",{className:"carbon-cleaning-process",children:"Premium Tours and Travel Services"}),(0,t.jsx)("div",{className:"carbon-cleaning-advanced-technology",children:"Reliable & Efficient Travel Service"})]}),(0,t.jsx)("div",{className:"carbon-cleaning-container-bottom",children:J.map(e=>(0,t.jsx)(Ge,{item:e},e.title))})]}),$e=n.Ay.section`
+`,Ue=({item:e})=>(0,t.jsxs)(Ge,{"data-testid":"process-card",children:[(0,t.jsxs)("div",{className:"process-card-icon",children:[(0,t.jsx)(e.Icon,{className:"process-card-icon-image"}),(0,t.jsxs)("span",{className:"process-card-icon-step-number",children:["0",e.id]})]}),(0,t.jsx)("h3",{className:"process-card-title",children:e.title}),(0,t.jsx)("div",{className:"process-card-description",children:e.description})]}),Ye=()=>(0,t.jsxs)(De,{children:[(0,t.jsxs)("div",{className:"carbon-cleaning-container-top",children:[(0,t.jsx)("div",{className:"carbon-cleaning-our-specialty",children:"Our Specialty"}),(0,t.jsx)("div",{className:"carbon-cleaning-process",children:"Premium Tours and Travel Services"}),(0,t.jsx)("div",{className:"carbon-cleaning-advanced-technology",children:"Reliable & Efficient Travel Service"})]}),(0,t.jsx)("div",{className:"carbon-cleaning-container-bottom",children:J.map(e=>(0,t.jsx)(Ue,{item:e},e.title))})]}),$e=n.Ay.section`
   position: relative;
   width: 100%;
   padding: 72px 0 88px;
@@ -1405,7 +1411,61 @@
       height: 220px;
     }
   }
-`;var Ue=i(5066);const Le=()=>{const[e,a]=(0,o.useState)("photos");return(0,t.jsxs)($e,{children:[(0,t.jsxs)("header",{className:"gallery-header",children:[(0,t.jsx)("span",{className:"gallery-eyebrow",children:"Travel Memories"}),(0,t.jsx)("h2",{className:"gallery-title",children:"GALLERY"}),(0,t.jsx)("p",{className:"gallery-label",children:"Stunning journeys, happy travellers, and unforgettable destinations captured by Ramesh Tours & Travels."})]}),(0,t.jsxs)("div",{className:"gallery-buttons-container",children:[(0,t.jsxs)("button",{type:"button",className:"gallery-button "+("photos"===e?"gallery-button-active":""),onClick:()=>a("photos"),children:[(0,t.jsx)(Ue.ReI,{}),(0,t.jsx)("span",{children:"Photos"})]}),(0,t.jsxs)("button",{type:"button",className:"gallery-button "+("videos"===e?"gallery-button-active":""),onClick:()=>a("videos"),children:[(0,t.jsx)(S.HiP,{}),(0,t.jsx)("span",{children:"Videos"})]})]}),(0,t.jsx)("div",{className:"gallery-images-container",children:ne.map(e=>(0,t.jsx)("div",{className:"gallery-card",children:(0,t.jsx)("img",{src:e.image,alt:e.name,className:"gallery-image"})},e.id))})]})},Fe=n.Ay.div`
+
+  .gallery-videos-container {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    padding: 0 40px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      padding: 0 20px;
+      gap: 24px;
+    }
+  }
+
+  .gallery-video-card {
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow:
+      0 16px 40px rgba(15, 23, 42, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 24px 48px rgba(15, 23, 42, 0.35),
+        0 0 0 2px rgba(253, 230, 138, 0.35);
+    }
+  }
+
+  .gallery-video-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000000;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+`;var Le=i(5066);const Fe=()=>{const[e,a]=(0,r.useState)("photos");return(0,t.jsxs)($e,{children:[(0,t.jsxs)("header",{className:"gallery-header",children:[(0,t.jsx)("span",{className:"gallery-eyebrow",children:"Travel Memories"}),(0,t.jsx)("h2",{className:"gallery-title",children:"GALLERY"}),(0,t.jsx)("p",{className:"gallery-label",children:"Stunning journeys, happy travellers, and unforgettable destinations captured by Ramesh Tours & Travels."})]}),(0,t.jsxs)("div",{className:"gallery-buttons-container",children:[(0,t.jsxs)("button",{type:"button",className:"gallery-button "+("photos"===e?"gallery-button-active":""),onClick:()=>a("photos"),"aria-pressed":"photos"===e,children:[(0,t.jsx)(Le.ReI,{}),(0,t.jsx)("span",{children:"Photos"})]}),(0,t.jsxs)("button",{type:"button",className:"gallery-button "+("videos"===e?"gallery-button-active":""),onClick:()=>a("videos"),"aria-pressed":"videos"===e,children:[(0,t.jsx)(S.HiP,{}),(0,t.jsx)("span",{children:"Videos"})]})]}),"photos"===e?(0,t.jsx)("div",{className:"gallery-images-container",children:se.map(e=>(0,t.jsx)("div",{className:"gallery-card",children:(0,t.jsx)("img",{src:e.image,alt:e.name,className:"gallery-image"})},e.id))}):(0,t.jsx)("div",{className:"gallery-videos-container",children:ne.map(e=>(0,t.jsx)("div",{className:"gallery-video-card",children:(0,t.jsx)("div",{className:"gallery-video-wrap",children:(0,t.jsx)("iframe",{src:e.embedUrl,title:e.title,allow:"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",referrerPolicy:"strict-origin-when-cross-origin",allowFullScreen:!0,loading:"lazy"})})},e.id))})]})},He=n.Ay.div`
   width: 100%;
   background-color: black;
   /* padding: 0 30px; */
@@ -1527,6 +1587,15 @@
     cursor: pointer;
     text-align: center;
     margin: 0 auto;
+    display: block;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background-color: #45a832;
+      transform: translateY(-1px);
+    }
   }
 
   .about-us-vision-mission-title {
@@ -1640,7 +1709,7 @@
       flex-direction: column;
     }
   }
-`,He=i.p+"44fccc2a0c0fdcaea0d3.jpg",Be=i.p+"6c315a036f1495d47c66.jpg",We=i.p+"a1dc3485bf5d54747e0a.jpg",qe=()=>(0,t.jsxs)(Fe,{children:[(0,t.jsx)("h1",{className:"about-us-main-title",children:"About Us"}),(0,t.jsxs)("div",{className:"about-us-main-container",children:[(0,t.jsx)("div",{children:(0,t.jsx)("div",{className:"about-us-container",children:(0,t.jsxs)("div",{className:"about-us-content",children:[(0,t.jsx)("h1",{className:"about-us-title",children:"Welcome to Ramesh Tours & Travels"}),(0,t.jsx)("p",{className:"about-us-description",children:"Experience the ultimate travel comfort with our expertly crafted tours and travel services. We specialize in creating unforgettable journeys using carefully planned itineraries, trusted partners, and seamless logistics. Whether it's a relaxing getaway, an adventurous expedition, or a business trip, our professional team ensures every detail is handled with precision and care. Your journey deserves the best, and we deliver exceptional experiences that turn every trip into a lasting memory."}),(0,t.jsx)("p",{className:"about-us-description",children:"Whether you're planning a short weekend escape or a complete international tour, we've got you covered! From flights and accommodations to sightseeing and guided tours, our experienced travel experts take care of everything. We work with high-quality service providers to ensure comfort, safety, and value at every step. Your satisfaction is our top priority, and we're committed to making your travel smooth, enjoyable, and truly unforgettable—start your next adventure with us today! 🌍✈️"})]})})}),(0,t.jsx)("img",{src:He,alt:"About Us",className:"about-us-image"})]}),(0,t.jsxs)("div",{className:"about-us-contact-us",children:[(0,t.jsx)("label",{className:"about-us-contact-us-title",children:"First Time Ever in Rajahmundry"}),(0,t.jsx)("label",{className:"about-us-contact-us-subtitle",children:"Premium Tours and Travel Services"}),(0,t.jsx)("button",{className:"about-us-contact-us-button",children:"Contact Us"})]}),(0,t.jsx)("div",{className:"about-us-vision-mission-title",children:"VISION & MISSION"}),(0,t.jsxs)("div",{className:"vission-container",children:[(0,t.jsxs)("div",{className:"vision-content",children:[(0,t.jsx)("label",{className:"vision-content-title",children:"Vision"}),(0,t.jsx)("p",{children:"Our vision is to become a trusted leader in the tours and travel industry by creating meaningful, memorable, and enriching travel experiences for every traveler. We aim to inspire people to explore the world with confidence, comfort, and curiosity, while promoting sustainable tourism and cultural understanding. Through innovation, personalized service, and a passion for travel, we strive to connect people to destinations in a way that leaves lasting impressions and lifelong memories."})]}),(0,t.jsx)("img",{src:Be,alt:"Vision",className:"vision-image"})]}),(0,t.jsxs)("div",{className:"mission-container",children:[(0,t.jsx)("img",{src:We,alt:"Mission",className:"mission-image"}),(0,t.jsxs)("div",{className:"mission-content",children:[(0,t.jsx)("label",{className:"mission-content-title",children:"Mission"}),(0,t.jsx)("p",{children:"Our mission is to provide exceptional tours and travel services that combine comfort, safety, and value for our customers. We are committed to designing well-planned itineraries, offering reliable transportation and accommodations, and delivering personalized support at every step of the journey. By focusing on customer satisfaction, quality service, and ethical travel practices, we aim to make every trip smooth, enjoyable, and unforgettable for individuals, families, and groups alike."})]})]})]}),Ve=n.Ay.section`
+`,Be=i.p+"44fccc2a0c0fdcaea0d3.jpg",We=i.p+"6c315a036f1495d47c66.jpg",qe=i.p+"a1dc3485bf5d54747e0a.jpg",Ve=()=>(0,t.jsxs)(He,{children:[(0,t.jsx)("h1",{className:"about-us-main-title",children:"About Us"}),(0,t.jsxs)("div",{className:"about-us-main-container",children:[(0,t.jsx)("div",{children:(0,t.jsx)("div",{className:"about-us-container",children:(0,t.jsxs)("div",{className:"about-us-content",children:[(0,t.jsx)("h1",{className:"about-us-title",children:"Welcome to Ramesh Tours & Travels"}),(0,t.jsx)("p",{className:"about-us-description",children:"Experience the ultimate travel comfort with our expertly crafted tours and travel services. We specialize in creating unforgettable journeys using carefully planned itineraries, trusted partners, and seamless logistics. Whether it's a relaxing getaway, an adventurous expedition, or a business trip, our professional team ensures every detail is handled with precision and care. Your journey deserves the best, and we deliver exceptional experiences that turn every trip into a lasting memory."}),(0,t.jsx)("p",{className:"about-us-description",children:"Whether you're planning a short weekend escape or a complete international tour, we've got you covered! From flights and accommodations to sightseeing and guided tours, our experienced travel experts take care of everything. We work with high-quality service providers to ensure comfort, safety, and value at every step. Your satisfaction is our top priority, and we're committed to making your travel smooth, enjoyable, and truly unforgettable—start your next adventure with us today! 🌍✈️"})]})})}),(0,t.jsx)("img",{src:Be,alt:"About Us",className:"about-us-image"})]}),(0,t.jsxs)("div",{className:"about-us-contact-us",children:[(0,t.jsx)("label",{className:"about-us-contact-us-title",children:"First Time Ever in Rajahmundry"}),(0,t.jsx)("label",{className:"about-us-contact-us-subtitle",children:"Premium Tours and Travel Services"}),(0,t.jsx)("button",{type:"button",className:"about-us-contact-us-button",onClick:()=>G(R),children:"Contact Us"})]}),(0,t.jsx)("div",{className:"about-us-vision-mission-title",children:"VISION & MISSION"}),(0,t.jsxs)("div",{className:"vission-container",children:[(0,t.jsxs)("div",{className:"vision-content",children:[(0,t.jsx)("label",{className:"vision-content-title",children:"Vision"}),(0,t.jsx)("p",{children:"Our vision is to become a trusted leader in the tours and travel industry by creating meaningful, memorable, and enriching travel experiences for every traveler. We aim to inspire people to explore the world with confidence, comfort, and curiosity, while promoting sustainable tourism and cultural understanding. Through innovation, personalized service, and a passion for travel, we strive to connect people to destinations in a way that leaves lasting impressions and lifelong memories."})]}),(0,t.jsx)("img",{src:We,alt:"Vision",className:"vision-image"})]}),(0,t.jsxs)("div",{className:"mission-container",children:[(0,t.jsx)("img",{src:qe,alt:"Mission",className:"mission-image"}),(0,t.jsxs)("div",{className:"mission-content",children:[(0,t.jsx)("label",{className:"mission-content-title",children:"Mission"}),(0,t.jsx)("p",{children:"Our mission is to provide exceptional tours and travel services that combine comfort, safety, and value for our customers. We are committed to designing well-planned itineraries, offering reliable transportation and accommodations, and delivering personalized support at every step of the journey. By focusing on customer satisfaction, quality service, and ethical travel practices, we aim to make every trip smooth, enjoyable, and unforgettable for individuals, families, and groups alike."})]})]})]}),Xe=n.Ay.section`
   width: 100%;
   padding: 60px 24px 80px;
   background: linear-gradient(180deg, #f8faf8 0%, #ffffff 45%, #f4f9f3 100%);
@@ -1709,7 +1778,7 @@
       max-width: 420px;
     }
   }
-`,Xe=n.Ay.article`
+`,Qe=n.Ay.article`
   display: flex;
   flex-direction: column;
   background: #ffffff;
@@ -1879,7 +1948,7 @@
       transform: scale(0.98);
     }
   }
-`,Qe=()=>{const e=P(O);return(0,t.jsxs)(Ve,{children:[(0,t.jsxs)("header",{className:"packages-header",children:[(0,t.jsx)("span",{className:"packages-eyebrow",children:"Tour Packages"}),(0,t.jsx)("h2",{className:"packages-title",children:"Explore Our Travel Packages"}),(0,t.jsx)("p",{className:"packages-subtitle",children:"Handpicked tours across Andhra Pradesh and beyond — transparent pricing, comfortable stays, and memorable experiences with Ramesh Tours & Travels."})]}),(0,t.jsx)("div",{className:"packages-grid",children:se.map(a=>{return(0,t.jsxs)(Xe,{children:[(0,t.jsxs)("div",{className:"package-card-image-wrap",children:[(0,t.jsx)("img",{src:a.image,alt:a.title,className:"package-card-image"}),a.badge&&(0,t.jsx)("span",{className:"package-card-badge",children:a.badge})]}),(0,t.jsxs)("div",{className:"package-card-body",children:[(0,t.jsxs)("span",{className:"package-card-location",children:[(0,t.jsx)(S.vq8,{"aria-hidden":!0})," ",a.location]}),(0,t.jsx)("h3",{className:"package-card-title",children:a.title}),(0,t.jsxs)("span",{className:"package-card-duration",children:[(0,t.jsx)(S.w_X,{"aria-hidden":!0})," ",a.duration]}),(0,t.jsxs)("div",{className:"package-card-price-row",children:[(0,t.jsx)("span",{className:"package-card-price",children:(i=a.price,new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(i))}),(0,t.jsx)("span",{className:"package-card-price-note",children:"per person"})]}),(0,t.jsx)("ul",{className:"package-card-highlights",children:a.highlights.map(e=>(0,t.jsx)("li",{className:"package-card-highlight",children:e},e))}),(0,t.jsx)("a",{href:e,className:"package-card-cta",children:"Book Now"})]})]},a.id);var i})})]})},Ke=n.Ay.section`
+`,Ke=()=>{const e=P(R);return(0,t.jsxs)(Xe,{children:[(0,t.jsxs)("header",{className:"packages-header",children:[(0,t.jsx)("span",{className:"packages-eyebrow",children:"Tour Packages"}),(0,t.jsx)("h2",{className:"packages-title",children:"Explore Our Travel Packages"}),(0,t.jsx)("p",{className:"packages-subtitle",children:"Handpicked tours across Andhra Pradesh and beyond — transparent pricing, comfortable stays, and memorable experiences with Ramesh Tours & Travels."})]}),(0,t.jsx)("div",{className:"packages-grid",children:de.map(a=>{return(0,t.jsxs)(Qe,{children:[(0,t.jsxs)("div",{className:"package-card-image-wrap",children:[(0,t.jsx)("img",{src:a.image,alt:a.title,className:"package-card-image"}),a.badge&&(0,t.jsx)("span",{className:"package-card-badge",children:a.badge})]}),(0,t.jsxs)("div",{className:"package-card-body",children:[(0,t.jsxs)("span",{className:"package-card-location",children:[(0,t.jsx)(S.vq8,{"aria-hidden":!0})," ",a.location]}),(0,t.jsx)("h3",{className:"package-card-title",children:a.title}),(0,t.jsxs)("span",{className:"package-card-duration",children:[(0,t.jsx)(S.w_X,{"aria-hidden":!0})," ",a.duration]}),(0,t.jsxs)("div",{className:"package-card-price-row",children:[(0,t.jsx)("span",{className:"package-card-price",children:(i=a.price,new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(i))}),(0,t.jsx)("span",{className:"package-card-price-note",children:"per person"})]}),(0,t.jsx)("ul",{className:"package-card-highlights",children:a.highlights.map(e=>(0,t.jsx)("li",{className:"package-card-highlight",children:e},e))}),(0,t.jsx)("a",{href:e,className:"package-card-cta",children:"Book Now"})]})]},a.id);var i})})]})},Je=n.Ay.section`
   width: 100%;
   padding: 60px 24px 80px;
   background: linear-gradient(180deg, #f8faf8 0%, #ffffff 40%, #eef8eb 100%);
@@ -1955,7 +2024,7 @@
       grid-template-columns: 1fr;
     }
   }
-`,Je=n.Ay.div`
+`,Ze=n.Ay.div`
   background: #ffffff;
   border-radius: 16px;
   padding: 24px 22px;
@@ -2010,7 +2079,7 @@
       color: #4fbd39;
     }
   }
-`,Ze=n.Ay.form`
+`,ea=n.Ay.form`
   background: #ffffff;
   border-radius: 20px;
   padding: 32px 28px;
@@ -2135,7 +2204,7 @@
     text-align: center;
     line-height: 1.5;
   }
-`,ea={name:"",email:"",phone:"",subject:"general",message:""},aa=()=>{const[e,a]=(0,o.useState)(ea),[i,r]=(0,o.useState)(!1),n=(e,t)=>{a(a=>({...a,[e]:t})),i&&r(!1)},s=e=>e.href?(0,t.jsx)("a",{href:e.href,className:"contact-info-link",children:(0,t.jsx)("p",{className:"contact-info-value",children:e.value})}):(0,t.jsx)("p",{className:"contact-info-value",children:e.value});return(0,t.jsxs)(Ke,{children:[(0,t.jsxs)("header",{className:"contact-header",children:[(0,t.jsx)("span",{className:"contact-eyebrow",children:"Get In Touch"}),(0,t.jsx)("h2",{className:"contact-title",children:"Contact Us"}),(0,t.jsx)("p",{className:"contact-subtitle",children:"Plan your next trip with Ramesh Tours & Travels. Reach out for packages, custom itineraries, or any travel enquiry — we're happy to help."})]}),(0,t.jsxs)("div",{className:"contact-layout",children:[(0,t.jsx)("div",{className:"contact-info-grid",children:q.map(e=>(0,t.jsxs)(Je,{children:[(0,t.jsx)("div",{className:"contact-info-icon-wrap",children:(0,t.jsx)(e.Icon,{"aria-hidden":!0})}),(0,t.jsx)("div",{className:"contact-info-title",children:e.title}),s(e)]},e.id))}),(0,t.jsxs)(Ze,{onSubmit:e=>{e.preventDefault(),r(!0),a(ea)},children:[(0,t.jsx)("h3",{className:"contact-form-title",children:"Send Us a Message"}),(0,t.jsx)("p",{className:"contact-form-subtitle",children:"Fill in the form and our team will get back to you shortly."}),(0,t.jsxs)("div",{className:"contact-form-row",children:[(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-name",children:"Full Name"}),(0,t.jsx)("input",{id:"contact-name",className:"contact-form-input",type:"text",placeholder:"Your name",required:!0,value:e.name,onChange:e=>n("name",e.target.value)})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-phone",children:"Phone Number"}),(0,t.jsx)("input",{id:"contact-phone",className:"contact-form-input",type:"tel",placeholder:"+91 98765 43210",required:!0,value:e.phone,onChange:e=>n("phone",e.target.value)})]})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-email",children:"Email Address"}),(0,t.jsx)("input",{id:"contact-email",className:"contact-form-input",type:"email",placeholder:"you@example.com",required:!0,value:e.email,onChange:e=>n("email",e.target.value)})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-subject",children:"Enquiry Type"}),(0,t.jsxs)("select",{id:"contact-subject",className:"contact-form-select",value:e.subject,onChange:e=>n("subject",e.target.value),children:[(0,t.jsx)("option",{value:"general",children:"General Enquiry"}),(0,t.jsx)("option",{value:"package",children:"Tour Package Booking"}),(0,t.jsx)("option",{value:"custom",children:"Custom Itinerary"}),(0,t.jsx)("option",{value:"group",children:"Group Travel"})]})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-message",children:"Message"}),(0,t.jsx)("textarea",{id:"contact-message",className:"contact-form-textarea",placeholder:"Tell us about your travel plans...",required:!0,value:e.message,onChange:e=>n("message",e.target.value)})]}),(0,t.jsx)("button",{type:"submit",className:"contact-form-submit",children:"Send Message"}),i&&(0,t.jsx)("p",{className:"contact-form-success",role:"status",children:"Thank you! Your message has been received. We will contact you soon."})]})]})]})},ia=()=>{const e=window.location.hash.replace(/^#/,"").trim()||null;e&&requestAnimationFrame(()=>{D(e)})},{IntlProvider:ta}=i(6730),{FormattedMessage:oa}=i(6730),ra=n.Ay.div`
+`,aa={name:"",email:"",phone:"",subject:"general",message:""},ia=()=>{const[e,a]=(0,r.useState)(aa),[i,o]=(0,r.useState)(!1),n=(e,t)=>{a(a=>({...a,[e]:t})),i&&o(!1)},s=e=>e.href?(0,t.jsx)("a",{href:e.href,className:"contact-info-link",children:(0,t.jsx)("p",{className:"contact-info-value",children:e.value})}):(0,t.jsx)("p",{className:"contact-info-value",children:e.value});return(0,t.jsxs)(Je,{children:[(0,t.jsxs)("header",{className:"contact-header",children:[(0,t.jsx)("span",{className:"contact-eyebrow",children:"Get In Touch"}),(0,t.jsx)("h2",{className:"contact-title",children:"Contact Us"}),(0,t.jsx)("p",{className:"contact-subtitle",children:"Plan your next trip with Ramesh Tours & Travels. Reach out for packages, custom itineraries, or any travel enquiry — we're happy to help."})]}),(0,t.jsxs)("div",{className:"contact-layout",children:[(0,t.jsx)("div",{className:"contact-info-grid",children:q.map(e=>(0,t.jsxs)(Ze,{children:[(0,t.jsx)("div",{className:"contact-info-icon-wrap",children:(0,t.jsx)(e.Icon,{"aria-hidden":!0})}),(0,t.jsx)("div",{className:"contact-info-title",children:e.title}),s(e)]},e.id))}),(0,t.jsxs)(ea,{onSubmit:e=>{e.preventDefault(),o(!0),a(aa)},children:[(0,t.jsx)("h3",{className:"contact-form-title",children:"Send Us a Message"}),(0,t.jsx)("p",{className:"contact-form-subtitle",children:"Fill in the form and our team will get back to you shortly."}),(0,t.jsxs)("div",{className:"contact-form-row",children:[(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-name",children:"Full Name"}),(0,t.jsx)("input",{id:"contact-name",className:"contact-form-input",type:"text",placeholder:"Your name",required:!0,minLength:2,title:"Use letters only, e.g. Ramesh Manepalli",value:e.name,onChange:e=>n("name",e.target.value.replace(/[^\p{L}\s]/gu,"").replace(/\s{2,}/g," "))})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-phone",children:"Phone Number"}),(0,t.jsx)("input",{id:"contact-phone",className:"contact-form-input",type:"tel",inputMode:"tel",autoComplete:"tel",placeholder:"+91 6363620044",required:!0,pattern:"\\+?[\\d\\s]{8,}",title:"Use numbers and + only, e.g. +91 6363620044",value:e.phone,onChange:e=>n("phone",(e=>{const a=e.replace(/[^\d+\s]/g,""),i=a.trimStart().startsWith("+"),t=a.replace(/\+/g,"");return i?`+${t}`:t})(e.target.value))})]})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-email",children:"Email Address"}),(0,t.jsx)("input",{id:"contact-email",className:"contact-form-input",type:"email",placeholder:"you@example.com",required:!0,value:e.email,onChange:e=>n("email",e.target.value)})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-subject",children:"Enquiry Type"}),(0,t.jsxs)("select",{id:"contact-subject",className:"contact-form-select",value:e.subject,onChange:e=>n("subject",e.target.value),children:[(0,t.jsx)("option",{value:"general",children:"General Enquiry"}),(0,t.jsx)("option",{value:"package",children:"Tour Package Booking"}),(0,t.jsx)("option",{value:"custom",children:"Custom Itinerary"}),(0,t.jsx)("option",{value:"group",children:"Group Travel"})]})]}),(0,t.jsxs)("div",{className:"contact-form-field",children:[(0,t.jsx)("label",{className:"contact-form-label",htmlFor:"contact-message",children:"Message"}),(0,t.jsx)("textarea",{id:"contact-message",className:"contact-form-textarea",placeholder:"Tell us about your travel plans...",required:!0,value:e.message,onChange:e=>n("message",e.target.value)})]}),(0,t.jsx)("button",{type:"submit",className:"contact-form-submit",children:"Send Message"}),i&&(0,t.jsx)("p",{className:"contact-form-success",role:"status",children:"Thank you! Your message has been received. We will contact you soon."})]})]})]})},ta=()=>{const e=window.location.hash.replace(/^#/,"").trim()||null;e&&requestAnimationFrame(()=>{D(e)})},{IntlProvider:ra}=i(6730),{FormattedMessage:oa}=i(6730),na=n.Ay.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2145,15 +2214,15 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-align: center;
-`,na=n.Ay.div`
+`,sa=n.Ay.div`
   font-size: 4rem;
   margin-bottom: 1rem;
   opacity: 0.8;
-`,sa=n.Ay.h1`
+`,da=n.Ay.h1`
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
-`,da=n.Ay.p`
+`,la=n.Ay.p`
   font-size: 1.2rem;
   margin-bottom: 2rem;
   opacity: 0.9;
@@ -2179,7 +2248,7 @@
   &:active {
     transform: translateY(0);
   }
-`;class la extends o.Component{constructor(e){super(e),this.handleRetry=()=>{this.setState({hasError:!1,isAccessDenied:!1}),window.location.reload()},this.renderAccessDenied=()=>(0,t.jsxs)(ra,{children:[(0,t.jsx)(na,{children:"🚫"}),(0,t.jsx)(sa,{children:(0,t.jsx)(oa,{...s.ACCESS_DENIED})}),(0,t.jsx)(da,{children:(0,t.jsx)(oa,{...s.ACCESS_DENIED_MESSAGE})}),(0,t.jsx)(ca,{onClick:this.handleRetry,children:(0,t.jsx)(oa,{...s.RETRY_ACCESS})})]}),this.renderError=()=>(0,t.jsxs)(ra,{children:[(0,t.jsx)(na,{children:"⚠️"}),(0,t.jsx)(sa,{children:(0,t.jsx)(oa,{...s.SOMETHING_WENT_WRONG})}),(0,t.jsx)(da,{children:this.state.error&&this.state.error.message?this.state.error.message:(0,t.jsx)(oa,{...s.UNEXPECTED_ERROR})}),(0,t.jsx)(ca,{onClick:this.handleRetry,children:(0,t.jsx)(oa,{...s.TRY_AGAIN})})]}),this.state={hasError:!1}}static getDerivedStateFromError(e){return{hasError:!0,error:e}}componentDidCatch(e,a){}render(){return this.state.hasError?this.state.isAccessDenied?this.renderAccessDenied():this.renderError():this.props.children}}const pa=la,xa=n.DU`
+`;class pa extends r.Component{constructor(e){super(e),this.handleRetry=()=>{this.setState({hasError:!1,isAccessDenied:!1}),window.location.reload()},this.renderAccessDenied=()=>(0,t.jsxs)(na,{children:[(0,t.jsx)(sa,{children:"🚫"}),(0,t.jsx)(da,{children:(0,t.jsx)(oa,{...s.ACCESS_DENIED})}),(0,t.jsx)(la,{children:(0,t.jsx)(oa,{...s.ACCESS_DENIED_MESSAGE})}),(0,t.jsx)(ca,{onClick:this.handleRetry,children:(0,t.jsx)(oa,{...s.RETRY_ACCESS})})]}),this.renderError=()=>(0,t.jsxs)(na,{children:[(0,t.jsx)(sa,{children:"⚠️"}),(0,t.jsx)(da,{children:(0,t.jsx)(oa,{...s.SOMETHING_WENT_WRONG})}),(0,t.jsx)(la,{children:this.state.error&&this.state.error.message?this.state.error.message:(0,t.jsx)(oa,{...s.UNEXPECTED_ERROR})}),(0,t.jsx)(ca,{onClick:this.handleRetry,children:(0,t.jsx)(oa,{...s.TRY_AGAIN})})]}),this.state={hasError:!1}}static getDerivedStateFromError(e){return{hasError:!0,error:e}}componentDidCatch(e,a){}render(){return this.state.hasError?this.state.isAccessDenied?this.renderAccessDenied():this.renderError():this.props.children}}const xa=pa,ma=n.DU`
   * {
     margin: 0;
     padding: 0;
@@ -2219,5 +2288,5 @@
 
     --color-text-default: #fff;
   }
-`,ma=document.getElementById("root");if(!ma)throw new Error("Failed to find the root element");(0,r.H)(ma).render((0,t.jsx)(o.StrictMode,{children:(0,t.jsxs)(pa,{children:[(0,t.jsx)(xa,{}),(0,t.jsx)(()=>((0,o.useEffect)(()=>{ia();const e=()=>{ia()};return window.addEventListener("hashchange",e),()=>window.removeEventListener("hashchange",e)},[]),(0,t.jsx)(ta,{locale:"en",defaultLocale:"en",children:(0,t.jsx)(m,{children:(0,t.jsxs)(Re,{children:[(0,t.jsx)(ue,{}),(0,t.jsx)(ve,{}),(0,t.jsx)(de,{}),(0,t.jsx)(g,{id:E,children:(0,t.jsx)(ke,{})}),(0,t.jsx)(g,{id:I,children:(0,t.jsx)(qe,{})}),(0,t.jsx)(g,{id:C,children:(0,t.jsx)(Ye,{})}),(0,t.jsx)(g,{id:T,children:(0,t.jsx)(Qe,{})}),(0,t.jsx)(g,{id:M,children:(0,t.jsx)(Le,{})}),(0,t.jsx)(g,{id:R,children:(0,t.jsx)(Oe,{})}),(0,t.jsx)(g,{id:O,children:(0,t.jsx)(aa,{})}),(0,t.jsx)(Se,{})]})})})),{})]})}))}},i={};function t(e){var o=i[e];if(void 0!==o)return o.exports;var r=i[e]={exports:{}};return a[e](r,r.exports,t),r.exports}t.m=a,e=[],t.O=(a,i,o,r)=>{if(!i){var n=1/0;for(l=0;l<e.length;l++){for(var[i,o,r]=e[l],s=!0,d=0;d<i.length;d++)(!1&r||n>=r)&&Object.keys(t.O).every(e=>t.O[e](i[d]))?i.splice(d--,1):(s=!1,r<n&&(n=r));if(s){e.splice(l--,1);var c=o();void 0!==c&&(a=c)}}return a}r=r||0;for(var l=e.length;l>0&&e[l-1][2]>r;l--)e[l]=e[l-1];e[l]=[i,o,r]},t.n=e=>{var a=e&&e.__esModule?()=>e.default:()=>e;return t.d(a,{a}),a},t.d=(e,a)=>{for(var i in a)t.o(a,i)&&!t.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:a[i]})},t.o=(e,a)=>Object.prototype.hasOwnProperty.call(e,a),t.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.p="/",(()=>{var e={792:0};t.O.j=a=>0===e[a];var a=(a,i)=>{var o,r,[n,s,d]=i,c=0;if(n.some(a=>0!==e[a])){for(o in s)t.o(s,o)&&(t.m[o]=s[o]);if(d)var l=d(t)}for(a&&a(i);c<n.length;c++)r=n[c],t.o(e,r)&&e[r]&&e[r][0](),e[r]=0;return t.O(l)},i=self.webpackChunkaditya_car_zone=self.webpackChunkaditya_car_zone||[];i.forEach(a.bind(null,0)),i.push=a.bind(null,i.push.bind(i))})(),t.nc=void 0;var o=t.O(void 0,[142],()=>t(9298));o=t.O(o)})();
-//# sourceMappingURL=main.9033fe41e4f2bce90720.js.map
+`,ga=document.getElementById("root");if(!ga)throw new Error("Failed to find the root element");(0,o.H)(ga).render((0,t.jsx)(r.StrictMode,{children:(0,t.jsxs)(xa,{children:[(0,t.jsx)(ma,{}),(0,t.jsx)(()=>((0,r.useEffect)(()=>{ta();const e=()=>{ta()};return window.addEventListener("hashchange",e),()=>window.removeEventListener("hashchange",e)},[]),(0,t.jsx)(ra,{locale:"en",defaultLocale:"en",children:(0,t.jsx)(m,{children:(0,t.jsxs)(Pe,{children:[(0,t.jsx)(ue,{}),(0,t.jsx)(ye,{}),(0,t.jsx)(le,{}),(0,t.jsx)(h,{id:E,children:(0,t.jsx)(Ne,{})}),(0,t.jsx)(h,{id:I,children:(0,t.jsx)(Ve,{})}),(0,t.jsx)(h,{id:C,children:(0,t.jsx)(Ye,{})}),(0,t.jsx)(h,{id:T,children:(0,t.jsx)(Ke,{})}),(0,t.jsx)(h,{id:M,children:(0,t.jsx)(Fe,{})}),(0,t.jsx)(h,{id:O,children:(0,t.jsx)(Oe,{})}),(0,t.jsx)(h,{id:R,children:(0,t.jsx)(ia,{})}),(0,t.jsx)(Ee,{})]})})})),{})]})}))}},i={};function t(e){var r=i[e];if(void 0!==r)return r.exports;var o=i[e]={exports:{}};return a[e](o,o.exports,t),o.exports}t.m=a,e=[],t.O=(a,i,r,o)=>{if(!i){var n=1/0;for(c=0;c<e.length;c++){for(var[i,r,o]=e[c],s=!0,d=0;d<i.length;d++)(!1&o||n>=o)&&Object.keys(t.O).every(e=>t.O[e](i[d]))?i.splice(d--,1):(s=!1,o<n&&(n=o));if(s){e.splice(c--,1);var l=r();void 0!==l&&(a=l)}}return a}o=o||0;for(var c=e.length;c>0&&e[c-1][2]>o;c--)e[c]=e[c-1];e[c]=[i,r,o]},t.n=e=>{var a=e&&e.__esModule?()=>e.default:()=>e;return t.d(a,{a}),a},t.d=(e,a)=>{for(var i in a)t.o(a,i)&&!t.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:a[i]})},t.o=(e,a)=>Object.prototype.hasOwnProperty.call(e,a),t.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.p="/",(()=>{var e={792:0};t.O.j=a=>0===e[a];var a=(a,i)=>{var r,o,[n,s,d]=i,l=0;if(n.some(a=>0!==e[a])){for(r in s)t.o(s,r)&&(t.m[r]=s[r]);if(d)var c=d(t)}for(a&&a(i);l<n.length;l++)o=n[l],t.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return t.O(c)},i=self.webpackChunkaditya_car_zone=self.webpackChunkaditya_car_zone||[];i.forEach(a.bind(null,0)),i.push=a.bind(null,i.push.bind(i))})(),t.nc=void 0;var r=t.O(void 0,[142],()=>t(9298));r=t.O(r)})();
+//# sourceMappingURL=main.eef611048ed80f43297c.js.map

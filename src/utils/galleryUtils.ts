@@ -5,6 +5,25 @@ import gallery4 from "@assets/gallery4.jpg";
 import gallery5 from "@assets/gallery5.jpg";
 import gallery6 from "@assets/gallery6.jpg";
 
+export type GalleryVideo = {
+  id: number;
+  title: string;
+  embedUrl: string;
+};
+
+export const galleryVideosUtils: GalleryVideo[] = [
+  {
+    id: 1,
+    title: "Travel Highlights",
+    embedUrl: "https://www.youtube.com/embed/5OKl1rAx8a8",
+  },
+  {
+    id: 2,
+    title: "Journey Experience",
+    embedUrl: "https://www.youtube.com/embed/pmZ0RFTdlG0",
+  },
+];
+
 export const galleryUtils = [
   {
     id: 1,
