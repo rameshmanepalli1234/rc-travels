@@ -1,7 +1,12 @@
+import InsightsPieChart from "@components/charts/InsightsPieChart";
+import InsightsVerticalBarChart from "@components/charts/InsightsVerticalBarChart";
 import {
   formatPackagePrice,
   getPackageInsightsSummary,
+  getPriceTierChartData,
+  getRegionChartData,
   getTravelThemeChartData,
+  groupChartDataWithOther,
   maxChartValue,
   type ChartDatum,
 } from "@utils";
@@ -32,8 +37,17 @@ const PackageInsightsChart = ({
   showHeader = true,
 }: PackageInsightsChartProps) => {
   const chartData = getTravelThemeChartData();
+  const regionPieData = groupChartDataWithOther(getRegionChartData(), 6);
+  const priceTierBarData = getPriceTierChartData();
   const summary = getPackageInsightsSummary();
   const peak = maxChartValue(chartData);
+
+  const regionPieAria = regionPieData
+    .map((item) => `${item.label}: ${item.value} packages`)
+    .join("; ");
+  const priceBarAria = priceTierBarData
+    .map((item) => `${item.label}: ${item.value} packages`)
+    .join("; ");
 
   return (
     <StyledPackageInsightsChart $embedded={!showHeader}>
@@ -98,6 +112,19 @@ const PackageInsightsChart = ({
             );
           })}
         </ul>
+      </div>
+
+      <div className="insights-charts-grid">
+        <InsightsPieChart
+          title="Packages by region"
+          data={regionPieData}
+          ariaLabel={`Regional distribution pie chart. ${regionPieAria}`}
+        />
+        <InsightsVerticalBarChart
+          title="Packages by price tier"
+          data={priceTierBarData}
+          ariaLabel={`Price tier bar chart. ${priceBarAria}`}
+        />
       </div>
     </StyledPackageInsightsChart>
   );

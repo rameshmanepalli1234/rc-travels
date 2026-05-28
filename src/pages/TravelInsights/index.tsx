@@ -12,7 +12,9 @@ const TravelInsights = () => (
       </p>
     </header>
 
-    <PackageInsightsChart showHeader={false} />
+    <div className="travel-insights-content">
+      <PackageInsightsChart showHeader={false} />
+    </div>
   </StyledTravelInsights>
 );
 

@@ -15,4 +15,6 @@ export declare const getTravelThemeChartData: (packages?: readonly TravelPackage
 export declare const getRegionChartData: (packages?: readonly TravelPackage[], limit?: number) => ChartDatum[];
 export declare const getPackageInsightsSummary: (packages?: readonly TravelPackage[]) => PackageInsightsSummary;
 export declare const maxChartValue: (data: ChartDatum[]) => number;
+export declare const groupChartDataWithOther: (data: ChartDatum[], topN: number) => ChartDatum[];
+export declare const getPriceTierChartData: (packages?: readonly TravelPackage[]) => ChartDatum[];
 //# sourceMappingURL=packageChartUtils.d.ts.map

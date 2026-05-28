@@ -137,3 +137,50 @@ export const getPackageInsightsSummary = (
 
 export const maxChartValue = (data: ChartDatum[]): number =>
   data.reduce((max, item) => Math.max(max, item.value), 0) || 1;
+
+/** Keep top N items; merge remainder into "Other" */
+export const groupChartDataWithOther = (
+  data: ChartDatum[],
+  topN: number,
+): ChartDatum[] => {
+  if (data.length <= topN) {
+    return data;
+  }
+
+  const top = data.slice(0, topN);
+  const otherValue = data
+    .slice(topN)
+    .reduce((sum, item) => sum + item.value, 0);
+
+  if (otherValue > 0) {
+    top.push({ label: "Other", value: otherValue });
+  }
+
+  return top;
+};
+
+const PRICE_TIER_RULES: ReadonlyArray<{ label: string; max: number }> = [
+  { label: "Budget (under ₹8k)", max: 7999 },
+  { label: "Mid (₹8k – ₹15k)", max: 15000 },
+  { label: "Premium (above ₹15k)", max: Number.POSITIVE_INFINITY },
+];
+
+/** Package count by price tier */
+export const getPriceTierChartData = (
+  packages: readonly TravelPackage[] = packagesTableUtils,
+): ChartDatum[] => {
+  const counts = PRICE_TIER_RULES.map((tier) => ({
+    label: tier.label,
+    value: 0,
+    max: tier.max,
+  }));
+
+  for (const pkg of packages) {
+    const tierIndex = PRICE_TIER_RULES.findIndex((tier) => pkg.price <= tier.max);
+    if (tierIndex >= 0) {
+      counts[tierIndex].value += 1;
+    }
+  }
+
+  return counts.map(({ label, value }) => ({ label, value }));
+};

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledPackageInsightsChart = styled.section<{
   $embedded?: boolean;
 }>`
-  max-width: ${({ $embedded }) => ($embedded ? "1000px" : "900px")};
+  max-width: ${({ $embedded }) => ($embedded ? "1100px" : "900px")};
   margin: ${({ $embedded }) => ($embedded ? "0 auto" : "0 auto 48px")};
   padding: 32px 28px;
   background: #ffffff;
@@ -154,5 +154,135 @@ export const StyledPackageInsightsChart = styled.section<{
     @media (max-width: 520px) {
       text-align: left;
     }
+  }
+
+  .insights-chart {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e8efe6;
+  }
+
+  .insights-charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+
+    @media (max-width: 860px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .insights-viz-card {
+    padding: 20px 18px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #f8fcf7 0%, #ffffff 100%);
+    border: 1px solid #e8efe6;
+    min-height: 280px;
+  }
+
+  .insights-pie-layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .insights-pie-svg {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+  }
+
+  .insights-pie-center-value {
+    font-size: 22px;
+    font-weight: 700;
+    fill: #2d7a22;
+  }
+
+  .insights-pie-center-label {
+    font-size: 11px;
+    font-weight: 600;
+    fill: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .insights-pie-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .insights-pie-legend-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .insights-pie-legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .insights-pie-legend-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .insights-pie-legend-meta {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+  }
+
+  .insights-vertical-bar-svg {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .insights-bar-grid-line {
+    stroke: #e8efe6;
+    stroke-width: 1;
+  }
+
+  .insights-bar-axis-label {
+    font-size: 10px;
+    fill: #888;
+    text-anchor: end;
+  }
+
+  .insights-bar-value-label {
+    font-size: 11px;
+    font-weight: 700;
+    fill: #2d7a22;
+  }
+
+  .insights-bar-category-label {
+    font-size: 10px;
+    fill: #555;
+  }
+
+  .insights-chart-empty {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin: 40px 0;
   }
 `;

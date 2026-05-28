@@ -52,6 +52,11 @@ export const StyledTravelInsights = styled.section`
     z-index: 1;
   }
 
+  .travel-insights-content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
   @media (max-width: 768px) {
     padding: 48px 16px 64px;
   }
