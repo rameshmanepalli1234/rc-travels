@@ -27,6 +27,7 @@ export const StyledAboutUs = styled.div`
     text-align: center;
     color: white;
     margin-top: 30px;
+    padding-top: 30px;
 
     @media (max-width: 450px) {
       font-size: 35px;
@@ -198,7 +199,7 @@ export const StyledAboutUs = styled.div`
 
     @media (max-width: 450px) {
       flex-direction: column;
-      padding: 0 20px;
+      padding: 0 20px 35px 20px;
     }
   }
 

@@ -98,21 +98,6 @@ const centerGlow = keyframes`
   }
 `;
 
-const ringSpin = keyframes`
-  to { transform: rotate(360deg); }
-`;
-
-const logoPulse = keyframes`
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(79, 189, 57, 0.5);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 16px rgba(79, 189, 57, 0);
-  }
-`;
-
 const wordReveal = keyframes`
   0% {
     opacity: 0;
@@ -324,7 +309,7 @@ export const StyledAppLoader = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 28px 36px 32px;
+    padding: 28px 36px 28px;
     width: min(92vw, 400px);
     border-radius: 28px;
     background: rgba(15, 23, 42, 0.45);
@@ -338,9 +323,9 @@ export const StyledAppLoader = styled.div`
   .loader-center-glow {
     position: absolute;
     left: 50%;
-    top: 42%;
-    width: 200px;
-    height: 200px;
+    top: 38%;
+    width: 220px;
+    height: 220px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: radial-gradient(
@@ -352,84 +337,77 @@ export const StyledAppLoader = styled.div`
     pointer-events: none;
   }
 
-  .loader-emblem {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .loader-greeting {
+    margin: 0 0 4px;
+    font-size: clamp(1.5rem, 5vw, 1.85rem);
+    font-weight: 800;
+    color: #fde047;
+    letter-spacing: -0.02em;
+    animation: ${wordReveal} 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--text-i, 0) * 0.1s);
   }
 
-  .loader-ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    border-top-color: #4fbd39;
-    border-right-color: rgba(255, 255, 255, 0.5);
-    animation: ${ringSpin} 1.2s linear infinite;
-
-    &.loader-ring-reverse {
-      inset: 8px;
-      border-width: 2px;
-      border-top-color: transparent;
-      border-bottom-color: #22d3ee;
-      border-left-color: rgba(253, 230, 138, 0.6);
-      animation-direction: reverse;
-      animation-duration: 2s;
-    }
-  }
-
-  .loader-logo {
-    position: relative;
-    z-index: 1;
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 18px;
-    font-size: 26px;
-    font-weight: 900;
-    color: #fff;
-    background: linear-gradient(145deg, #5fd648, #2d8a47);
-    animation: ${logoPulse} 2s ease-in-out infinite;
+  .loader-welcome-line {
+    margin: 0 0 6px;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    animation: ${wordReveal} 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--text-i, 1) * 0.1s);
   }
 
   .loader-brand {
-    margin: 0 0 8px;
-    font-size: clamp(1.2rem, 4.2vw, 1.55rem);
+    margin: 0 0 14px;
+    font-size: clamp(1.15rem, 4.2vw, 1.5rem);
     font-weight: 800;
-    line-height: 1.35;
+    line-height: 1.4;
     color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.2em;
+    row-gap: 0.1em;
   }
 
   .loader-brand-word {
     display: inline-block;
     animation: ${wordReveal} 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: calc(var(--word-i) * 0.12s);
+    animation-delay: calc(0.2s + var(--word-i) * 0.12s);
   }
 
-  .loader-tagline {
-    margin: 0 0 20px;
-    font-size: 14px;
+  .loader-brand-phrase {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.12em;
+    white-space: nowrap;
+  }
+
+  .loader-brand-amp {
+    display: inline-block;
+    color: #4ade80;
+  }
+
+  .loader-status {
+    margin: 0;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.88);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2px;
+    animation: ${wordReveal} 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--text-i, 4) * 0.1s);
   }
 
-  .loader-tagline-text {
+  .loader-status-text {
     animation: ${taglineShimmer} 2s ease-in-out infinite;
   }
 
-  .loader-tagline-dots span {
+  .loader-status-dots span {
     animation: ${dotBounce} 1.2s ease-in-out infinite;
 
     &:nth-child(2) {
@@ -442,10 +420,15 @@ export const StyledAppLoader = styled.div`
   }
 
   .loader-progress-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
     width: 100%;
-    height: 5px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.2);
+    height: 4px;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.15);
     overflow: hidden;
   }
 

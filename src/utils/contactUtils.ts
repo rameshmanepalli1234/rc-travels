@@ -1,16 +1,11 @@
-import {
-  FaClock,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaPhone,
-} from "react-icons/fa";
+import { FaClock, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
 export const BRAND_NAME = "Ramesh Tours & Travels";
 
-export const CONTACT_PHONE_DISPLAY = "+91 6363620044";
+export const CONTACT_PHONE_DISPLAY = " +91 6363620044";
 export const CONTACT_PHONE_TEL = "tel:+916363620044";
-export const CONTACT_EMAIL = "rameshtravelszone@gmail.com";
+export const CONTACT_EMAIL = " rameshtravelszone@gmail.com";
 export const CONTACT_EMAIL_MAILTO = "mailto:rameshtravelszone@gmail.com";
 export const CONTACT_ADDRESS =
   "Near Vartha Office, Morampudi, Rajamahendravaram, Andhra Pradesh, 533107";
