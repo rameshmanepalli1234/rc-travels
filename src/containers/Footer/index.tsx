@@ -30,7 +30,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div>
-            <div className="footer-top-title">{BRAND_NAME}</div>
+            <div className="footer-top-title footer-brand-gradient">
+              {BRAND_NAME}
+            </div>
             <div className="footer-top-title-description">
               Professional travel services designed for comfort and convenience.
               Experienced drivers and clean vehicles you can trust. Making every

@@ -63,11 +63,24 @@ export const StyledFooter = styled.div`
     color: #4fbd39;
   }
 
+  .footer-brand-gradient {
+    background: linear-gradient(
+      90deg,
+      #4fbd39 0%,
+      #22d3ee 42%,
+      #86efac 58%,
+      #fde68a 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 8px rgba(79, 189, 57, 0.35));
+  }
+
   .footer-top-title {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 25px;
-    color: white;
   }
 
   .footer-top-section-title {

@@ -43,22 +43,22 @@ export const navbarUtils = (intl: IntlShape): NavItem[] => [
   //   Icon: PiEngineFill,
   // },
   {
-    name: intl.formatMessage(messages.SERVICES),
-    href: hashForSection(SECTION_IDS.SERVICES),
-    sectionId: SECTION_IDS.SERVICES,
-    Icon: FaTools,
-  },
-  {
     name: intl.formatMessage(messages.PACKAGES),
     href: hashForSection(SECTION_IDS.PACKAGES),
     sectionId: SECTION_IDS.PACKAGES,
     Icon: FaBoxesPacking,
   },
   {
-    name: intl.formatMessage(messages.GALLERY),
-    href: hashForSection(SECTION_IDS.GALLERY),
-    sectionId: SECTION_IDS.GALLERY,
-    Icon: FaImages,
+    name: intl.formatMessage(messages.SERVICES),
+    href: hashForSection(SECTION_IDS.SERVICES),
+    sectionId: SECTION_IDS.SERVICES,
+    Icon: FaTools,
+  },
+  {
+    name: intl.formatMessage(messages.CONTACT_US),
+    href: hashForSection(SECTION_IDS.CONTACT_US),
+    sectionId: SECTION_IDS.CONTACT_US,
+    Icon: RiCustomerServiceFill,
   },
   {
     name: intl.formatMessage(messages.TESTIMONIALS),
@@ -67,9 +67,9 @@ export const navbarUtils = (intl: IntlShape): NavItem[] => [
     Icon: FaUser,
   },
   {
-    name: intl.formatMessage(messages.CONTACT_US),
-    href: hashForSection(SECTION_IDS.CONTACT_US),
-    sectionId: SECTION_IDS.CONTACT_US,
-    Icon: RiCustomerServiceFill,
+    name: intl.formatMessage(messages.GALLERY),
+    href: hashForSection(SECTION_IDS.GALLERY),
+    sectionId: SECTION_IDS.GALLERY,
+    Icon: FaImages,
   },
 ];

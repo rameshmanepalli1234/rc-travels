@@ -33,20 +33,20 @@ const App: React.FC = () => {
           <SectionAnchor id={SECTION_IDS.ABOUT_US}>
             <AboutUs />
           </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.SERVICES}>
-            <Services />
-          </SectionAnchor>
           <SectionAnchor id={SECTION_IDS.PACKAGES}>
             <Packages />
           </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.GALLERY}>
-            <Gallery />
+          <SectionAnchor id={SECTION_IDS.SERVICES}>
+            <Services />
+          </SectionAnchor>
+          <SectionAnchor id={SECTION_IDS.CONTACT_US}>
+            <ContactUs />
           </SectionAnchor>
           <SectionAnchor id={SECTION_IDS.TESTIMONIALS}>
             <Testimonials />
           </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.CONTACT_US}>
-            <ContactUs />
+          <SectionAnchor id={SECTION_IDS.GALLERY}>
+            <Gallery />
           </SectionAnchor>
           <Footer />
         </StyledMainContainer>
