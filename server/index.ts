@@ -9,6 +9,7 @@ import {
 import {
   assistantPort,
   getGeminiApiKey,
+  getGeminiModel,
   isGeminiConfigured,
   projectRootPath,
 } from "./loadEnv";
@@ -27,7 +28,7 @@ app.get("/api/travel-assistant/health", (_req, res) => {
   res.json({
     status: "ok",
     geminiConfigured: isGeminiConfigured(),
-    model: process.env.GEMINI_MODEL ?? "gemini-2.0-flash",
+    model: getGeminiModel(),
   });
 });
 

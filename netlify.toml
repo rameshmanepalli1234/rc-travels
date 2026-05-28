@@ -1,0 +1,13 @@
+[build]
+  command = "yarn build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# SPA fallback (API routes are handled by functions via config.path)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

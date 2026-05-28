@@ -43,13 +43,17 @@ const TravelAssistant = () => {
         const health = await fetchTravelAssistantHealth();
         if (!cancelled && !health.geminiConfigured) {
           setSetupError(
-            "Add GEMINI_API_KEY to .env (free key at aistudio.google.com/apikey), then run yarn start.",
+            process.env.NODE_ENV === "production"
+              ? "Add GEMINI_API_KEY in Netlify → Site configuration → Environment variables, then redeploy. Get a free key at aistudio.google.com/apikey"
+              : "Add GEMINI_API_KEY to .env (free key at aistudio.google.com/apikey), then run yarn start.",
           );
         }
       } catch {
         if (!cancelled) {
           setSetupError(
-            "Travel Assistant server is offline. Run yarn start (starts API + web).",
+            process.env.NODE_ENV === "production"
+              ? "Travel Assistant API is unavailable. Confirm GEMINI_API_KEY is set in Netlify environment variables and redeploy."
+              : "Travel Assistant server is offline. Run yarn start (starts API + web).",
           );
         }
       }

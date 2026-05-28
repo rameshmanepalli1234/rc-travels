@@ -21,6 +21,7 @@
     "type-check": "tsc --noEmit",
     "test": "echo \"No tests specified\" && exit 0",
     "prepare": "husky install",
+    "build:netlify": "webpack --mode production",
     "vercel-build": "webpack --mode production --env production",
     "test-build": "yarn build && node test-build.js"
   },
@@ -55,6 +56,7 @@
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@netlify/functions": "^3.1.10",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/react": "^18.0.0",
