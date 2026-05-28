@@ -81,7 +81,7 @@ const messages = defineMessages({
   },
   PHONE_NUMBER: {
     id: "infobar.phone",
-    defaultMessage: "+91 6300133869",
+    defaultMessage: "+91 6363620044",
   },
   EMAIL: {
     id: "infobar.email",

@@ -29,9 +29,16 @@ const Footer = () => {
             </div>
             <div className="footer-top-title-icons">
               {infoIconUtils.map((item: InfoBarItem, index: number) => (
-                <span key={index} className="footer-top-title-icon">
+                <a
+                  key={index}
+                  href={item.href}
+                  className="footer-top-title-icon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                >
                   <item.Icon />
-                </span>
+                </a>
               ))}
             </div>
           </div>

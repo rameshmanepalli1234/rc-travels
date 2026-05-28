@@ -104,6 +104,7 @@ export const StyledFooter = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    text-decoration: none;
     &:hover {
       background: white;
       color: #4fbd39;

@@ -27,13 +27,26 @@ export const StyledInfoBar = styled.div`
     align-items: center;
     gap: 20px;
 
-    .info-bar-item {
+    .info-bar-item,
+    .info-bar-item-link {
       color: var(--color-text-default);
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 8px;
       ${textStyles.bodyMediumStrong};
+    }
+
+    .info-bar-item-link {
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    .info-bar-item {
 
       @media (max-width: 1024px) {
         ${textStyles.bodySmallStrong};
@@ -59,6 +72,18 @@ export const StyledInfoBar = styled.div`
     gap: 25px;
     color: var(--color-text-default);
     ${textStyles.headingSmallSemiBold};
+
+    .info-bar-social-link {
+      color: inherit;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
 
     @media (max-width: 1024px) {
       ${textStyles.bodyMediumStrong};

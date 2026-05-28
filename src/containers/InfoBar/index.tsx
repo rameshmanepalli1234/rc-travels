@@ -11,16 +11,45 @@ const InfoBar: React.FC = () => {
   return (
     <StyledInfoBar data-testid="section-infobar">
       <div className="info-bar-left-container">
-        {items.map((item: InfoBarItem, index: number) => (
-          <div key={index} className="info-bar-item">
-            <item.Icon />
-            <span className="info-bar-item-text">{item.name}</span>
-          </div>
-        ))}
+        {items.map((item: InfoBarItem, index: number) => {
+          const content = (
+            <>
+              <item.Icon />
+              <span className="info-bar-item-text">{item.name}</span>
+            </>
+          );
+
+          if (item.href) {
+            return (
+              <a
+                key={index}
+                href={item.href}
+                className="info-bar-item info-bar-item-link"
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <div key={index} className="info-bar-item">
+              {content}
+            </div>
+          );
+        })}
       </div>
       <div className="info-bar-right-container">
         {infoIconUtils.map((item: InfoBarItem, index: number) => (
-          <item.Icon key={index} />
+          <a
+            key={index}
+            href={item.href}
+            className="info-bar-social-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.name}
+          >
+            <item.Icon />
+          </a>
         ))}
       </div>
     </StyledInfoBar>
