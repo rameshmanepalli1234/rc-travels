@@ -122,6 +122,15 @@ export const StyledAboutUs = styled.div`
     cursor: pointer;
     text-align: center;
     margin: 0 auto;
+    display: block;
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background-color: #45a832;
+      transform: translateY(-1px);
+    }
   }
 
   .about-us-vision-mission-title {

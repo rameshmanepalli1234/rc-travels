@@ -2,6 +2,8 @@ import { StyledAboutUs } from "./styles";
 import AboutUsImage from "@assets/aboutUsImage.jpg";
 import VisionImage from "@assets/vision.jpg";
 import MissionImage from "@assets/mission.jpg";
+import { SECTION_IDS } from "@/constants/sectionIds";
+import { navigateToSection } from "@/utils/scrollUtils";
 
 const AboutUs = () => {
   return (
@@ -47,7 +49,13 @@ const AboutUs = () => {
         <label className="about-us-contact-us-subtitle">
           Premium Tours and Travel Services
         </label>
-        <button className="about-us-contact-us-button">Contact Us</button>
+        <button
+          type="button"
+          className="about-us-contact-us-button"
+          onClick={() => navigateToSection(SECTION_IDS.CONTACT_US)}
+        >
+          Contact Us
+        </button>
       </div>
       <div className="about-us-vision-mission-title">VISION & MISSION</div>
 
