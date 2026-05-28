@@ -15,6 +15,7 @@ import AboutUs from "@pages/AboutUs";
 import Packages from "@pages/Packages";
 import TravelInsights from "@pages/TravelInsights";
 import ContactUs from "@pages/ContactUs";
+import TravelAssistant from "@components/TravelAssistant";
 import { SECTION_IDS } from "@/constants/sectionIds";
 import { useHashScroll } from "@/hooks/useHashScroll";
 
@@ -53,6 +54,7 @@ const App: React.FC = () => {
             <Gallery />
           </SectionAnchor>
           <Footer />
+          <TravelAssistant />
         </StyledMainContainer>
       </AccessControl>
     </IntlProvider>

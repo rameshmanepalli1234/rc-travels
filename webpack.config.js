@@ -129,6 +129,9 @@ module.exports = (env, argv) => {
         "process.env.REACT_APP_ACCESS_KEY": JSON.stringify(
           process.env.ACCESS_KEY || getAccessKeyFromNpmrc()
         ),
+        "process.env.REACT_APP_TRAVEL_ASSISTANT_API": JSON.stringify(
+          process.env.REACT_APP_TRAVEL_ASSISTANT_API || "/api/travel-assistant"
+        ),
       }),
     ],
     devServer: {
@@ -151,6 +154,20 @@ module.exports = (env, argv) => {
       liveReload: true,
       // Watch for file changes
       watchFiles: ["src/**/*"],
+      proxy: [
+        {
+          context: ["/api/travel-assistant"],
+          target: `http://127.0.0.1:${process.env.ASSISTANT_PORT || "4000"}`,
+          changeOrigin: true,
+          secure: false,
+          onProxyRes(proxyRes) {
+            if (proxyRes.headers["content-type"]?.includes("text/event-stream")) {
+              proxyRes.headers["cache-control"] = "no-cache";
+              proxyRes.headers["x-accel-buffering"] = "no";
+            }
+          },
+        },
+      ],
     },
     optimization: {
       splitChunks: {
