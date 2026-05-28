@@ -6,3 +6,4 @@ export * from "./footerUtils";
 export * from "./carbonCleaningUtils";
 export * from "./testimonialUtils";
 export * from "./galleryUtils";
+export * from "./packagesUtils";
