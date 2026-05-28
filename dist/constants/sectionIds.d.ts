@@ -3,6 +3,7 @@ export declare const SECTION_IDS: {
     readonly ABOUT_US: "aboutus";
     readonly SERVICES: "services";
     readonly PACKAGES: "packages";
+    readonly TRAVEL_INSIGHTS: "travelinsights";
     readonly GALLERY: "gallery";
     readonly CONTACT_US: "contactus";
     readonly TESTIMONIALS: "testimonials";

@@ -1,7 +1,7 @@
 import { FaBoxesPacking } from "react-icons/fa6";
 // import { PiEngineFill } from 'react-icons/pi';
 import { RiCustomerServiceFill } from "react-icons/ri";
-import { FaHome, FaImages, FaTools, FaUser } from "react-icons/fa";
+import { FaChartBar, FaHome, FaImages, FaTools, FaUser } from "react-icons/fa";
 // import { FaCar } from 'react-icons/fa';
 import { IntlShape } from "react-intl";
 import type { IconType } from "react-icons";
@@ -47,6 +47,12 @@ export const navbarUtils = (intl: IntlShape): NavItem[] => [
     href: hashForSection(SECTION_IDS.PACKAGES),
     sectionId: SECTION_IDS.PACKAGES,
     Icon: FaBoxesPacking,
+  },
+  {
+    name: intl.formatMessage(messages.TRAVEL_INSIGHTS),
+    href: hashForSection(SECTION_IDS.TRAVEL_INSIGHTS),
+    sectionId: SECTION_IDS.TRAVEL_INSIGHTS,
+    Icon: FaChartBar,
   },
   {
     name: intl.formatMessage(messages.SERVICES),

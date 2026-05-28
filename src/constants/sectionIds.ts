@@ -3,6 +3,7 @@ export const SECTION_IDS = {
   ABOUT_US: "aboutus",
   SERVICES: "services",
   PACKAGES: "packages",
+  TRAVEL_INSIGHTS: "travelinsights",
   GALLERY: "gallery",
   CONTACT_US: "contactus",
   TESTIMONIALS: "testimonials",

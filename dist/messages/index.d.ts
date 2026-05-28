@@ -27,6 +27,10 @@ declare const messages: {
         id: string;
         defaultMessage: string;
     };
+    TRAVEL_INSIGHTS: {
+        id: string;
+        defaultMessage: string;
+    };
     GALLERY: {
         id: string;
         defaultMessage: string;

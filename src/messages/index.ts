@@ -29,6 +29,10 @@ const messages = defineMessages({
     id: "nav.packages",
     defaultMessage: "Packages",
   },
+  TRAVEL_INSIGHTS: {
+    id: "nav.travel-insights",
+    defaultMessage: "Travel Insights",
+  },
   GALLERY: {
     id: "nav.gallery",
     defaultMessage: "Gallery",

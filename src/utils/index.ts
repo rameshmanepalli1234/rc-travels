@@ -8,4 +8,5 @@ export * from "./testimonialUtils";
 export * from "./tourImages";
 export * from "./galleryUtils";
 export * from "./packagesUtils";
+export * from "./packageChartUtils";
 export * from "./contactUtils";

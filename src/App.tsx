@@ -13,6 +13,7 @@ import Services from "@/pages/Services";
 import Gallery from "@pages/Gallery";
 import AboutUs from "@pages/AboutUs";
 import Packages from "@pages/Packages";
+import TravelInsights from "@pages/TravelInsights";
 import ContactUs from "@pages/ContactUs";
 import { SECTION_IDS } from "@/constants/sectionIds";
 import { useHashScroll } from "@/hooks/useHashScroll";
@@ -35,6 +36,9 @@ const App: React.FC = () => {
           </SectionAnchor>
           <SectionAnchor id={SECTION_IDS.PACKAGES}>
             <Packages />
+          </SectionAnchor>
+          <SectionAnchor id={SECTION_IDS.TRAVEL_INSIGHTS}>
+            <TravelInsights />
           </SectionAnchor>
           <SectionAnchor id={SECTION_IDS.SERVICES}>
             <Services />
