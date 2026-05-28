@@ -3,16 +3,25 @@ import styled from "styled-components";
 export const StyledVideoSlider = styled.div`
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
   max-width: 900px;
   margin: 32px auto 0;
-  padding: 0 40px;
+  padding-inline: clamp(12px, 4vw, 40px);
 
   @media (max-width: 768px) {
-    padding: 0 16px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding-inline: 12px;
   }
 
   .video-slider-main {
     position: relative;
+    width: 100%;
+    margin-inline: auto;
     border-radius: 20px;
     overflow: hidden;
     background: #000000;
@@ -82,6 +91,9 @@ export const StyledVideoSlider = styled.div`
     justify-content: center;
     gap: 10px;
     margin-top: 18px;
+    width: 100%;
+    padding-inline: 4px;
+    box-sizing: border-box;
   }
 
   .video-slider-dot {

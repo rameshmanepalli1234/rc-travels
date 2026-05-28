@@ -3,16 +3,25 @@ import styled from "styled-components";
 export const StyledPhotoSlider = styled.div`
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
   max-width: 1100px;
   margin: 32px auto 0;
-  padding: 0 40px;
+  padding-inline: clamp(12px, 4vw, 40px);
 
   @media (max-width: 768px) {
-    padding: 0 16px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  @media (max-width: 480px) {
+    padding-inline: 12px;
   }
 
   .slider-main {
     position: relative;
+    width: 100%;
+    margin-inline: auto;
     border-radius: 20px;
     overflow: hidden;
     background: rgba(15, 23, 42, 0.35);
@@ -159,6 +168,9 @@ export const StyledPhotoSlider = styled.div`
     gap: 8px;
     margin-top: 18px;
     flex-wrap: wrap;
+    width: 100%;
+    padding-inline: 4px;
+    box-sizing: border-box;
   }
 
   .slider-dot {
@@ -217,8 +229,12 @@ export const StyledPhotoSlider = styled.div`
     display: flex;
     gap: 12px;
     margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     padding-bottom: 8px;
+    padding-inline: 2px;
+    box-sizing: border-box;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 

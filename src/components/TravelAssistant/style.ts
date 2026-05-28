@@ -39,20 +39,32 @@ export const StyledPanel = styled.div`
   right: 24px;
   bottom: 92px;
   z-index: 9991;
+  box-sizing: border-box;
   width: min(400px, calc(100vw - 32px));
   max-height: min(520px, calc(100vh - 120px));
   display: flex;
   flex-direction: column;
+  min-width: 0;
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
   overflow: hidden;
   border: 1px solid rgba(79, 189, 57, 0.25);
 
+  @media (max-width: 768px) {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: min(400px, calc(100vw - 24px));
+    max-height: min(520px, calc(100dvh - 108px));
+    bottom: 88px;
+  }
+
   @media (max-width: 480px) {
-    right: 16px;
-    left: 16px;
-    width: auto;
+    width: calc(100vw - 20px);
+    max-width: 400px;
+    bottom: 84px;
+    max-height: min(480px, calc(100dvh - 100px));
   }
 `;
 
@@ -83,7 +95,9 @@ export const StyledHeader = styled.div`
 
 export const StyledMessages = styled.div`
   flex: 1;
+  min-width: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -95,7 +109,10 @@ export const StyledMessages = styled.div`
 export const StyledBubble = styled.div<{ $role: "user" | "assistant" }>`
   align-self: ${({ $role }) => ($role === "user" ? "flex-end" : "flex-start")};
   max-width: 88%;
+  min-width: 0;
   padding: 10px 14px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   border-radius: ${({ $role }) =>
     $role === "user" ? "14px 14px 4px 14px" : "14px 14px 14px 4px"};
   background: ${({ $role }) => ($role === "user" ? "#4fbd39" : "#fff")};
@@ -134,7 +151,10 @@ export const StyledTyping = styled.div`
 
 export const StyledAlert = styled.div`
   margin: 0 16px 8px;
+  box-sizing: border-box;
+  max-width: 100%;
   padding: 10px 12px;
+  overflow-wrap: anywhere;
   border-radius: 8px;
   background: #fef2f2;
   border: 1px solid #ef4444;
@@ -146,12 +166,15 @@ export const StyledAlert = styled.div`
 export const StyledInputRow = styled.form`
   display: flex;
   gap: 8px;
+  min-width: 0;
   padding: 12px 16px 16px;
   border-top: 1px solid #e8eee8;
   background: #fff;
+  box-sizing: border-box;
 
   input {
     flex: 1;
+    min-width: 0;
     border: 1px solid #d0ddd0;
     border-radius: 24px;
     padding: 10px 16px;
@@ -187,11 +210,13 @@ export const StyledInputRow = styled.form`
 
 export const StyledPoweredBy = styled.p`
   margin: 0;
-  padding: 0 16px 10px;
+  padding: 0 12px 10px;
   font-size: 10px;
   color: #888;
   text-align: center;
   background: #fff;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
 
   .assistant-brand-highlight {
     font-weight: 700;

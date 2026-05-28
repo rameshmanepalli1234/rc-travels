@@ -91,21 +91,28 @@ export const StyledGallery = styled.section`
   .gallery-subsection-title {
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
     max-width: 1100px;
     margin: 48px auto 0;
-    padding: 0 40px;
+    padding-inline: clamp(12px, 4vw, 40px);
     font-size: 22px;
     font-weight: 700;
     color: #fef3c7;
     letter-spacing: 0.04em;
+    text-align: center;
 
     &.gallery-subsection-all {
       margin-top: 56px;
     }
 
     @media (max-width: 768px) {
-      padding: 0 20px;
+      padding-inline: 16px;
       font-size: 18px;
+    }
+
+    @media (max-width: 480px) {
+      padding-inline: 12px;
     }
   }
 
@@ -166,17 +173,24 @@ export const StyledGallery = styled.section`
   .gallery-images-container {
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 28px;
     max-width: 1400px;
     margin: 40px auto 0;
-    padding: 0 40px;
+    padding-inline: clamp(12px, 4vw, 40px);
 
     @media (max-width: 768px) {
-      padding: 0 20px;
+      padding-inline: 16px;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 20px;
+    }
+
+    @media (max-width: 480px) {
+      padding-inline: 12px;
+      grid-template-columns: 1fr;
     }
   }
 
@@ -262,17 +276,23 @@ export const StyledGallery = styled.section`
   .video-slider-grid {
     position: relative;
     z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     max-width: 1100px;
     margin: 40px auto 0;
-    padding: 0 40px;
+    padding-inline: clamp(12px, 4vw, 40px);
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      padding: 0 20px;
+      padding-inline: 16px;
       gap: 20px;
+    }
+
+    @media (max-width: 480px) {
+      padding-inline: 12px;
     }
   }
 
