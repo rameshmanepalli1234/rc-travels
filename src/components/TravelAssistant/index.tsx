@@ -1,6 +1,7 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { FiMessageCircle, FiSend } from "react-icons/fi";
-import { BRAND_NAME } from "@utils";
+import { BRAND_NAME, TOOLTIPS } from "@utils";
+import InfoTooltip from "@components/Tooltip/InfoTooltip";
 import {
   fetchTravelAssistantHealth,
   streamTravelAssistantChat,
@@ -130,6 +131,7 @@ const TravelAssistant = () => {
       <StyledFab
         type="button"
         aria-label={open ? "Close travel assistant" : "Open travel assistant"}
+        title={open ? undefined : TOOLTIPS.assistant.fab}
         onClick={() => setOpen((value) => !value)}
       >
         <FiMessageCircle />
@@ -138,7 +140,15 @@ const TravelAssistant = () => {
       {open ? (
         <StyledPanel role="dialog" aria-label="Travel Assistant">
           <StyledHeader>
-            <h3>Travel Assistant</h3>
+            <h3>
+              Travel Assistant
+              <InfoTooltip
+                content={TOOLTIPS.assistant.input}
+                placement="bottom"
+                variant="light"
+                ariaLabel="About Travel Assistant"
+              />
+            </h3>
             <button type="button" aria-label="Close" onClick={() => setOpen(false)}>
               ×
             </button>
@@ -185,6 +195,11 @@ const TravelAssistant = () => {
           <StyledPoweredBy>
             Powered by Google Gemini ·{" "}
             <span className="assistant-brand-highlight">{BRAND_NAME}</span>
+            <InfoTooltip
+              content={TOOLTIPS.assistant.poweredBy}
+              placement="top"
+              ariaLabel="About AI responses"
+            />
           </StyledPoweredBy>
         </StyledPanel>
       ) : null}

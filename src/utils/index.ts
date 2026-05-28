@@ -13,3 +13,4 @@ export * from "./contactUtils";
 export * from "./packageBookingUtils";
 export * from "./whyChooseUsUtils";
 export * from "./howItWorksUtils";
+export * from "./tooltipMessages";

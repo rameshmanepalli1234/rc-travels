@@ -262,9 +262,11 @@ export const StyledContactForm = styled.form`
   }
 
   .contact-form-label {
+    display: block;
     font-size: 14px;
     font-weight: 600;
     color: #333;
+    margin-bottom: 0;
   }
 
   .contact-form-input,

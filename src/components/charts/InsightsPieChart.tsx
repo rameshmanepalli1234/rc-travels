@@ -1,3 +1,4 @@
+import InfoTooltip from "@components/Tooltip/InfoTooltip";
 import type { ChartDatum } from "@utils";
 import {
   buildPieSlices,
@@ -9,19 +10,34 @@ type InsightsPieChartProps = {
   title: string;
   data: ChartDatum[];
   ariaLabel: string;
+  titleTooltip?: string;
 };
 
 const PIE_SIZE = 220;
 const PIE_CENTER = PIE_SIZE / 2;
 const PIE_RADIUS = 88;
 
-const InsightsPieChart = ({ title, data, ariaLabel }: InsightsPieChartProps) => {
+const InsightsPieChart = ({
+  title,
+  data,
+  ariaLabel,
+  titleTooltip,
+}: InsightsPieChartProps) => {
   const slices = buildPieSlices(data);
   const hasData = slices.length > 0;
 
   return (
     <div className="insights-viz-card" role="img" aria-label={ariaLabel}>
-      <p className="insights-chart-caption">{title}</p>
+      <p className="insights-chart-caption">
+        {title}
+        {titleTooltip ? (
+          <InfoTooltip
+            content={titleTooltip}
+            placement="top"
+            ariaLabel={`Help: ${title}`}
+          />
+        ) : null}
+      </p>
       {hasData ? (
         <div className="insights-pie-layout">
           <svg

@@ -5,6 +5,8 @@ import {
   type TravelPackage,
 } from "@utils";
 import BookNowButton from "@components/BookNowButton";
+import InfoTooltip from "@components/Tooltip/InfoTooltip";
+import { TOOLTIPS } from "@utils";
 import PackagesTable from "@components/PackagesTable";
 import { StyledPackages, StyledPackageCard } from "./style";
 
@@ -30,7 +32,14 @@ const Packages = () => {
                 className="package-card-image"
               />
               {pkg.badge && (
-                <span className="package-card-badge">{pkg.badge}</span>
+                <span className="package-card-badge">
+                  {pkg.badge}
+                  <InfoTooltip
+                    content={TOOLTIPS.packages.badge}
+                    placement="left"
+                    ariaLabel="About package badge"
+                  />
+                </span>
               )}
             </div>
 
@@ -47,7 +56,14 @@ const Packages = () => {
                 <span className="package-card-price">
                   {formatPackagePrice(pkg.price)}
                 </span>
-                <span className="package-card-price-note">per person</span>
+                <span className="package-card-price-note">
+                  per person
+                  <InfoTooltip
+                    content={TOOLTIPS.packages.perPerson}
+                    placement="top"
+                    ariaLabel="Pricing information"
+                  />
+                </span>
               </div>
 
               <ul className="package-card-highlights">

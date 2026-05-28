@@ -10,6 +10,9 @@ import {
   maxChartValue,
   type ChartDatum,
 } from "@utils";
+import StatLabelWithInfo from "@components/Tooltip/StatLabelWithInfo";
+import InfoTooltip from "@components/Tooltip/InfoTooltip";
+import { TOOLTIPS } from "@utils";
 import { StyledPackageInsightsChart } from "./style";
 
 const BAR_COLORS = [
@@ -65,23 +68,38 @@ const PackageInsightsChart = ({
       <div className="insights-summary">
         <div className="insights-stat">
           <span className="insights-stat-value">{summary.totalPackages}</span>
-          <span className="insights-stat-label">Listed tours</span>
+          <StatLabelWithInfo
+            className="insights-stat-label"
+            label="Listed tours"
+            tooltip={TOOLTIPS.insights.listedTours}
+          />
         </div>
         <div className="insights-stat">
           <span className="insights-stat-value">{summary.regionsCovered}</span>
-          <span className="insights-stat-label">Regions covered</span>
+          <StatLabelWithInfo
+            className="insights-stat-label"
+            label="Regions covered"
+            tooltip={TOOLTIPS.insights.regions}
+          />
         </div>
         <div className="insights-stat">
           <span className="insights-stat-value">
             {formatPackagePrice(summary.lowestPrice)}
           </span>
-          <span className="insights-stat-label">Starting from</span>
+          <StatLabelWithInfo
+            label="Starting from"
+            tooltip={TOOLTIPS.insights.startingFrom}
+          />
         </div>
         <div className="insights-stat">
           <span className="insights-stat-value">
             {formatPackagePrice(summary.averagePrice)}
           </span>
-          <span className="insights-stat-label">Average package</span>
+          <StatLabelWithInfo
+            className="insights-stat-label"
+            label="Average package"
+            tooltip={TOOLTIPS.insights.average}
+          />
         </div>
       </div>
 
@@ -90,7 +108,14 @@ const PackageInsightsChart = ({
         role="img"
         aria-label={`Tour packages by travel style. ${buildChartAriaLabel(chartData)}`}
       >
-        <p className="insights-chart-caption">Packages by travel style</p>
+        <p className="insights-chart-caption">
+          Packages by travel style
+          <InfoTooltip
+            content={TOOLTIPS.insights.travelStyle}
+            placement="top"
+            ariaLabel="About travel style chart"
+          />
+        </p>
         <ul className="insights-bars">
           {chartData.map((item, index) => {
             const widthPercent = Math.round((item.value / peak) * 100);
@@ -119,11 +144,13 @@ const PackageInsightsChart = ({
           title="Packages by region"
           data={regionPieData}
           ariaLabel={`Regional distribution pie chart. ${regionPieAria}`}
+          titleTooltip={TOOLTIPS.insights.regionChart}
         />
         <InsightsVerticalBarChart
           title="Packages by price tier"
           data={priceTierBarData}
           ariaLabel={`Price tier bar chart. ${priceBarAria}`}
+          titleTooltip={TOOLTIPS.insights.priceTier}
         />
       </div>
     </StyledPackageInsightsChart>

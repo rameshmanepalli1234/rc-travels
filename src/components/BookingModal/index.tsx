@@ -2,12 +2,15 @@ import { FormEvent, useState } from "react";
 import { FiX } from "react-icons/fi";
 import type { TravelPackage } from "@utils";
 import TripDatePicker from "@components/FormFields/TripDatePicker";
+import FormLabelWithInfo from "@components/Tooltip/FormLabelWithInfo";
+import Tooltip from "@components/Tooltip";
 import {
   formatPackagePrice,
   sanitizePhoneInput,
   isValidBookingEmail,
   isValidBookingPhone,
   isValidPlannedTripDate,
+  TOOLTIPS,
 } from "@utils";
 import {
   StyledCloseButton,
@@ -115,9 +118,13 @@ const BookingModal = ({
 
           <form onSubmit={handleSubmit}>
             <div className="booking-field">
-              <label className="booking-label" htmlFor="booking-email">
-                Email address
-              </label>
+              <FormLabelWithInfo
+                className="booking-label"
+                htmlFor="booking-email"
+                label="Email address"
+                tooltip={TOOLTIPS.booking.email}
+                required
+              />
               <input
                 id="booking-email"
                 className="booking-input"
@@ -133,9 +140,13 @@ const BookingModal = ({
             </div>
 
             <div className="booking-field">
-              <label className="booking-label" htmlFor="booking-phone">
-                Mobile number
-              </label>
+              <FormLabelWithInfo
+                className="booking-label"
+                htmlFor="booking-phone"
+                label="Mobile number"
+                tooltip={TOOLTIPS.booking.phone}
+                required
+              />
               <input
                 id="booking-phone"
                 className="booking-input"
@@ -151,9 +162,13 @@ const BookingModal = ({
             </div>
 
             <div className="booking-field">
-              <label className="booking-label" htmlFor="booking-trip-date">
-                Preferred travel date
-              </label>
+              <FormLabelWithInfo
+                className="booking-label"
+                htmlFor="booking-trip-date"
+                label="Preferred travel date"
+                tooltip={TOOLTIPS.booking.travelDate}
+                required
+              />
               <TripDatePicker
                 value={plannedTripDate}
                 onChange={setPlannedTripDate}
@@ -178,14 +193,16 @@ const BookingModal = ({
               >
                 Cancel
               </button>
-              <button
-                type="submit"
-                className="booking-btn booking-btn-submit"
-                disabled={isSubmitting}
-                data-testid="button-booking-submit"
-              >
-                {isSubmitting ? "Sending…" : "Confirm booking"}
-              </button>
+              <Tooltip content={TOOLTIPS.booking.confirm} placement="top">
+                <button
+                  type="submit"
+                  className="booking-btn booking-btn-submit"
+                  disabled={isSubmitting}
+                  data-testid="button-booking-submit"
+                >
+                  {isSubmitting ? "Sending…" : "Confirm booking"}
+                </button>
+              </Tooltip>
             </div>
           </form>
         </StyledModalBody>

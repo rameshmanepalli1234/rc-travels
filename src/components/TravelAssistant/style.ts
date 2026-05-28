@@ -78,6 +78,9 @@ export const StyledHeader = styled.div`
 
   h3 {
     margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     font-size: 16px;
     font-weight: 700;
   }
@@ -220,6 +223,12 @@ export const StyledPoweredBy = styled.p`
   font-size: 10px;
   color: #888;
   text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
   background: #fff;
   box-sizing: border-box;
   overflow-wrap: anywhere;

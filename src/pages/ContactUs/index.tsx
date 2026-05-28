@@ -122,7 +122,6 @@ const ContactUs = () => {
                 placeholder="Your name"
                 required
                 minLength={2}
-                title="Use letters only, e.g. Ramesh Manepalli"
                 value={form.name}
                 disabled={isSubmitting}
                 onChange={(e) =>
@@ -143,7 +142,6 @@ const ContactUs = () => {
                 placeholder="+91 6363620044"
                 required
                 pattern="\+?[\d\s]{8,}"
-                title="Use numbers and + only, e.g. +91 6363620044"
                 value={form.phone}
                 disabled={isSubmitting}
                 onChange={(e) =>

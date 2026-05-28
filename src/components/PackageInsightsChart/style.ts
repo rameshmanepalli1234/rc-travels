@@ -94,6 +94,15 @@ export const StyledPackageInsightsChart = styled.section<{
     color: #666;
   }
 
+  .insights-chart-caption,
+  .stat-label-with-info.insights-stat-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
   .insights-chart-caption {
     font-size: 14px;
     font-weight: 700;

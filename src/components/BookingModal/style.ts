@@ -102,6 +102,21 @@ export const StyledModalBody = styled.div`
     font-size: 13px;
     font-weight: 600;
     color: #334155;
+
+    .stat-label-with-info,
+    span:first-child {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  .booking-actions > span {
+    flex: 1;
+    display: flex;
+  }
+
+  .booking-actions .booking-btn-submit {
+    width: 100%;
   }
 
   .booking-input {
@@ -112,7 +127,9 @@ export const StyledModalBody = styled.div`
     padding: 11px 14px;
     font-size: 16px;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
 
     &:focus {
       border-color: #4fbd39;

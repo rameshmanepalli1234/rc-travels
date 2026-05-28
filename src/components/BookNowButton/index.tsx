@@ -1,5 +1,7 @@
 import type { TravelPackage, TableTravelPackage } from "@utils";
+import { TOOLTIPS } from "@utils";
 import { useBooking } from "@/context/BookingContext";
+import Tooltip from "@components/Tooltip";
 
 type BookNowButtonProps = {
   pkg: TravelPackage | TableTravelPackage;
@@ -30,14 +32,16 @@ const BookNowButton = ({
   }
 
   return (
-    <button
-      type="button"
-      className={className}
-      onClick={() => openBooking(pkg)}
-      data-testid="button-book-now"
-    >
-      Book Now
-    </button>
+    <Tooltip content={TOOLTIPS.packages.bookNow} placement="top">
+      <button
+        type="button"
+        className={className}
+        onClick={() => openBooking(pkg)}
+        data-testid="button-book-now"
+      >
+        Book Now
+      </button>
+    </Tooltip>
   );
 };
 

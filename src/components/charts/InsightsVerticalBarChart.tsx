@@ -1,3 +1,4 @@
+import InfoTooltip from "@components/Tooltip/InfoTooltip";
 import { maxChartValue, type ChartDatum } from "@utils";
 import { colorForChartIndex } from "./chartTheme";
 
@@ -5,6 +6,7 @@ type InsightsVerticalBarChartProps = {
   title: string;
   data: ChartDatum[];
   ariaLabel: string;
+  titleTooltip?: string;
 };
 
 const CHART_WIDTH = 400;
@@ -20,6 +22,7 @@ const InsightsVerticalBarChart = ({
   title,
   data,
   ariaLabel,
+  titleTooltip,
 }: InsightsVerticalBarChartProps) => {
   const peak = maxChartValue(data);
   const barCount = data.length;
@@ -29,7 +32,16 @@ const InsightsVerticalBarChart = ({
 
   return (
     <div className="insights-viz-card" role="img" aria-label={ariaLabel}>
-      <p className="insights-chart-caption">{title}</p>
+      <p className="insights-chart-caption">
+        {title}
+        {titleTooltip ? (
+          <InfoTooltip
+            content={titleTooltip}
+            placement="top"
+            ariaLabel={`Help: ${title}`}
+          />
+        ) : null}
+      </p>
       {barCount > 0 ? (
         <svg
           viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}

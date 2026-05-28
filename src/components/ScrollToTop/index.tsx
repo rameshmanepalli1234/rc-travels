@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiArrowUp } from "react-icons/fi";
+import { TOOLTIPS } from "@utils";
 import { StyledScrollToTop } from "./style";
 
 const SCROLL_THRESHOLD = 400;
@@ -27,6 +28,7 @@ const ScrollToTop = () => {
       $visible={visible}
       onClick={scrollToTop}
       aria-label="Scroll to top"
+      title={TOOLTIPS.general.scrollTop}
       data-testid="button-scroll-top"
     >
       <FiArrowUp aria-hidden />
