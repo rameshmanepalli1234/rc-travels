@@ -3,10 +3,19 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
 
-const projectRoot = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "..",
-);
+/** Resolves project root for local Express; safe when bundled for Netlify (no import.meta.url). */
+const resolveProjectRoot = (): string => {
+  const metaUrl =
+    typeof import.meta !== "undefined" ? import.meta.url : undefined;
+
+  if (metaUrl) {
+    return path.resolve(path.dirname(fileURLToPath(metaUrl)), "..");
+  }
+
+  return process.cwd();
+};
+
+const projectRoot = resolveProjectRoot();
 
 for (const fileName of [".env.local", ".env"]) {
   const filePath = path.join(projectRoot, fileName);

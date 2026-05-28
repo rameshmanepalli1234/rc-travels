@@ -25,7 +25,14 @@
   status = 200
   force = true
 
-# SPA fallback (API routes are handled by functions via config.path)
+# API must not fall through to SPA index.html
+[[redirects]]
+  from = "/api/travel-assistant/*"
+  to = "/.netlify/functions/travel-assistant-:splat"
+  status = 200
+  force = true
+
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"

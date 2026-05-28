@@ -52,7 +52,7 @@ const TravelAssistant = () => {
         if (!cancelled) {
           setSetupError(
             process.env.NODE_ENV === "production"
-              ? "Travel Assistant API is unavailable. Confirm GEMINI_API_KEY is set in Netlify environment variables and redeploy."
+              ? "Travel Assistant API is not responding. Redeploy the site after setting GEMINI_API_KEY (Netlify → Environment variables). If the key is already set, trigger Deploy → Clear cache and deploy site."
               : "Travel Assistant server is offline. Run yarn start (starts API + web).",
           );
         }
