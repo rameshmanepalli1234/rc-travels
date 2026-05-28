@@ -16,7 +16,7 @@ const Gallery = () => {
         <h2 className="gallery-title">GALLERY</h2>
         <p className="gallery-label">
           Stunning journeys, happy travellers, and unforgettable destinations
-          captured by RC Tours &amp; Travels.
+          captured by Ramesh Tours &amp; Travels.
         </p>
       </header>
 

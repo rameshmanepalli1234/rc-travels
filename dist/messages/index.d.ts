@@ -35,6 +35,10 @@ declare const messages: {
         id: string;
         defaultMessage: string;
     };
+    TESTIMONIALS: {
+        id: string;
+        defaultMessage: string;
+    };
     VALIDATING_ACCESS: {
         id: string;
         defaultMessage: string;

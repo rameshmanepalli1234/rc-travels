@@ -4,9 +4,10 @@ import { FaClock } from "react-icons/fa6";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import messages from "@messages";
-
-const PHONE_TEL = "tel:+916300133869";
-const EMAIL_MAILTO = "mailto:rctravels@gmail.com";
+import {
+  CONTACT_EMAIL_MAILTO,
+  CONTACT_PHONE_TEL,
+} from "./contactUtils";
 
 export const SOCIAL_LINKS = {
   FACEBOOK:
@@ -22,12 +23,12 @@ export const infobarUtils = (intl: IntlShape) => [
   {
     name: intl.formatMessage(messages.PHONE_NUMBER),
     Icon: FaPhone,
-    href: PHONE_TEL,
+    href: CONTACT_PHONE_TEL,
   },
   {
     name: intl.formatMessage(messages.EMAIL),
     Icon: FaEnvelope,
-    href: EMAIL_MAILTO,
+    href: CONTACT_EMAIL_MAILTO,
   },
   {
     name: intl.formatMessage(messages.OPENING_HOURS),

@@ -1,5 +1,180 @@
+import { FormEvent, useState } from "react";
+import { contactInfoUtils, type ContactInfoItem } from "@utils";
+import {
+  StyledContactUs,
+  StyledContactInfoCard,
+  StyledContactForm,
+} from "./style";
+
+type FormState = {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+};
+
+const initialFormState: FormState = {
+  name: "",
+  email: "",
+  phone: "",
+  subject: "general",
+  message: "",
+};
+
 const ContactUs = () => {
-  return <div>ContactUs</div>;
+  const [form, setForm] = useState<FormState>(initialFormState);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (
+    field: keyof FormState,
+    value: string,
+  ): void => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+    if (submitted) {
+      setSubmitted(false);
+    }
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    setSubmitted(true);
+    setForm(initialFormState);
+  };
+
+  const renderContactValue = (item: ContactInfoItem) => {
+    if (item.href) {
+      return (
+        <a href={item.href} className="contact-info-link">
+          <p className="contact-info-value">{item.value}</p>
+        </a>
+      );
+    }
+    return <p className="contact-info-value">{item.value}</p>;
+  };
+
+  return (
+    <StyledContactUs>
+      <header className="contact-header">
+        <span className="contact-eyebrow">Get In Touch</span>
+        <h2 className="contact-title">Contact Us</h2>
+        <p className="contact-subtitle">
+          Plan your next trip with Ramesh Tours &amp; Travels. Reach out for
+          packages, custom itineraries, or any travel enquiry — we&apos;re happy
+          to help.
+        </p>
+      </header>
+
+      <div className="contact-layout">
+        <div className="contact-info-grid">
+          {contactInfoUtils.map((item) => (
+            <StyledContactInfoCard key={item.id}>
+              <div className="contact-info-icon-wrap">
+                <item.Icon aria-hidden />
+              </div>
+              <div className="contact-info-title">{item.title}</div>
+              {renderContactValue(item)}
+            </StyledContactInfoCard>
+          ))}
+        </div>
+
+        <StyledContactForm onSubmit={handleSubmit}>
+          <h3 className="contact-form-title">Send Us a Message</h3>
+          <p className="contact-form-subtitle">
+            Fill in the form and our team will get back to you shortly.
+          </p>
+
+          <div className="contact-form-row">
+            <div className="contact-form-field">
+              <label className="contact-form-label" htmlFor="contact-name">
+                Full Name
+              </label>
+              <input
+                id="contact-name"
+                className="contact-form-input"
+                type="text"
+                placeholder="Your name"
+                required
+                value={form.name}
+                onChange={(e) => handleChange("name", e.target.value)}
+              />
+            </div>
+            <div className="contact-form-field">
+              <label className="contact-form-label" htmlFor="contact-phone">
+                Phone Number
+              </label>
+              <input
+                id="contact-phone"
+                className="contact-form-input"
+                type="tel"
+                placeholder="+91 98765 43210"
+                required
+                value={form.phone}
+                onChange={(e) => handleChange("phone", e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="contact-form-field">
+            <label className="contact-form-label" htmlFor="contact-email">
+              Email Address
+            </label>
+            <input
+              id="contact-email"
+              className="contact-form-input"
+              type="email"
+              placeholder="you@example.com"
+              required
+              value={form.email}
+              onChange={(e) => handleChange("email", e.target.value)}
+            />
+          </div>
+
+          <div className="contact-form-field">
+            <label className="contact-form-label" htmlFor="contact-subject">
+              Enquiry Type
+            </label>
+            <select
+              id="contact-subject"
+              className="contact-form-select"
+              value={form.subject}
+              onChange={(e) => handleChange("subject", e.target.value)}
+            >
+              <option value="general">General Enquiry</option>
+              <option value="package">Tour Package Booking</option>
+              <option value="custom">Custom Itinerary</option>
+              <option value="group">Group Travel</option>
+            </select>
+          </div>
+
+          <div className="contact-form-field">
+            <label className="contact-form-label" htmlFor="contact-message">
+              Message
+            </label>
+            <textarea
+              id="contact-message"
+              className="contact-form-textarea"
+              placeholder="Tell us about your travel plans..."
+              required
+              value={form.message}
+              onChange={(e) => handleChange("message", e.target.value)}
+            />
+          </div>
+
+          <button type="submit" className="contact-form-submit">
+            Send Message
+          </button>
+
+          {submitted && (
+            <p className="contact-form-success" role="status">
+              Thank you! Your message has been received. We will contact you
+              soon.
+            </p>
+          )}
+        </StyledContactForm>
+      </div>
+    </StyledContactUs>
+  );
 };
 
 export default ContactUs;

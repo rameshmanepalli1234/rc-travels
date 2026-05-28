@@ -11,7 +11,7 @@ const AboutUs = () => {
         <div>
           <div className="about-us-container">
             <div className="about-us-content">
-              <h1 className="about-us-title">Welcome to RC Tours & Travels</h1>
+              <h1 className="about-us-title">Welcome to Ramesh Tours & Travels</h1>
               <p className="about-us-description">
                 Experience the ultimate travel comfort with our expertly crafted
                 tours and travel services. We specialize in creating

@@ -168,8 +168,14 @@ export const StyledFooter = styled.div`
     margin-top: 4px;
   }
 
-  .footer-top-section-contact-info-phone-number {
+  .footer-top-section-contact-info-phone-number,
+  a.footer-top-section-contact-info-phone-number {
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+
+    &:hover {
+      color: #4fbd39;
+    }
   }
 
   .footer-bottom-copyright-text {

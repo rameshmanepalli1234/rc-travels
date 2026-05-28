@@ -1,4 +1,13 @@
-import { infoIconUtils } from "@utils";
+import {
+  infoIconUtils,
+  BRAND_NAME,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL,
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_MAILTO,
+  CONTACT_ADDRESS,
+  CONTACT_HOURS,
+} from "@utils";
 import { StyledFooter } from "./style";
 import { InfoBarItem } from "@containers/InfoBar/types";
 import { navbarUtils } from "@utils";
@@ -21,7 +30,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-top">
           <div>
-            <div className="footer-top-title">RC Tours & Travels</div>
+            <div className="footer-top-title">{BRAND_NAME}</div>
             <div className="footer-top-title-description">
               Professional travel services designed for comfort and convenience.
               Experienced drivers and clean vehicles you can trust. Making every
@@ -102,17 +111,19 @@ const Footer = () => {
             </div>
             <div className="footer-top-section-contact-info-address">
               <FaLocationDot className="footer-top-section-contact-info-address-icon" />
-              Near vartha office, Morampudi, Rajamahendravaram, Andhra Pradesh,
-              533107.
+              {CONTACT_ADDRESS}
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div className="footer-top-section-contact-info-address">
                 <FaPhone className="footer-top-section-contact-info-phone-icon" />
                 <div>
                   Call Us:
-                  <div className="footer-top-section-contact-info-phone-number">
-                    +91 6300133869
-                  </div>
+                  <a
+                    href={CONTACT_PHONE_TEL}
+                    className="footer-top-section-contact-info-phone-number"
+                  >
+                    {CONTACT_PHONE_DISPLAY}
+                  </a>
                 </div>
               </div>
             </div>
@@ -121,9 +132,12 @@ const Footer = () => {
                 <FaEnvelope className="footer-top-section-contact-info-phone-icon" />
                 <div>
                   Email Us:
-                  <div className="footer-top-section-contact-info-phone-number">
-                    rctravels@gmail.com
-                  </div>
+                  <a
+                    href={CONTACT_EMAIL_MAILTO}
+                    className="footer-top-section-contact-info-phone-number"
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
                 </div>
               </div>
             </div>
@@ -133,7 +147,7 @@ const Footer = () => {
                 <div>
                   Working Hours:
                   <div className="footer-top-section-contact-info-phone-number">
-                    Mon - Sat: 9:00 AM - 9:00 PM
+                    {CONTACT_HOURS}
                   </div>
                 </div>
               </div>
@@ -142,11 +156,11 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-copyright-info">
-            © 2025 RC Tours & Travels All rights reserved.
+            © 2025 {BRAND_NAME} All rights reserved.
           </div>
           <div className="footer-bottom-copyright-text">
             Design and Developed by{" "}
-            <span className="footer-copyright-link">RC Tours & Travels</span>{" "}
+            <span className="footer-copyright-link">{BRAND_NAME}</span>{" "}
             Pvt Ltd.
           </div>
         </div>

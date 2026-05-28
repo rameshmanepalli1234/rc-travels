@@ -7,3 +7,4 @@ export * from "./carbonCleaningUtils";
 export * from "./testimonialUtils";
 export * from "./galleryUtils";
 export * from "./packagesUtils";
+export * from "./contactUtils";

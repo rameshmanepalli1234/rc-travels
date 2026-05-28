@@ -17,7 +17,7 @@ const Packages = () => {
         <h2 className="packages-title">Explore Our Travel Packages</h2>
         <p className="packages-subtitle">
           Handpicked tours across Andhra Pradesh and beyond — transparent pricing,
-          comfortable stays, and memorable experiences with RC Tours &amp; Travels.
+          comfortable stays, and memorable experiences with Ramesh Tours &amp; Travels.
         </p>
       </header>
 
