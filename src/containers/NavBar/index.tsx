@@ -5,6 +5,7 @@ import {
   StyledDrawer,
   StyledDrawerOverlay,
   StyledHamburger,
+  StyledMobileNavActions,
   StyledDrawerContent,
   StyledDrawerHeader,
   StyledDrawerClose,
@@ -16,6 +17,7 @@ import type { SectionId } from "@/constants/sectionIds";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IntlShape } from "react-intl";
 import TutorialTrigger from "@components/TutorialTrigger";
+import AccountMenu from "@components/CustomerAuth/AccountMenu";
 
 const NavBar: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -63,15 +65,19 @@ const NavBar: React.FC = () => {
               {item.name}
             </a>
           ))}
+          <AccountMenu />
         </StyledNavLinks>
 
-        {/* Mobile Hamburger Menu */}
-        <StyledHamburger
-          onClick={toggleDrawer}
-          data-testid="button-navbar-menu"
-        >
-          <FaBars />
-        </StyledHamburger>
+        {/* Mobile: account icon left of menu */}
+        <StyledMobileNavActions>
+          <AccountMenu />
+          <StyledHamburger
+            onClick={toggleDrawer}
+            data-testid="button-navbar-menu"
+          >
+            <FaBars />
+          </StyledHamburger>
+        </StyledMobileNavActions>
       </StyledNavBar>
 
       {/* Mobile/Tablet Drawer */}

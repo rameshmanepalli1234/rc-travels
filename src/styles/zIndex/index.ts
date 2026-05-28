@@ -6,6 +6,8 @@ export const zIndexValues = {
   OVERLAY: 9980,
   TOOLTIP: 9950,
   POPOVER: 9940,
+  /** Account navbar popover — above drawer/nav, below toast & tutorial */
+  ACCOUNT_POPOVER: 9997,
   ZINDEX_SIX: 6,
   ZINDEX_TWO: 2,
   ZINDEX_ONE: 1,

@@ -12,7 +12,7 @@ export const StyledNavBar = styled.div`
   position: relative;
   z-index: 1000;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
   position: sticky;
   top: 40px;
 
@@ -55,6 +55,9 @@ export const StyledNavLinks = styled.div`
   display: flex;
   gap: 2rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
 
   a {
     text-decoration: none;
@@ -73,8 +76,21 @@ export const StyledNavLinks = styled.div`
   }
 `;
 
-export const StyledHamburger = styled.button`
+export const StyledMobileNavActions = styled.div`
   display: none;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
+
+export const StyledHamburger = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -87,10 +103,6 @@ export const StyledHamburger = styled.button`
 
   &:hover {
     color: #007bff;
-  }
-
-  @media (max-width: 768px) {
-    display: block;
   }
 
   @media (max-width: 320px) {

@@ -23,6 +23,8 @@ import TravelAssistant from "@components/TravelAssistant";
 import { ToastProvider } from "@/context/ToastContext";
 import { BookingProvider } from "@/context/BookingContext";
 import { TutorialProvider } from "@/context/TutorialContext";
+import { CustomerAuthProvider } from "@/context/CustomerAuthContext";
+import CustomerAuthModals from "@components/CustomerAuth";
 import AppTutorial from "@components/AppTutorial";
 import TutorialAutoStart from "@components/AppTutorial/TutorialAutoStart";
 import { SECTION_IDS } from "@/constants/sectionIds";
@@ -35,6 +37,7 @@ const App: React.FC = () => {
     <IntlProvider locale="en" defaultLocale="en">
       <AccessControl>
         <ToastProvider>
+        <CustomerAuthProvider>
         <TutorialProvider>
         <BookingProvider>
         <StyledMainContainer>
@@ -77,9 +80,11 @@ const App: React.FC = () => {
               <TravelAssistant />
               <AppTutorial />
               <TutorialAutoStart />
+              <CustomerAuthModals />
             </StyledMainContainer>
         </BookingProvider>
         </TutorialProvider>
+        </CustomerAuthProvider>
         </ToastProvider>
       </AccessControl>
     </IntlProvider>

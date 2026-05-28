@@ -46,6 +46,15 @@ module.exports = (env, argv) => {
     );
   }
 
+  if (
+    !process.env.REACT_APP_SUPABASE_URL?.trim() ||
+    !process.env.REACT_APP_SUPABASE_ANON_KEY?.trim()
+  ) {
+    console.warn(
+      "Warning: REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY are not set — customer Google login will not work. See SUPABASE_SETUP.md"
+    );
+  }
+
   return {
     entry: "./src/index.tsx",
     output: {
@@ -138,6 +147,12 @@ module.exports = (env, argv) => {
         ),
         "process.env.REACT_APP_CONTACT_API": JSON.stringify(
           process.env.REACT_APP_CONTACT_API || "/api/contact"
+        ),
+        "process.env.REACT_APP_SUPABASE_URL": JSON.stringify(
+          process.env.REACT_APP_SUPABASE_URL || ""
+        ),
+        "process.env.REACT_APP_SUPABASE_ANON_KEY": JSON.stringify(
+          process.env.REACT_APP_SUPABASE_ANON_KEY || ""
         ),
       }),
     ],

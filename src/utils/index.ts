@@ -10,6 +10,7 @@ export * from "./galleryUtils";
 export * from "./packagesUtils";
 export * from "./packageChartUtils";
 export * from "./contactUtils";
+export * from "./customerProfileUtils";
 export * from "./packageBookingUtils";
 export * from "./whyChooseUsUtils";
 export * from "./howItWorksUtils";
