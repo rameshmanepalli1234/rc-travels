@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 const { FormattedMessage } = require("react-intl");
 import messages from "@messages";
-import AppLoader from "@components/AppLoader";
+import AppLoader, { APP_LOADER_DURATION_MS } from "@components/AppLoader";
 
 interface AccessControlProps {
   children: React.ReactNode;
@@ -98,8 +98,9 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
         const expectedKey = "u34kkfe993943kkjerufj3343334hss";
         const fallbackKey = "4444";
 
-        // Show branded loader for 4 seconds on initial load
-        await new Promise((resolve) => setTimeout(resolve, 4000));
+        await new Promise((resolve) =>
+          setTimeout(resolve, APP_LOADER_DURATION_MS),
+        );
 
         if (accessKey === expectedKey || accessKey === fallbackKey) {
           setIsAuthorized(true);

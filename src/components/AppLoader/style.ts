@@ -1,57 +1,61 @@
 import styled, { keyframes } from "styled-components";
 import { zIndexValues } from "@styles/zIndex";
 
-const gradientFlow = keyframes`
-  0% { background-position: 0% 50%; }
+const skyGradient = keyframes`
+  0%, 100% { background-position: 0% 0%; }
   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 `;
 
-const auroraShift = keyframes`
-  0%, 100% { transform: translate(-10%, -10%) rotate(0deg) scale(1); opacity: 0.5; }
-  50% { transform: translate(10%, 5%) rotate(8deg) scale(1.15); opacity: 0.75; }
-`;
-
-const scanlineMove = keyframes`
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-`;
-
-const orbFloat = keyframes`
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(24px, -18px) scale(1.08); }
-  66% { transform: translate(-16px, 12px) scale(0.92); }
-`;
-
-const ringSpin = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`;
-
-const ringSpinReverse = keyframes`
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
-`;
-
-const emblemPulse = keyframes`
+const sunPulse = keyframes`
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(79, 189, 57, 0.5), 0 12px 40px rgba(15, 23, 42, 0.35);
     transform: scale(1);
+    filter: drop-shadow(0 0 24px rgba(251, 191, 36, 0.7));
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(79, 189, 57, 0), 0 18px 52px rgba(15, 23, 42, 0.45);
-    transform: scale(1.04);
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.95));
   }
 `;
 
-const logoFloat = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+const sunRaysSpin = keyframes`
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
 `;
 
-const travelAlong = keyframes`
+const cloudDrift = keyframes`
+  0% { transform: translateX(-110%) translateY(0); }
+  100% { transform: translateX(110vw) translateY(var(--cloud-y, 0px)); }
+`;
+
+const planeTakeoff = keyframes`
   0% {
     offset-distance: 0%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+`;
+
+const trailDash = keyframes`
+  to { stroke-dashoffset: -80; }
+`;
+
+const roadDashMove = keyframes`
+  from { background-position: 0 0; }
+  to { background-position: 48px 0; }
+`;
+
+const driveLeft = keyframes`
+  0% {
+    left: -48px;
     opacity: 0;
   }
   6% {
@@ -61,579 +65,301 @@ const travelAlong = keyframes`
     opacity: 1;
   }
   100% {
-    offset-distance: 100%;
-    opacity: 0;
-  }
-`;
-
-/** Horizontal travel fallback when offset-path is unsupported */
-const driveFromLeft = keyframes`
-  0% {
-    left: -56px;
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  100% {
-    left: calc(100% + 56px);
-    opacity: 0;
-  }
-`;
-
-const driveFromRight = keyframes`
-  0% {
-    left: calc(100% + 56px);
-    opacity: 0;
-  }
-  8% {
-    opacity: 1;
-  }
-  100% {
-    left: -56px;
-    opacity: 0;
-  }
-`;
-
-const planeFlyFallback = keyframes`
-  0% {
-    left: -48px;
-    top: 20%;
-    opacity: 0;
-    transform: rotate(-14deg) scale(0.88);
-  }
-  10% {
-    opacity: 1;
-  }
-  100% {
     left: calc(100% + 48px);
-    top: 10%;
     opacity: 0;
-    transform: rotate(10deg) scale(1);
   }
 `;
 
-const routeDash = keyframes`
-  to { stroke-dashoffset: -120; }
-`;
-
-const routeGlowPulse = keyframes`
-  0%, 100% { stroke-opacity: 0.25; stroke-width: 6; }
-  50% { stroke-opacity: 0.55; stroke-width: 10; }
-`;
-
-const markerPop = keyframes`
-  0%, 100% { transform: scale(1) translateY(0); opacity: 0.7; }
-  50% { transform: scale(1.2) translateY(-6px); opacity: 1; }
-`;
-
-const cloudDrift = keyframes`
-  0% { transform: translateX(-120%) translateY(0); }
-  100% { transform: translateX(120vw) translateY(-8px); }
-`;
-
-const particleRise = keyframes`
+const driveRight = keyframes`
   0% {
-    transform: translateY(20px) scale(0);
+    left: calc(100% + 48px);
     opacity: 0;
   }
-  15% {
-    opacity: 0.9;
+  6% {
+    opacity: 1;
   }
-  85% {
-    opacity: 0.5;
+  94% {
+    opacity: 1;
   }
   100% {
-    transform: translateY(-120px) scale(1);
+    left: -48px;
     opacity: 0;
   }
 `;
 
-const sparkleBlink = keyframes`
-  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
-  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+const centerGlow = keyframes`
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
 `;
 
-const compassPulse = keyframes`
-  0%, 100% { opacity: 0.15; transform: rotate(0deg) scale(1); }
-  50% { opacity: 0.35; transform: rotate(180deg) scale(1.08); }
+const ringSpin = keyframes`
+  to { transform: rotate(360deg); }
 `;
 
-const shimmer = keyframes`
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+const logoPulse = keyframes`
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 189, 57, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 16px rgba(79, 189, 57, 0);
+  }
 `;
 
-const progressFill = keyframes`
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+const wordReveal = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
-const progressGlowMove = keyframes`
-  0% { left: -30%; opacity: 0; }
+const taglineShimmer = keyframes`
+  0%, 100% { opacity: 0.75; }
   50% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
 `;
 
-const fadeInUp = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+const dotBounce = keyframes`
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.35; }
+  40% { transform: translateY(-5px); opacity: 1; }
 `;
 
-const dotPulse = keyframes`
-  0%, 80%, 100% { opacity: 0.25; transform: scale(0.85); }
-  40% { opacity: 1; transform: scale(1.15); }
+const progressGrow = keyframes`
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 `;
 
-const taglineFade = keyframes`
-  0%, 100% { opacity: 0.65; }
-  50% { opacity: 1; }
-`;
-
-const SKY_PATH_OFFSET =
-  'path("M -40 130 Q 220 95 480 88 T 1040 55")';
-const ROAD_BUS_PATH_OFFSET =
-  'path("M 1040 310 Q 720 300 480 318 T -40 328")';
-const ROAD_CAR_PATH_OFFSET =
-  'path("M -40 365 Q 320 358 580 362 T 1040 355")';
-const GROUND_BIKE_PATH_OFFSET =
-  'path("M -40 410 Q 280 405 520 408 T 1040 402")';
+const PLANE_PATH = 'path("M 60 470 Q 200 360 420 240 T 920 100")';
 
 export const StyledAppLoader = styled.div`
   position: fixed;
   inset: 0;
   z-index: ${zIndexValues.LOADER};
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   overflow: hidden;
-  background: #0f172a;
+  background: #0c4a6e;
 
-  .loader-bg {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      #0d9488 0%,
-      #059669 18%,
-      #2563eb 48%,
-      #7c3aed 78%,
-      #4fbd39 100%
-    );
-    background-size: 320% 320%;
-    animation: ${gradientFlow} 6s ease infinite;
-  }
-
-  .loader-aurora {
-    position: absolute;
-    width: 140%;
-    height: 140%;
-    top: -20%;
-    left: -20%;
-    background: radial-gradient(
-      ellipse at 30% 40%,
-      rgba(34, 211, 238, 0.35) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      ellipse at 70% 60%,
-      rgba(251, 191, 36, 0.25) 0%,
-      transparent 45%
-    );
-    animation: ${auroraShift} 10s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  .loader-scanline {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 120px;
+  /* ─── Sky (top ~58%) ─── */
+  .loader-sky {
+    position: relative;
+    flex: 1 1 58%;
+    min-height: 0;
     background: linear-gradient(
       180deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.04) 50%,
-      transparent 100%
+      #38bdf8 0%,
+      #7dd3fc 28%,
+      #bae6fd 55%,
+      #e0f2fe 100%
     );
-    animation: ${scanlineMove} 4s linear infinite;
-    pointer-events: none;
+    background-size: 200% 200%;
+    animation: ${skyGradient} 12s ease infinite;
+    overflow: hidden;
   }
 
-  .loader-grid {
+  .loader-sun {
     position: absolute;
-    inset: 0;
-    opacity: 0.1;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(ellipse 75% 65% at 50% 50%, black 15%, transparent 78%);
-    animation: ${gradientFlow} 20s linear infinite reverse;
+    top: 14%;
+    right: 12%;
+    z-index: 4;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fde047;
+    font-size: 52px;
+    animation: ${sunPulse} 3s ease-in-out infinite;
+
+    svg {
+      position: relative;
+      z-index: 2;
+    }
   }
 
-  .loader-orb {
+  .loader-sun-glow {
     position: absolute;
+    inset: -20px;
     border-radius: 50%;
-    filter: blur(70px);
-    pointer-events: none;
-    animation: ${orbFloat} 6s ease-in-out infinite;
+    background: radial-gradient(
+      circle,
+      rgba(253, 224, 71, 0.55) 0%,
+      transparent 70%
+    );
+  }
 
-    &.loader-orb-1 {
-      width: 300px;
-      height: 300px;
-      top: -90px;
-      right: -70px;
-      background: #fbbf24;
-      opacity: 0.55;
-    }
-
-    &.loader-orb-2 {
-      width: 340px;
-      height: 340px;
-      bottom: -110px;
-      left: -90px;
-      background: #4fbd39;
-      opacity: 0.5;
-      animation-delay: -2s;
-    }
-
-    &.loader-orb-3 {
-      width: 220px;
-      height: 220px;
-      top: 38%;
-      left: 58%;
-      background: #22d3ee;
-      opacity: 0.42;
-      animation-delay: -3.5s;
-    }
-
-    &.loader-orb-4 {
-      width: 180px;
-      height: 180px;
-      top: 12%;
-      left: 8%;
-      background: #a78bfa;
-      opacity: 0.35;
-      animation-delay: -5s;
-    }
+  .loader-sun-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin: -60px 0 0 -60px;
+    border-radius: 50%;
+    background: repeating-conic-gradient(
+      from 0deg,
+      rgba(253, 224, 71, 0.2) 0deg 8deg,
+      transparent 8deg 18deg
+    );
+    animation: ${sunRaysSpin} 20s linear infinite;
+    z-index: 1;
   }
 
   .loader-clouds {
     position: absolute;
     inset: 0;
-    overflow: hidden;
+    z-index: 3;
     pointer-events: none;
-    opacity: 0.5;
   }
 
   .loader-cloud {
     position: absolute;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.92);
+    filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.35));
     animation: ${cloudDrift} linear infinite;
+    left: 0;
+    top: calc(8% + (var(--cloud-i) * 7.5%));
 
     &.loader-cloud-1 {
-      font-size: 64px;
-      top: 12%;
-      animation-duration: 22s;
+      font-size: clamp(48px, 8vw, 72px);
+      animation-duration: 28s;
+      animation-delay: calc(var(--cloud-i) * -2.8s);
+      --cloud-y: 4px;
     }
 
     &.loader-cloud-2 {
-      font-size: 48px;
-      top: 28%;
-      animation-duration: 28s;
-      animation-delay: -8s;
-      opacity: 0.7;
+      font-size: clamp(36px, 6vw, 56px);
+      animation-duration: 34s;
+      animation-delay: calc(var(--cloud-i) * -3.2s);
+      opacity: 0.88;
+      --cloud-y: -6px;
     }
 
     &.loader-cloud-3 {
-      font-size: 56px;
-      bottom: 18%;
-      animation-duration: 25s;
-      animation-delay: -14s;
+      font-size: clamp(56px, 9vw, 80px);
+      animation-duration: 32s;
+      animation-delay: calc(var(--cloud-i) * -2.2s);
+      --cloud-y: 8px;
+    }
+
+    &.loader-cloud-4 {
+      font-size: clamp(40px, 7vw, 60px);
+      animation-duration: 26s;
+      animation-delay: calc(var(--cloud-i) * -4s);
+      opacity: 0.8;
+    }
+
+    &.loader-cloud-5 {
+      font-size: clamp(44px, 7.5vw, 64px);
+      animation-duration: 30s;
+      animation-delay: calc(var(--cloud-i) * -1.5s);
+      --cloud-y: -4px;
     }
   }
 
-  .loader-particles {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .loader-particle {
-    position: absolute;
-    bottom: -10px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
-    left: calc(8% + (var(--particle-i) * 6.5%));
-    animation: ${particleRise} 3.5s ease-in-out infinite;
-    animation-delay: calc(var(--particle-i) * -0.28s);
-
-    &.loader-particle-1 {
-      width: 4px;
-      height: 4px;
-      background: #fde68a;
-    }
-
-    &.loader-particle-2 {
-      width: 8px;
-      height: 8px;
-      background: #4fbd39;
-      box-shadow: 0 0 12px #4fbd39;
-    }
-
-    &.loader-particle-3 {
-      width: 5px;
-      height: 5px;
-      background: #22d3ee;
-    }
-  }
-
-  .loader-route {
+  .loader-plane-path {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
     pointer-events: none;
 
-    .loader-route-glow {
+    .loader-plane-trail-line {
       fill: none;
-      stroke: rgba(79, 189, 57, 0.4);
-      stroke-linecap: round;
-      animation: ${routeGlowPulse} 2.5s ease-in-out infinite;
-    }
-
-    .loader-route-line {
-      fill: none;
+      stroke: rgba(255, 255, 255, 0.35);
       stroke-width: 2;
-      stroke-dasharray: 10 14;
+      stroke-dasharray: 8 12;
       stroke-linecap: round;
-      animation: ${routeDash} 2s linear infinite;
-
-      &.loader-route-sky {
-        stroke: rgba(254, 243, 199, 0.55);
-        stroke-width: 2.5;
-        animation-duration: 2.5s;
-      }
-
-      &.loader-route-road {
-        stroke: rgba(255, 255, 255, 0.42);
-      }
-
-      &.loader-route-road-alt {
-        stroke: rgba(34, 211, 238, 0.4);
-        stroke-dasharray: 8 18;
-        animation-duration: 2.8s;
-        animation-direction: reverse;
-      }
-
-      &.loader-route-ground {
-        stroke: rgba(79, 189, 57, 0.5);
-        stroke-dasharray: 6 12;
-        animation-duration: 1.8s;
-      }
-    }
-
-    .loader-route-glow.loader-route-sky {
-      stroke: rgba(254, 243, 199, 0.35);
+      animation: ${trailDash} 1.5s linear infinite;
     }
   }
 
-  .loader-vehicles {
+  .loader-plane {
     position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .loader-marker {
-    position: absolute;
-    color: #4fbd39;
-    font-size: 22px;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-    animation: ${markerPop} 2s ease-in-out infinite;
-
-    &.loader-marker-1 {
-      left: 14%;
-      bottom: 28%;
-      animation-delay: 0s;
-    }
-
-    &.loader-marker-2 {
-      left: 50%;
-      top: 22%;
-      color: #fde68a;
-      animation-delay: -0.7s;
-    }
-
-    &.loader-marker-3 {
-      right: 12%;
-      top: 18%;
-      animation-delay: -1.4s;
-    }
-  }
-
-  .loader-vehicle {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    filter: drop-shadow(0 3px 12px rgba(0, 0, 0, 0.45));
+    z-index: 5;
+    width: 32px;
+    height: 32px;
+    color: #ffffff;
+    offset-path: ${PLANE_PATH};
+    offset-rotate: auto;
+    animation: ${planeTakeoff} 4.2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
 
     svg {
       width: 100%;
       height: 100%;
-      display: block;
     }
 
-    &.loader-vehicle-plane {
-      width: 34px;
-      height: 34px;
-      color: #fef3c7;
-      offset-path: ${SKY_PATH_OFFSET};
-      offset-rotate: auto;
-      animation: ${travelAlong} 5.5s ease-in-out infinite;
-      filter: drop-shadow(-6px 4px 10px rgba(254, 243, 199, 0.55))
-        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
-
-      .loader-plane-trail {
-        position: absolute;
-        right: 70%;
-        top: 50%;
-        width: 28px;
-        height: 3px;
-        margin-top: -1px;
-        border-radius: 2px;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(254, 243, 199, 0.7)
-        );
-        animation: ${taglineFade} 0.4s ease-in-out infinite;
-      }
-    }
-
-    &.loader-vehicle-bus {
-      width: 30px;
-      height: 30px;
-      color: #ffffff;
-      offset-path: ${ROAD_BUS_PATH_OFFSET};
-      offset-rotate: auto;
-      animation: ${travelAlong} 7s linear infinite;
-      animation-delay: -1.5s;
-    }
-
-    &.loader-vehicle-car {
-      width: 28px;
-      height: 28px;
-      color: #22d3ee;
-      offset-path: ${ROAD_CAR_PATH_OFFSET};
-      offset-rotate: auto;
-      animation: ${travelAlong} 6s linear infinite;
-      animation-delay: -3s;
-    }
-
-    &.loader-vehicle-bike {
-      width: 26px;
-      height: 26px;
-      color: #4fbd39;
-      offset-path: ${GROUND_BIKE_PATH_OFFSET};
-      offset-rotate: auto;
-      animation: ${travelAlong} 4.5s ease-in-out infinite;
-      animation-delay: -0.8s;
+    .loader-plane-contrail {
+      position: absolute;
+      right: 85%;
+      top: 50%;
+      width: 24px;
+      height: 3px;
+      margin-top: -1px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8));
     }
   }
 
-  @supports not (offset-path: path("M 0 0")) {
-    .loader-vehicle-plane,
-    .loader-vehicle-bus,
-    .loader-vehicle-car,
-    .loader-vehicle-bike {
-      offset-path: none;
-    }
-
-    .loader-vehicle-plane {
-      animation: ${planeFlyFallback} 5.5s ease-in-out infinite;
-    }
-
-    .loader-vehicle-bus {
-      top: 62%;
-      animation: ${driveFromRight} 7s linear infinite;
-      animation-delay: -1.5s;
-    }
-
-    .loader-vehicle-car {
-      top: 70%;
-      animation: ${driveFromLeft} 6s linear infinite;
-      animation-delay: -3s;
-    }
-
-    .loader-vehicle-bike {
-      top: 78%;
-      animation: ${driveFromLeft} 4.5s ease-in-out infinite;
-      animation-delay: -0.8s;
-    }
-  }
-
-  .loader-content {
-    position: relative;
-    z-index: 3;
+  /* ─── Center — RT + text ─── */
+  .loader-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -52%);
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 24px;
-    max-width: 420px;
-    animation: ${fadeInUp} 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    padding: 28px 36px 32px;
+    width: min(92vw, 400px);
+    border-radius: 28px;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+      0 24px 64px rgba(15, 23, 42, 0.35),
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  }
+
+  .loader-center-glow {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(79, 189, 57, 0.35) 0%,
+      transparent 70%
+    );
+    animation: ${centerGlow} 2.5s ease-in-out infinite;
+    pointer-events: none;
   }
 
   .loader-emblem {
     position: relative;
-    width: 128px;
-    height: 128px;
-    margin-bottom: 28px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .loader-sparkles {
-    position: absolute;
-    inset: -8px;
-    pointer-events: none;
-  }
-
-  .loader-spark {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #fde68a;
-    top: 50%;
-    left: 50%;
-    margin: -3px 0 0 -3px;
-    transform: rotate(calc(var(--spark-i) * 45deg)) translateY(-58px);
-    animation: ${sparkleBlink} 1.8s ease-in-out infinite;
-    animation-delay: calc(var(--spark-i) * -0.22s);
-    box-shadow: 0 0 10px #fde68a;
-  }
-
-  .loader-compass {
-    position: absolute;
-    inset: -6px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      rgba(79, 189, 57, 0.2) 90deg,
-      transparent 180deg,
-      rgba(34, 211, 238, 0.15) 270deg,
-      transparent 360deg
-    );
-    animation: ${compassPulse} 4s ease-in-out infinite;
   }
 
   .loader-ring {
@@ -642,137 +368,221 @@ export const StyledAppLoader = styled.div`
     border-radius: 50%;
     border: 3px solid transparent;
     border-top-color: #4fbd39;
-    border-right-color: rgba(255, 255, 255, 0.55);
-    animation: ${ringSpin} 1s linear infinite;
+    border-right-color: rgba(255, 255, 255, 0.5);
+    animation: ${ringSpin} 1.2s linear infinite;
 
-    &.loader-ring-outer {
-      inset: -8px;
+    &.loader-ring-reverse {
+      inset: 8px;
       border-width: 2px;
-      border-top-color: rgba(34, 211, 238, 0.8);
-      border-left-color: rgba(253, 230, 138, 0.5);
-      border-right-color: transparent;
-      border-bottom-color: transparent;
-      animation: ${ringSpinReverse} 2.8s linear infinite;
+      border-top-color: transparent;
+      border-bottom-color: #22d3ee;
+      border-left-color: rgba(253, 230, 138, 0.6);
+      animation-direction: reverse;
+      animation-duration: 2s;
     }
-  }
-
-  .loader-ring-inner {
-    position: absolute;
-    inset: 12px;
-    border-radius: 50%;
-    border: 2px dashed rgba(255, 255, 255, 0.4);
-    animation: ${ringSpinReverse} 2s linear infinite;
   }
 
   .loader-logo {
     position: relative;
     z-index: 1;
-    width: 76px;
-    height: 76px;
+    width: 64px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 22px;
-    font-size: 30px;
+    border-radius: 18px;
+    font-size: 26px;
     font-weight: 900;
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    background: linear-gradient(145deg, #5fd648 0%, #2d8a47 100%);
-    animation:
-      ${emblemPulse} 2s ease-in-out infinite,
-      ${logoFloat} 2.5s ease-in-out infinite;
+    color: #fff;
+    background: linear-gradient(145deg, #5fd648, #2d8a47);
+    animation: ${logoPulse} 2s ease-in-out infinite;
   }
 
   .loader-brand {
-    margin: 0 0 10px;
-    font-size: clamp(1.35rem, 4vw, 1.75rem);
+    margin: 0 0 8px;
+    font-size: clamp(1.2rem, 4.2vw, 1.55rem);
     font-weight: 800;
-    line-height: 1.25;
-    background: linear-gradient(
-      90deg,
-      #ffffff 0%,
-      #d1fae5 35%,
-      #fef3c7 50%,
-      #d1fae5 65%,
-      #ffffff 100%
-    );
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: ${shimmer} 2s linear infinite;
+    line-height: 1.35;
+    color: #fff;
+  }
+
+  .loader-brand-word {
+    display: inline-block;
+    animation: ${wordReveal} 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--word-i) * 0.12s);
   }
 
   .loader-tagline {
-    margin: 0 0 8px;
-    font-size: 15px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.88);
-    letter-spacing: 0.08em;
+    margin: 0 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    animation: ${taglineFade} 2s ease-in-out infinite;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
   }
 
-  .loader-dots {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 28px;
+  .loader-tagline-text {
+    animation: ${taglineShimmer} 2s ease-in-out infinite;
+  }
 
-    span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, #4fbd39, #22d3ee);
-      animation: ${dotPulse} 1s ease-in-out infinite;
-      box-shadow: 0 0 12px rgba(79, 189, 57, 0.6);
+  .loader-tagline-dots span {
+    animation: ${dotBounce} 1.2s ease-in-out infinite;
 
-      &:nth-child(2) {
-        animation-delay: 0.12s;
-      }
+    &:nth-child(2) {
+      animation-delay: 0.15s;
+    }
 
-      &:nth-child(3) {
-        animation-delay: 0.24s;
-      }
+    &:nth-child(3) {
+      animation-delay: 0.3s;
     }
   }
 
   .loader-progress-wrap {
-    position: relative;
-    width: min(300px, 78vw);
-    height: 6px;
+    width: 100%;
+    height: 5px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-      0 4px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .loader-progress-glow {
-    position: absolute;
-    top: 0;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.5),
-      transparent
-    );
-    animation: ${progressGlowMove} 1.5s ease-in-out infinite;
-    pointer-events: none;
   }
 
   .loader-progress-fill {
     height: 100%;
     width: 100%;
     border-radius: inherit;
-    background: linear-gradient(90deg, #4fbd39, #22d3ee, #fde68a, #4fbd39);
-    background-size: 200% 100%;
+    background: linear-gradient(90deg, #4fbd39, #22d3ee, #fde047);
     transform-origin: left center;
-    animation:
-      ${progressFill} 1.4s ease-in-out infinite,
-      ${gradientFlow} 2s linear infinite;
+    animation: ${progressGrow} linear forwards;
+  }
+
+  /* ─── Ground — road & vehicles ─── */
+  .loader-ground {
+    position: relative;
+    flex: 0 0 22%;
+    min-height: 120px;
+    z-index: 6;
+  }
+
+  .loader-road {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .loader-road-surface {
+    flex: 1;
+    background: linear-gradient(
+      180deg,
+      #86efac 0%,
+      #4ade80 12%,
+      #374151 12%,
+      #1f2937 100%
+    );
+  }
+
+  .loader-road-dash {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 22%;
+    height: 4px;
+    background: repeating-linear-gradient(
+      90deg,
+      #fde047 0,
+      #fde047 20px,
+      transparent 20px,
+      transparent 40px
+    );
+    background-size: 48px 4px;
+    animation: ${roadDashMove} 0.8s linear infinite;
+  }
+
+  .loader-road-dash-offset {
+    top: 26%;
+    opacity: 0.5;
+    animation-duration: 1.1s;
+  }
+
+  .loader-road-vehicles {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 38%;
+    height: 36px;
+    pointer-events: none;
+  }
+
+  .loader-vehicle {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.loader-vehicle-bus {
+      width: 32px;
+      height: 32px;
+      color: #fff;
+      animation: ${driveRight} 8s linear infinite;
+      animation-delay: -0.2s;
+    }
+
+    &.loader-vehicle-car {
+      width: 28px;
+      height: 28px;
+      color: #22d3ee;
+      animation: ${driveLeft} 4.2s linear infinite;
+      animation-delay: -2s;
+    }
+
+    &.loader-vehicle-bike {
+      width: 24px;
+      height: 24px;
+      color: #4fbd39;
+      animation: ${driveLeft} 4.8s linear infinite;
+      animation-delay: -3.2s;
+    }
+  }
+
+  @supports (offset-path: path("M 0 0")) {
+    .loader-plane {
+      /* plane uses offset-path in sky layer */
+    }
+  }
+
+  @supports not (offset-path: path("M 0 0")) {
+    .loader-plane {
+      offset-path: none;
+      top: 55%;
+      left: -40px;
+      animation: ${driveLeft} 4.2s ease-in-out infinite;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .loader-sun {
+      width: 56px;
+      height: 56px;
+      font-size: 40px;
+      top: 10%;
+      right: 8%;
+    }
+
+    .loader-center {
+      padding: 22px 24px 26px;
+      transform: translate(-50%, -54%);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

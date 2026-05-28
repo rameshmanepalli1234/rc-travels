@@ -1,25 +1,12 @@
 import type { CSSProperties } from "react";
-import {
-  FaBicycle,
-  FaBus,
-  FaCar,
-  FaCloud,
-  FaMapMarkerAlt,
-  FaPlane,
-} from "react-icons/fa";
+import { FaBicycle, FaBus, FaCar, FaCloud, FaPlane, FaSun } from "react-icons/fa";
 import { BRAND_NAME } from "@utils";
 import { StyledAppLoader } from "./style";
 
-const PARTICLE_COUNT = 14;
-const SPARKLE_COUNT = 8;
-/** Sky — plane takeoff (high, left → right, climbing) */
-const SKY_PATH = "M -40 130 Q 220 95 480 88 T 1040 55";
-/** Upper road — bus */
-const ROAD_BUS_PATH = "M 1040 310 Q 720 300 480 318 T -40 328";
-/** Lower road — car */
-const ROAD_CAR_PATH = "M -40 365 Q 320 358 580 362 T 1040 355";
-/** Ground lane — bike from left */
-const GROUND_BIKE_PATH = "M -40 410 Q 280 405 520 408 T 1040 402";
+export const APP_LOADER_DURATION_MS = 4000;
+
+const CLOUD_COUNT = 10;
+const PLANE_TAKEOFF_PATH = "M 60 470 Q 200 360 420 240 T 920 100";
 
 const AppLoader = () => (
   <StyledAppLoader
@@ -29,96 +16,95 @@ const AppLoader = () => (
     aria-label="Loading application"
     data-testid="overlay-app-loader"
   >
-    <div className="loader-bg" aria-hidden />
-    <div className="loader-aurora" aria-hidden />
-    <div className="loader-grid" aria-hidden />
-    <div className="loader-scanline" aria-hidden />
+    {/* Sky */}
+    <div className="loader-sky" aria-hidden>
+      <div className="loader-sun">
+        <FaSun />
+        <span className="loader-sun-glow" />
+        <span className="loader-sun-rays" />
+      </div>
 
-    <div className="loader-orb loader-orb-1" aria-hidden />
-    <div className="loader-orb loader-orb-2" aria-hidden />
-    <div className="loader-orb loader-orb-3" aria-hidden />
-    <div className="loader-orb loader-orb-4" aria-hidden />
+      <div className="loader-clouds">
+        {Array.from({ length: CLOUD_COUNT }, (_, index) => (
+          <FaCloud
+            key={index}
+            className={`loader-cloud loader-cloud-${(index % 5) + 1}`}
+            style={{ "--cloud-i": index } as CSSProperties}
+          />
+        ))}
+      </div>
 
-    <div className="loader-clouds" aria-hidden>
-      <FaCloud className="loader-cloud loader-cloud-1" />
-      <FaCloud className="loader-cloud loader-cloud-2" />
-      <FaCloud className="loader-cloud loader-cloud-3" />
-    </div>
+      <svg
+        className="loader-plane-path"
+        viewBox="0 0 1000 500"
+        preserveAspectRatio="none"
+        aria-hidden
+      >
+        <path className="loader-plane-trail-line" d={PLANE_TAKEOFF_PATH} />
+      </svg>
 
-    <div className="loader-particles" aria-hidden>
-      {Array.from({ length: PARTICLE_COUNT }, (_, index) => (
-        <span
-          key={index}
-          className={`loader-particle loader-particle-${index % 4}`}
-          style={{ "--particle-i": index } as CSSProperties}
-        />
-      ))}
-    </div>
-
-    <svg className="loader-route" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden>
-      <path className="loader-route-glow loader-route-sky" d={SKY_PATH} />
-      <path className="loader-route-line loader-route-sky" d={SKY_PATH} />
-      <path className="loader-route-line loader-route-road" d={ROAD_BUS_PATH} />
-      <path className="loader-route-line loader-route-road-alt" d={ROAD_CAR_PATH} />
-      <path className="loader-route-line loader-route-ground" d={GROUND_BIKE_PATH} />
-    </svg>
-
-    <div className="loader-marker loader-marker-1" aria-hidden>
-      <FaMapMarkerAlt />
-    </div>
-    <div className="loader-marker loader-marker-2" aria-hidden>
-      <FaMapMarkerAlt />
-    </div>
-    <div className="loader-marker loader-marker-3" aria-hidden>
-      <FaMapMarkerAlt />
-    </div>
-
-    <div className="loader-vehicles" aria-hidden>
-      <div className="loader-vehicle loader-vehicle-plane">
-        <span className="loader-plane-trail" />
+      <div className="loader-plane" aria-hidden>
+        <span className="loader-plane-contrail" />
         <FaPlane />
       </div>
-      <div className="loader-vehicle loader-vehicle-bus">
-        <FaBus />
-      </div>
-      <div className="loader-vehicle loader-vehicle-car">
-        <FaCar />
-      </div>
-      <div className="loader-vehicle loader-vehicle-bike">
-        <FaBicycle />
-      </div>
     </div>
 
-    <div className="loader-content">
+    {/* Center — logo & loading text */}
+    <div className="loader-center">
+      <div className="loader-center-glow" aria-hidden />
       <div className="loader-emblem">
-        <div className="loader-sparkles" aria-hidden>
-          {Array.from({ length: SPARKLE_COUNT }, (_, index) => (
-            <span
-              key={index}
-              className="loader-spark"
-              style={{ "--spark-i": index } as CSSProperties}
-            />
-          ))}
-        </div>
-        <div className="loader-compass" aria-hidden />
         <div className="loader-ring" />
-        <div className="loader-ring-inner" />
-        <div className="loader-ring loader-ring-outer" />
+        <div className="loader-ring loader-ring-reverse" />
         <span className="loader-logo">RT</span>
       </div>
 
-      <h1 className="loader-brand">{BRAND_NAME}</h1>
-      <p className="loader-tagline">Preparing your journey</p>
+      <h1 className="loader-brand">
+        {BRAND_NAME.split(" ").map((word, index) => (
+          <span
+            key={word}
+            className="loader-brand-word"
+            style={{ "--word-i": index } as CSSProperties}
+          >
+            {word}{" "}
+          </span>
+        ))}
+      </h1>
 
-      <div className="loader-dots" aria-hidden>
-        <span />
-        <span />
-        <span />
-      </div>
+      <p className="loader-tagline">
+        <span className="loader-tagline-text">Preparing your journey</span>
+        <span className="loader-tagline-dots" aria-hidden>
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </span>
+      </p>
 
       <div className="loader-progress-wrap">
-        <div className="loader-progress-glow" aria-hidden />
-        <div className="loader-progress-fill" />
+        <div
+          className="loader-progress-fill"
+          style={{ animationDuration: `${APP_LOADER_DURATION_MS}ms` }}
+        />
+      </div>
+    </div>
+
+    {/* Ground — road & vehicles */}
+    <div className="loader-ground" aria-hidden>
+      <div className="loader-road">
+        <div className="loader-road-surface" />
+        <div className="loader-road-dash" />
+        <div className="loader-road-dash loader-road-dash-offset" />
+      </div>
+
+      <div className="loader-road-vehicles">
+        <div className="loader-vehicle loader-vehicle-bus">
+          <FaBus />
+        </div>
+        <div className="loader-vehicle loader-vehicle-car">
+          <FaCar />
+        </div>
+        <div className="loader-vehicle loader-vehicle-bike">
+          <FaBicycle />
+        </div>
       </div>
     </div>
   </StyledAppLoader>
