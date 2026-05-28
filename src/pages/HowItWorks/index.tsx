@@ -8,7 +8,7 @@ import { StyledHowItWorks } from "./style";
 
 const HowItWorks = () => {
   return (
-    <StyledHowItWorks data-testid="section-how-works">
+    <StyledHowItWorks data-testid="section-how-works" data-tour="how-it-works">
       <div className="how-inner">
         <header className="how-header">
           <span className="how-eyebrow">Simple process</span>

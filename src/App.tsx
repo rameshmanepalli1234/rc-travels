@@ -22,6 +22,9 @@ import ScrollToTop from "@components/ScrollToTop";
 import TravelAssistant from "@components/TravelAssistant";
 import { ToastProvider } from "@/context/ToastContext";
 import { BookingProvider } from "@/context/BookingContext";
+import { TutorialProvider } from "@/context/TutorialContext";
+import AppTutorial from "@components/AppTutorial";
+import TutorialAutoStart from "@components/AppTutorial/TutorialAutoStart";
 import { SECTION_IDS } from "@/constants/sectionIds";
 import { useHashScroll } from "@/hooks/useHashScroll";
 
@@ -32,8 +35,9 @@ const App: React.FC = () => {
     <IntlProvider locale="en" defaultLocale="en">
       <AccessControl>
         <ToastProvider>
-          <BookingProvider>
-            <StyledMainContainer>
+        <TutorialProvider>
+        <BookingProvider>
+        <StyledMainContainer>
               <InfoBar />
               <MenuBar />
               <NavBar />
@@ -71,8 +75,11 @@ const App: React.FC = () => {
               <Footer />
               <ScrollToTop />
               <TravelAssistant />
+              <AppTutorial />
+              <TutorialAutoStart />
             </StyledMainContainer>
-          </BookingProvider>
+        </BookingProvider>
+        </TutorialProvider>
         </ToastProvider>
       </AccessControl>
     </IntlProvider>

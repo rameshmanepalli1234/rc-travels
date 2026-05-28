@@ -7,12 +7,15 @@ type BookNowButtonProps = {
   pkg: TravelPackage | TableTravelPackage;
   className?: string;
   disabled?: boolean;
+  /** Highlights this button during the app tutorial */
+  tourAnchor?: boolean;
 };
 
 const BookNowButton = ({
   pkg,
   className = "",
   disabled = false,
+  tourAnchor = false,
 }: BookNowButtonProps) => {
   const { openBooking } = useBooking();
   const isUnavailable =
@@ -38,6 +41,7 @@ const BookNowButton = ({
         className={className}
         onClick={() => openBooking(pkg)}
         data-testid="button-book-now"
+        {...(tourAnchor ? { "data-tour": "book-now" } : {})}
       >
         Book Now
       </button>

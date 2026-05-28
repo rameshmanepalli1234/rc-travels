@@ -104,7 +104,7 @@ const ContactUs = () => {
           ))}
         </div>
 
-        <StyledContactForm onSubmit={handleSubmit}>
+        <StyledContactForm onSubmit={handleSubmit} data-tour="contact-form">
           <h3 className="contact-form-title">Send Us a Message</h3>
           <p className="contact-form-subtitle">
             Fill in the form and our team will get back to you shortly.

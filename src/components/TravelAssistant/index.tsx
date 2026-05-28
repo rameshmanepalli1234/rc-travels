@@ -130,6 +130,7 @@ const TravelAssistant = () => {
     <>
       <StyledFab
         type="button"
+        data-tour="travel-assistant"
         aria-label={open ? "Close travel assistant" : "Open travel assistant"}
         title={open ? undefined : TOOLTIPS.assistant.fab}
         onClick={() => setOpen((value) => !value)}

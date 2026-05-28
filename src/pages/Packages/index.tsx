@@ -12,7 +12,7 @@ import { StyledPackages, StyledPackageCard } from "./style";
 
 const Packages = () => {
   return (
-    <StyledPackages>
+    <StyledPackages data-tour="packages">
       <header className="packages-header">
         <span className="packages-eyebrow">Tour Packages</span>
         <h2 className="packages-title">Explore Our Travel Packages</h2>
@@ -23,7 +23,7 @@ const Packages = () => {
       </header>
 
       <div className="packages-grid">
-        {packagesUtils.map((pkg: TravelPackage) => (
+        {packagesUtils.map((pkg: TravelPackage, index: number) => (
           <StyledPackageCard key={pkg.id}>
             <div className="package-card-image-wrap">
               <img
@@ -74,7 +74,11 @@ const Packages = () => {
                 ))}
               </ul>
 
-              <BookNowButton pkg={pkg} className="package-card-cta" />
+              <BookNowButton
+                pkg={pkg}
+                className="package-card-cta"
+                tourAnchor={index === 0}
+              />
             </div>
           </StyledPackageCard>
         ))}

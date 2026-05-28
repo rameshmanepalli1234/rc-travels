@@ -1,5 +1,6 @@
 export const zIndexValues = {
   TOAST: 9999,
+  TUTORIAL: 9998,
   LOADER: 9990,
   HEADER: 9900,
   OVERLAY: 9980,

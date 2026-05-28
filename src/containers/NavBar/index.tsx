@@ -15,6 +15,7 @@ import { navigateToSection } from "@/utils/scrollUtils";
 import type { SectionId } from "@/constants/sectionIds";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IntlShape } from "react-intl";
+import TutorialTrigger from "@components/TutorialTrigger";
 
 const NavBar: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -46,11 +47,12 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <StyledNavBar data-testid="section-navbar">
+      <StyledNavBar data-testid="section-navbar" data-tour="navbar">
         <h3 data-testid="text-navbar-brand">Ramesh Tours & Travels</h3>
 
         {/* Desktop Navigation */}
         <StyledNavLinks>
+          <TutorialTrigger />
           {navItems.map((item, index) => (
             <a
               key={index}
@@ -92,6 +94,7 @@ const NavBar: React.FC = () => {
           </StyledDrawerHeader>
 
           <StyledDrawerNav>
+            <TutorialTrigger variant="mobile" />
             {navItems.map((item, index) => (
               <a
                 key={index}
