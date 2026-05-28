@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+.yarn/cache/
+.yarn/install-state.gz
+.pnp.*
+
+# Build output
+dist/
+
+# Local env (secrets)
+.env
+.env.local

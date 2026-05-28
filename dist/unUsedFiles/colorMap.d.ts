@@ -1,1 +1,0 @@
-//# sourceMappingURL=colorMap.d.ts.map

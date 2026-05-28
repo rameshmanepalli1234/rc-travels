@@ -1,2 +1,0 @@
-export declare const StyledTestimonials: import("styled-components/dist/types").IStyledComponentBase<"web", import("styled-components").FastOmit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLElement>, HTMLElement>, never>> & string;
-//# sourceMappingURL=style.d.ts.map
