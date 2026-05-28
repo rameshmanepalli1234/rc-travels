@@ -8,5 +8,5 @@ node_modules/
 dist/
 
 # Local env (secrets)
-.env
-.env.local
+# .env
+# .env.local
