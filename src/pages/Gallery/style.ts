@@ -88,6 +88,27 @@ export const StyledGallery = styled.section`
     margin: 0;
   }
 
+  .gallery-subsection-title {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 48px auto 0;
+    padding: 0 40px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fef3c7;
+    letter-spacing: 0.04em;
+
+    &.gallery-subsection-all {
+      margin-top: 56px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+      font-size: 18px;
+    }
+  }
+
   .gallery-buttons-container {
     position: relative;
     z-index: 1;
@@ -161,31 +182,29 @@ export const StyledGallery = styled.section`
 
   .gallery-card {
     position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
     border-radius: 18px;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    border: 2px solid rgba(255, 255, 255, 0.28);
     box-shadow:
       0 16px 40px rgba(15, 23, 42, 0.25),
       0 0 0 1px rgba(255, 255, 255, 0.08) inset;
     transition:
       transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-      box-shadow 0.35s ease;
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
 
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        transparent 45%,
-        rgba(15, 23, 42, 0.55) 100%
-      );
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      pointer-events: none;
-      border-radius: 18px;
+    &.is-active-card {
+      border-color: #4fbd39;
+      box-shadow:
+        0 24px 48px rgba(79, 189, 57, 0.35),
+        0 0 0 2px rgba(79, 189, 57, 0.5);
     }
 
     &:hover {
@@ -194,14 +213,38 @@ export const StyledGallery = styled.section`
         0 24px 48px rgba(15, 23, 42, 0.35),
         0 0 0 2px rgba(253, 230, 138, 0.4);
 
-      &::after {
-        opacity: 1;
-      }
-
       .gallery-image {
         transform: scale(1.08);
       }
+
+      .gallery-card-caption {
+        opacity: 1;
+      }
     }
+
+    &:focus-visible {
+      outline: 2px solid #fde68a;
+      outline-offset: 3px;
+    }
+  }
+
+  .gallery-card-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(15, 23, 42, 0.88) 100%
+    );
+    opacity: 0.92;
+    transition: opacity 0.3s ease;
   }
 
   .gallery-image {
@@ -216,12 +259,12 @@ export const StyledGallery = styled.section`
     }
   }
 
-  .gallery-videos-container {
+  .video-slider-grid {
     position: relative;
     z-index: 1;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 24px;
     max-width: 1100px;
     margin: 40px auto 0;
     padding: 0 40px;
@@ -229,7 +272,7 @@ export const StyledGallery = styled.section`
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
       padding: 0 20px;
-      gap: 24px;
+      gap: 20px;
     }
   }
 
@@ -238,19 +281,33 @@ export const StyledGallery = styled.section`
     overflow: hidden;
     background: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    border: 2px solid rgba(255, 255, 255, 0.28);
     box-shadow:
       0 16px 40px rgba(15, 23, 42, 0.25),
       0 0 0 1px rgba(255, 255, 255, 0.08) inset;
     transition:
       transform 0.35s ease,
-      box-shadow 0.35s ease;
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
 
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 24px 48px rgba(15, 23, 42, 0.35),
-        0 0 0 2px rgba(253, 230, 138, 0.35);
+    &.is-active-video {
+      border-color: #4fbd39;
+      box-shadow: 0 0 0 2px rgba(79, 189, 57, 0.45);
+    }
+  }
+
+  .gallery-video-select {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+
+    &:focus-visible {
+      outline: 2px solid #fde68a;
+      outline-offset: 3px;
     }
   }
 
@@ -259,6 +316,7 @@ export const StyledGallery = styled.section`
     width: 100%;
     padding-bottom: 56.25%;
     background: #000000;
+    pointer-events: none;
 
     iframe {
       position: absolute;
@@ -267,6 +325,16 @@ export const StyledGallery = styled.section`
       width: 100%;
       height: 100%;
       border: none;
+      pointer-events: none;
     }
+  }
+
+  .gallery-video-label {
+    display: block;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(15, 23, 42, 0.65);
   }
 `;

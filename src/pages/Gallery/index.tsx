@@ -2,12 +2,22 @@ import { useState } from "react";
 import { StyledGallery } from "./style";
 import { TbPhotoFilled } from "react-icons/tb";
 import { FaVideo } from "react-icons/fa";
+import GalleryPhotoSlider from "@components/GalleryPhotoSlider";
+import GalleryVideoSlider from "@components/GalleryVideoSlider";
 import { galleryUtils, galleryVideosUtils } from "@utils";
 
 type GalleryTab = "photos" | "videos";
 
 const Gallery = () => {
   const [activeTab, setActiveTab] = useState<GalleryTab>("photos");
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  const handlePhotoSelect = (index: number): void => {
+    setPhotoIndex(index);
+    document
+      .querySelector("[data-testid='section-gallery-slider']")
+      ?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  };
 
   return (
     <StyledGallery>
@@ -42,30 +52,38 @@ const Gallery = () => {
       </div>
 
       {activeTab === "photos" ? (
-        <div className="gallery-images-container">
-          {galleryUtils.map((item) => (
-            <div key={item.id} className="gallery-card">
-              <img src={item.image} alt={item.name} className="gallery-image" />
-            </div>
-          ))}
-        </div>
+        <>
+          <h3 className="gallery-subsection-title">Featured highlights</h3>
+          <GalleryPhotoSlider
+            photos={galleryUtils}
+            activeIndex={photoIndex}
+            onSlideChange={setPhotoIndex}
+          />
+
+          <h3 className="gallery-subsection-title gallery-subsection-all">
+            All photos
+          </h3>
+          <div className="gallery-images-container" data-testid="section-gallery-photos">
+            {galleryUtils.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`gallery-card ${index === photoIndex ? "is-active-card" : ""}`}
+                onClick={() => handlePhotoSelect(index)}
+                aria-label={`View ${item.name} in slider`}
+                aria-current={index === photoIndex}
+              >
+                <img src={item.image} alt={item.name} className="gallery-image" loading="lazy" />
+                <span className="gallery-card-caption">{item.name}</span>
+              </button>
+            ))}
+          </div>
+        </>
       ) : (
-        <div className="gallery-videos-container">
-          {galleryVideosUtils.map((video) => (
-            <div key={video.id} className="gallery-video-card">
-              <div className="gallery-video-wrap">
-                <iframe
-                  src={video.embedUrl}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <>
+          <h3 className="gallery-subsection-title">Featured videos</h3>
+          <GalleryVideoSlider videos={galleryVideosUtils} />
+        </>
       )}
     </StyledGallery>
   );

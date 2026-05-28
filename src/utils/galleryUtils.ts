@@ -1,5 +1,11 @@
 import { TOUR_IMAGES } from "./tourImages";
 
+export type GalleryPhoto = {
+  id: number;
+  image: string;
+  name: string;
+};
+
 export type GalleryVideo = {
   id: number;
   title: string;
@@ -19,7 +25,7 @@ export const galleryVideosUtils: GalleryVideo[] = [
   },
 ];
 
-export const galleryUtils = [
+export const galleryUtils: GalleryPhoto[] = [
   {
     id: 1,
     image: TOUR_IMAGES.tirumala,

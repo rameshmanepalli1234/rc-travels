@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 const { FormattedMessage } = require("react-intl");
 import messages from "@messages";
+import AppLoader from "@components/AppLoader";
 
 interface AccessControlProps {
   children: React.ReactNode;
@@ -38,57 +39,6 @@ const AccessMessage = styled.p`
   opacity: 0.9;
   max-width: 600px;
   line-height: 1.6;
-`;
-
-const LoaderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-`;
-
-const AnimatedLoader = styled.div`
-  width: 60px;
-  height: 60px;
-  border: 5px solid rgba(79, 189, 57, 0.2);
-  border-top: 5px solid #4fbd39;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-`;
-
-const LoadingText = styled.div`
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #4fbd39;
-  letter-spacing: 2px;
-
-  &::after {
-    content: "...";
-    animation: dots 1.5s steps(4, end) infinite;
-  }
-
-  @keyframes dots {
-    0%,
-    20% {
-      content: ".";
-    }
-    40% {
-      content: "..";
-    }
-    60%,
-    100% {
-      content: "...";
-    }
-  }
 `;
 
 const AccessInput = styled.input`
@@ -148,8 +98,8 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
         const expectedKey = "u34kkfe993943kkjerufj3343334hss";
         const fallbackKey = "4444";
 
-        // Simulate a small delay for better UX
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Show branded loader for 4 seconds on initial load
+        await new Promise((resolve) => setTimeout(resolve, 4000));
 
         if (accessKey === expectedKey || accessKey === fallbackKey) {
           setIsAuthorized(true);
@@ -180,23 +130,7 @@ const AccessControl: React.FC<AccessControlProps> = ({ children }) => {
   };
 
   if (isLoading) {
-    return (
-      //  <AccessContainer>
-      //   <LoadingSpinner />
-      //   <AccessTitle>
-      //     <FormattedMessage {...messages.VALIDATING_ACCESS} />
-      //   </AccessTitle>
-      //   <AccessMessage>
-      //     <FormattedMessage {...messages.VALIDATING_ACCESS_MESSAGE} />
-      //   </AccessMessage>
-      // </AccessContainer>
-      <AccessContainer>
-        <LoaderContainer>
-          <AnimatedLoader />
-          <LoadingText>Loading</LoadingText>
-        </LoaderContainer>
-      </AccessContainer>
-    );
+    return <AppLoader />;
   }
 
   // Access denied gate disabled: flow is loader → app. Restore by changing to `if (!isAuthorized)`.
