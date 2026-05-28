@@ -3,6 +3,9 @@ import {
   contactInfoUtils,
   sanitizeNameInput,
   sanitizePhoneInput,
+  CONTACT_ADDRESS,
+  GODAVARI_MAP_EMBED_URL,
+  GODAVARI_MAP_DIRECTIONS_URL,
   type ContactInfoItem,
 } from "@utils";
 import {
@@ -31,10 +34,7 @@ const ContactUs = () => {
   const [form, setForm] = useState<FormState>(initialFormState);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    field: keyof FormState,
-    value: string,
-  ): void => {
+  const handleChange = (field: keyof FormState, value: string): void => {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (submitted) {
       setSubmitted(false);
@@ -188,6 +188,31 @@ const ContactUs = () => {
           )}
         </StyledContactForm>
       </div>
+
+      <section className="contact-map-section" aria-label="Location map">
+        <div className="contact-map-header">
+          <span className="contact-map-eyebrow">Our Location</span>
+          <h3 className="contact-map-title">Morampudi — Rajamahendravaram</h3>
+          <p className="contact-map-address">{CONTACT_ADDRESS}</p>
+        </div>
+        <div className="contact-map-wrap">
+          <iframe
+            src={GODAVARI_MAP_EMBED_URL}
+            title="Godavari River map near Rajamahendravaram"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+        <a
+          href={GODAVARI_MAP_DIRECTIONS_URL}
+          className="contact-map-directions"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open in Google Maps
+        </a>
+      </section>
     </StyledContactUs>
   );
 };

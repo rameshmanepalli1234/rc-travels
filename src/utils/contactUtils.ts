@@ -16,6 +16,15 @@ export const CONTACT_ADDRESS =
   "Near Vartha Office, Morampudi, Rajamahendravaram, Andhra Pradesh, 533107";
 export const CONTACT_HOURS = "Mon - Sat: 9:00 AM - 9:00 PM";
 
+const godavariMapQuery = encodeURIComponent(
+  "Godavari River Rajamahendravaram Andhra Pradesh",
+);
+
+/** Google Maps embed — Godavari / Rajamahendravaram area */
+export const GODAVARI_MAP_EMBED_URL = `https://maps.google.com/maps?q=${godavariMapQuery}&hl=en&z=13&output=embed`;
+
+export const GODAVARI_MAP_DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${godavariMapQuery}`;
+
 /** Allows letters and spaces only (e.g. Ramesh Manepalli) */
 export const sanitizeNameInput = (value: string): string =>
   value.replace(/[^\p{L}\s]/gu, "").replace(/\s{2,}/g, " ");
