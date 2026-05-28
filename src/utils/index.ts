@@ -11,3 +11,5 @@ export * from "./packagesUtils";
 export * from "./packageChartUtils";
 export * from "./contactUtils";
 export * from "./packageBookingUtils";
+export * from "./whyChooseUsUtils";
+export * from "./howItWorksUtils";
