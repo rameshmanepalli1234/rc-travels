@@ -1,1 +1,0 @@
-{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../src/components/TestimonialCard/types.ts"],"names":[],"mappings":"AAAA,MAAM,MAAM,oBAAoB,GAAG;IACjC,IAAI,EAAE;QACJ,EAAE,EAAE,MAAM,CAAC;QACX,IAAI,EAAE,MAAM,CAAC;QACb,OAAO,EAAE,MAAM,CAAC;KACjB,CAAC;CACH,CAAC"}

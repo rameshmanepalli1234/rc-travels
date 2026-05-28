@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const fs = require("fs");
 const ini = require("ini");
-require("dotenv").config();
+require("dotenv").config({ path: path.resolve(__dirname, ".env.local") });
+require("dotenv").config({ path: path.resolve(__dirname, ".env") });
 
 // Function to read ACCESS_KEY from .npmrc file
 function getAccessKeyFromNpmrc() {
@@ -129,6 +130,9 @@ module.exports = (env, argv) => {
         "process.env.REACT_APP_ACCESS_KEY": JSON.stringify(
           process.env.ACCESS_KEY || getAccessKeyFromNpmrc()
         ),
+        "process.env.REACT_APP_COPILOT_RUNTIME_URL": JSON.stringify(
+          process.env.REACT_APP_COPILOT_RUNTIME_URL || "/api/copilotkit"
+        ),
       }),
     ],
     devServer: {
@@ -151,6 +155,23 @@ module.exports = (env, argv) => {
       liveReload: true,
       // Watch for file changes
       watchFiles: ["src/**/*"],
+      proxy: [
+        {
+          context: ["/api/copilotkit"],
+          target: `http://127.0.0.1:${process.env.COPILOTKIT_PORT || "4000"}`,
+          changeOrigin: true,
+          secure: false,
+          ws: true,
+          logLevel: "warn",
+          // SSE agent streams must not be buffered by the dev proxy
+          onProxyRes(proxyRes) {
+            if (proxyRes.headers["content-type"]?.includes("text/event-stream")) {
+              proxyRes.headers["cache-control"] = "no-cache";
+              proxyRes.headers["x-accel-buffering"] = "no";
+            }
+          },
+        },
+      ],
     },
     optimization: {
       splitChunks: {

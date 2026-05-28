@@ -1,5 +1,6 @@
 import React from "react";
 const { IntlProvider } = require("react-intl");
+import CopilotAssistant from "@components/CopilotAssistant";
 import AccessControl from "@components/AccessControl";
 import SectionAnchor from "@components/SectionAnchor";
 import NavBar from "@containers/NavBar";
@@ -23,38 +24,40 @@ const App: React.FC = () => {
 
   return (
     <IntlProvider locale="en" defaultLocale="en">
-      <AccessControl>
-        <StyledMainContainer>
-          <InfoBar />
-          <MenuBar />
-          <NavBar />
-          <SectionAnchor id={SECTION_IDS.HOME}>
-            <Home />
-          </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.ABOUT_US}>
-            <AboutUs />
-          </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.PACKAGES}>
-            <Packages />
-          </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.TRAVEL_INSIGHTS}>
-            <TravelInsights />
-          </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.SERVICES}>
-            <Services />
-          </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.CONTACT_US}>
-            <ContactUs />
-          </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.TESTIMONIALS}>
-            <Testimonials />
-          </SectionAnchor>
-          <SectionAnchor id={SECTION_IDS.GALLERY}>
-            <Gallery />
-          </SectionAnchor>
-          <Footer />
-        </StyledMainContainer>
-      </AccessControl>
+      <CopilotAssistant>
+        <AccessControl>
+          <StyledMainContainer>
+            <InfoBar />
+            <MenuBar />
+            <NavBar />
+            <SectionAnchor id={SECTION_IDS.HOME}>
+              <Home />
+            </SectionAnchor>
+            <SectionAnchor id={SECTION_IDS.ABOUT_US}>
+              <AboutUs />
+            </SectionAnchor>
+            <SectionAnchor id={SECTION_IDS.PACKAGES}>
+              <Packages />
+            </SectionAnchor>
+            <SectionAnchor id={SECTION_IDS.TRAVEL_INSIGHTS}>
+              <TravelInsights />
+            </SectionAnchor>
+            <SectionAnchor id={SECTION_IDS.SERVICES}>
+              <Services />
+            </SectionAnchor>
+            <SectionAnchor id={SECTION_IDS.CONTACT_US}>
+              <ContactUs />
+            </SectionAnchor>
+            <SectionAnchor id={SECTION_IDS.TESTIMONIALS}>
+              <Testimonials />
+            </SectionAnchor>
+            <SectionAnchor id={SECTION_IDS.GALLERY}>
+              <Gallery />
+            </SectionAnchor>
+            <Footer />
+          </StyledMainContainer>
+        </AccessControl>
+      </CopilotAssistant>
     </IntlProvider>
   );
 };
