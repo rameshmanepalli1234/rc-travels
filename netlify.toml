@@ -6,6 +6,25 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Static assets must not be rewritten to index.html
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon.ico"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/favicon.svg"
+  to = "/favicon.svg"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/manifest.json"
+  to = "/manifest.json"
+  status = 200
+  force = true
+
 # SPA fallback (API routes are handled by functions via config.path)
 [[redirects]]
   from = "/*"

@@ -9,10 +9,10 @@
     "yarn": ">=1.22.0"
   },
   "scripts": {
-    "start": "concurrently -k -n api,web -c blue,green \"yarn server:gemini\" \"webpack serve --mode development --open\"",
+    "start": "node scripts/generate-favicon-ico.js public/favicon.ico && concurrently -k -n api,web -c blue,green \"yarn server:gemini\" \"webpack serve --mode development --open\"",
     "server:gemini": "tsx server/index.ts",
     "setup:env": "cp -n .env.example .env 2>/dev/null || cp .env.example .env",
-    "build": "webpack --mode production",
+    "build": "node scripts/generate-favicon-ico.js && webpack --mode production && node scripts/copy-public-assets.js",
     "dev": "concurrently -k -n api,web -c blue,green \"yarn server:gemini\" \"webpack serve --mode development\"",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
@@ -21,7 +21,7 @@
     "type-check": "tsc --noEmit",
     "test": "echo \"No tests specified\" && exit 0",
     "prepare": "husky install",
-    "build:netlify": "webpack --mode production",
+    "build:netlify": "webpack --mode production && node scripts/copy-public-assets.js",
     "vercel-build": "webpack --mode production --env production",
     "test-build": "yarn build && node test-build.js"
   },

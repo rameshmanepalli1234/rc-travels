@@ -105,6 +105,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: "./public/index.html",
         filename: "index.html",
+        favicon: path.join(__dirname, "public/favicon.ico"),
         publicPath: isProduction ? "/" : publicUrl,
         inject: true,
         minify: isProduction

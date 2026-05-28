@@ -1,0 +1,21 @@
+{
+  "short_name": "Ramesh Tours",
+  "name": "Ramesh Tours & Travels",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2d8a47",
+  "background_color": "#ffffff"
+}
