@@ -1035,6 +1035,8 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 `,qe=i(1535),Xe=n.Ay.div`
   width: 100%;
   height: 100%;
@@ -1731,10 +1733,13 @@
   max-width: 1200px;
   margin: 56px auto 0;
   padding: 0 24px;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     margin-top: 40px;
-    padding: 0 16px;
+    padding: 0 12px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .packages-table-header {
@@ -2024,36 +2029,43 @@
     }
   }
 
-  /* Mobile: stacked card rows */
+  /* Mobile: stacked card rows (no horizontal scroll) */
   @media (max-width: 900px) {
     .packages-table-scroll {
-      overflow-x: visible;
+      overflow-x: hidden;
       border: none;
       box-shadow: none;
       background: transparent;
+      width: 100%;
+      max-width: 100%;
     }
 
     .packages-table {
       min-width: 0;
+      width: 100%;
+      max-width: 100%;
+      table-layout: fixed;
 
       thead {
         display: none;
       }
 
-      tbody,
-      tr,
-      td {
+      tbody {
         display: block;
         width: 100%;
       }
 
       tbody tr {
-        margin-bottom: 16px;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 16px;
         border: 1px solid rgba(79, 189, 57, 0.2);
         border-radius: 14px;
         overflow: hidden;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
         background: #ffffff !important;
+        box-sizing: border-box;
 
         &:hover {
           background: #ffffff !important;
@@ -2061,49 +2073,94 @@
       }
 
       td {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        width: 100%;
+        max-width: 100%;
         padding: 12px 16px;
         text-align: left;
         border-bottom: 1px solid #f0f4f0;
-        position: relative;
-        padding-left: 42%;
-
-        &:last-child {
-          border-bottom: none;
-          padding-left: 16px;
-          text-align: center;
-        }
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+        word-break: break-word;
 
         &::before {
           content: attr(data-label);
-          position: absolute;
-          left: 16px;
-          width: 38%;
+          position: static;
+          width: auto;
+          left: auto;
           font-size: 11px;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           color: #4fbd39;
+          flex-shrink: 0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          align-items: center;
+          padding-top: 16px;
+          padding-bottom: 16px;
         }
       }
 
       .packages-table-tour-cell {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+        width: 100%;
       }
 
+      .packages-table-thumb {
+        width: 52px;
+        height: 52px;
+      }
+
+      .packages-table-tour-name {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+      }
+
+      .packages-table-location,
+      .packages-table-duration,
       .packages-table-inclusions {
-        max-width: none;
+        max-width: 100%;
+        font-size: 14px;
+      }
+
+      .packages-table-price {
+        white-space: normal;
+        font-size: 17px;
+      }
+
+      .packages-table-availability {
+        white-space: normal;
+      }
+
+      .packages-table-book-btn,
+      .packages-table-book-btn-disabled {
+        width: 100%;
+        max-width: 280px;
+        min-width: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
       }
     }
   }
 `,da=()=>{const e=O(R),a=ge.length,[i,o]=(0,r.useState)(8),n=ge.slice(0,i),s=i<a,l=i>8;return(0,t.jsxs)(la,{id:"packages-table",children:[(0,t.jsxs)("header",{className:"packages-table-header",children:[(0,t.jsx)("span",{className:"packages-table-eyebrow",children:"Quick Compare"}),(0,t.jsx)("h3",{className:"packages-table-title",children:"Tour Packages at a Glance"}),(0,t.jsxs)("p",{className:"packages-table-subtitle",children:["Browse ",a," destinations across India — compare pricing and inclusions, then book your preferred tour in one click."]})]}),(0,t.jsx)("div",{className:"packages-table-scroll",children:(0,t.jsxs)("table",{className:"packages-table",children:[(0,t.jsx)("thead",{children:(0,t.jsxs)("tr",{children:[(0,t.jsx)("th",{scope:"col",children:"Tour"}),(0,t.jsx)("th",{scope:"col",children:"Location"}),(0,t.jsx)("th",{scope:"col",children:"Duration"}),(0,t.jsx)("th",{scope:"col",children:"Price"}),(0,t.jsx)("th",{scope:"col",children:"Inclusions"}),(0,t.jsx)("th",{scope:"col",children:"Availability"}),(0,t.jsx)("th",{scope:"col",children:"Book Now"})]})}),(0,t.jsx)("tbody",{children:n.map(a=>(0,t.jsxs)("tr",{children:[(0,t.jsx)("td",{"data-label":"Tour",children:(0,t.jsxs)("div",{className:"packages-table-tour-cell",children:[(0,t.jsx)("img",{src:a.image,alt:"",className:"packages-table-thumb"}),(0,t.jsxs)("div",{children:[(0,t.jsx)("p",{className:"packages-table-tour-name",children:a.title}),a.badge&&(0,t.jsx)("span",{className:"packages-table-badge",children:a.badge})]})]})}),(0,t.jsx)("td",{"data-label":"Location",className:"packages-table-location",children:a.location}),(0,t.jsx)("td",{"data-label":"Duration",className:"packages-table-duration",children:a.duration}),(0,t.jsxs)("td",{"data-label":"Price",children:[(0,t.jsx)("span",{className:"packages-table-price",children:xe(a.price)}),(0,t.jsx)("span",{className:"packages-table-price-note",children:"per person"})]}),(0,t.jsx)("td",{"data-label":"Inclusions",className:"packages-table-inclusions",children:a.highlights.join(" • ")}),(0,t.jsx)("td",{"data-label":"Availability",children:(0,t.jsx)("span",{className:"packages-table-availability "+(a.available?"is-available":"is-unavailable"),children:a.available?"Available":"Not Available"})}),(0,t.jsx)("td",{"data-label":"Book Now",children:a.available?(0,t.jsx)("a",{href:e,className:"packages-table-book-btn",children:"Book Now"}):(0,t.jsx)("button",{type:"button",disabled:!0,className:"packages-table-book-btn packages-table-book-btn-disabled",children:"Book Now"})})]},a.id))})]})}),(s||l)&&(0,t.jsxs)("div",{className:"packages-table-pagination",children:[(0,t.jsxs)("span",{className:"packages-table-pagination-info",children:["Showing ",i," of ",a," tours"]}),(0,t.jsxs)("div",{className:"packages-table-pagination-actions",children:[l&&(0,t.jsx)("button",{type:"button",className:"packages-table-toggle-btn packages-table-toggle-less",onClick:()=>{o(8),requestAnimationFrame(()=>{window.history.pushState(null,"",O(I)),(()=>{const e=document.getElementById("packages-table");e&&L(e)})()})},children:"Show Less"}),s&&(0,t.jsx)("button",{type:"button",className:"packages-table-toggle-btn packages-table-toggle-more",onClick:()=>{o(e=>Math.min(e+8,a))},children:"Show More"})]})]})]})},ca=n.Ay.section`
   width: 100%;
+  max-width: 100%;
   padding: 60px 24px 80px;
   background: linear-gradient(180deg, #f8faf8 0%, #ffffff 45%, #f4f9f3 100%);
+  box-sizing: border-box;
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
-    padding: 48px 16px 64px;
+    padding: 48px 12px 64px;
   }
 
   .packages-header {
@@ -3140,4 +3197,4 @@
     --color-text-default: #fff;
   }
 `,Ya=document.getElementById("root");if(!Ya)throw new Error("Failed to find the root element");(0,o.H)(Ya).render((0,t.jsx)(r.StrictMode,{children:(0,t.jsxs)(Ba,{children:[(0,t.jsx)(Ua,{}),(0,t.jsx)(()=>((0,r.useEffect)(()=>{Pa();const e=()=>{Pa()};return window.addEventListener("hashchange",e),()=>window.removeEventListener("hashchange",e)},[]),(0,t.jsx)(Ra,{locale:"en",defaultLocale:"en",children:(0,t.jsx)(g,{children:(0,t.jsxs)(Ke,{children:[(0,t.jsx)(Ie,{}),(0,t.jsx)(Re,{}),(0,t.jsx)(ke,{}),(0,t.jsx)(m,{id:T,children:(0,t.jsx)($e,{})}),(0,t.jsx)(m,{id:M,children:(0,t.jsx)(sa,{})}),(0,t.jsx)(m,{id:I,children:(0,t.jsx)(ha,{})}),(0,t.jsx)(m,{id:E,children:(0,t.jsx)(Sa,{})}),(0,t.jsx)(m,{id:C,children:(0,t.jsx)(Ze,{})}),(0,t.jsx)(m,{id:R,children:(0,t.jsx)(Ea,{})}),(0,t.jsx)(m,{id:D,children:(0,t.jsx)(We,{})}),(0,t.jsx)(m,{id:P,children:(0,t.jsx)(ia,{})}),(0,t.jsx)(_e,{})]})})})),{})]})}))},1535:(e,a,i)=>{e.exports=i.p+"b6b264147d1993a3b7f4.png"},2741:(e,a,i)=>{e.exports=i.p+"c754b89086c58a705a5d.png"}},i={};function t(e){var r=i[e];if(void 0!==r)return r.exports;var o=i[e]={exports:{}};return a[e](o,o.exports,t),o.exports}t.m=a,e=[],t.O=(a,i,r,o)=>{if(!i){var n=1/0;for(c=0;c<e.length;c++){for(var[i,r,o]=e[c],s=!0,l=0;l<i.length;l++)(!1&o||n>=o)&&Object.keys(t.O).every(e=>t.O[e](i[l]))?i.splice(l--,1):(s=!1,o<n&&(n=o));if(s){e.splice(c--,1);var d=r();void 0!==d&&(a=d)}}return a}o=o||0;for(var c=e.length;c>0&&e[c-1][2]>o;c--)e[c]=e[c-1];e[c]=[i,r,o]},t.n=e=>{var a=e&&e.__esModule?()=>e.default:()=>e;return t.d(a,{a}),a},t.d=(e,a)=>{for(var i in a)t.o(a,i)&&!t.o(e,i)&&Object.defineProperty(e,i,{enumerable:!0,get:a[i]})},t.o=(e,a)=>Object.prototype.hasOwnProperty.call(e,a),t.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.p="/",(()=>{var e={792:0};t.O.j=a=>0===e[a];var a=(a,i)=>{var r,o,[n,s,l]=i,d=0;if(n.some(a=>0!==e[a])){for(r in s)t.o(s,r)&&(t.m[r]=s[r]);if(l)var c=l(t)}for(a&&a(i);d<n.length;d++)o=n[d],t.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return t.O(c)},i=self.webpackChunkaditya_car_zone=self.webpackChunkaditya_car_zone||[];i.forEach(a.bind(null,0)),i.push=a.bind(null,i.push.bind(i))})(),t.nc=void 0;var r=t.O(void 0,[142],()=>t(1345));r=t.O(r)})();
-//# sourceMappingURL=main.9951db526aa953703288.js.map
+//# sourceMappingURL=main.fa0c0ebbc309a228d6ad.js.map

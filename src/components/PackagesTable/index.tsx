@@ -21,9 +21,7 @@ const PackagesTable = () => {
   const canShowLess = visibleCount > INITIAL_VISIBLE_ROWS;
 
   const handleShowMore = (): void => {
-    setVisibleCount((prev) =>
-      Math.min(prev + ROWS_INCREMENT, totalRows),
-    );
+    setVisibleCount((prev) => Math.min(prev + ROWS_INCREMENT, totalRows));
   };
 
   const handleShowLess = (): void => {

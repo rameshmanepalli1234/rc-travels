@@ -11,6 +11,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -31,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   @keyframes spin {

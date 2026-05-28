@@ -5,10 +5,13 @@ export const StyledPackagesTable = styled.section`
   max-width: 1200px;
   margin: 56px auto 0;
   padding: 0 24px;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     margin-top: 40px;
-    padding: 0 16px;
+    padding: 0 12px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .packages-table-header {
@@ -298,36 +301,43 @@ export const StyledPackagesTable = styled.section`
     }
   }
 
-  /* Mobile: stacked card rows */
+  /* Mobile: stacked card rows (no horizontal scroll) */
   @media (max-width: 900px) {
     .packages-table-scroll {
-      overflow-x: visible;
+      overflow-x: hidden;
       border: none;
       box-shadow: none;
       background: transparent;
+      width: 100%;
+      max-width: 100%;
     }
 
     .packages-table {
       min-width: 0;
+      width: 100%;
+      max-width: 100%;
+      table-layout: fixed;
 
       thead {
         display: none;
       }
 
-      tbody,
-      tr,
-      td {
+      tbody {
         display: block;
         width: 100%;
       }
 
       tbody tr {
-        margin-bottom: 16px;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 16px;
         border: 1px solid rgba(79, 189, 57, 0.2);
         border-radius: 14px;
         overflow: hidden;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
         background: #ffffff !important;
+        box-sizing: border-box;
 
         &:hover {
           background: #ffffff !important;
@@ -335,39 +345,86 @@ export const StyledPackagesTable = styled.section`
       }
 
       td {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        width: 100%;
+        max-width: 100%;
         padding: 12px 16px;
         text-align: left;
         border-bottom: 1px solid #f0f4f0;
-        position: relative;
-        padding-left: 42%;
-
-        &:last-child {
-          border-bottom: none;
-          padding-left: 16px;
-          text-align: center;
-        }
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+        word-break: break-word;
 
         &::before {
           content: attr(data-label);
-          position: absolute;
-          left: 16px;
-          width: 38%;
+          position: static;
+          width: auto;
+          left: auto;
           font-size: 11px;
           font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 0.05em;
           color: #4fbd39;
+          flex-shrink: 0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+          align-items: center;
+          padding-top: 16px;
+          padding-bottom: 16px;
+
+          &::before {
+            display: none;
+            content: none;
+          }
         }
       }
 
       .packages-table-tour-cell {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+        width: 100%;
       }
 
+      .packages-table-thumb {
+        width: 52px;
+        height: 52px;
+      }
+
+      .packages-table-tour-name {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+      }
+
+      .packages-table-location,
+      .packages-table-duration,
       .packages-table-inclusions {
-        max-width: none;
+        max-width: 100%;
+        font-size: 14px;
+      }
+
+      .packages-table-price {
+        white-space: normal;
+        font-size: 17px;
+      }
+
+      .packages-table-availability {
+        white-space: normal;
+      }
+
+      .packages-table-book-btn,
+      .packages-table-book-btn-disabled {
+        width: 100%;
+        max-width: 280px;
+        min-width: 0;
+        margin: 0 auto;
+        box-sizing: border-box;
       }
     }
   }

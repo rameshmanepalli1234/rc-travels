@@ -2,11 +2,14 @@ import styled from "styled-components";
 
 export const StyledPackages = styled.section`
   width: 100%;
+  max-width: 100%;
   padding: 60px 24px 80px;
   background: linear-gradient(180deg, #f8faf8 0%, #ffffff 45%, #f4f9f3 100%);
+  box-sizing: border-box;
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
-    padding: 48px 16px 64px;
+    padding: 48px 12px 64px;
   }
 
   .packages-header {
