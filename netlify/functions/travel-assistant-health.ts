@@ -1,13 +1,24 @@
-import type { Config } from "@netlify/functions";
-import { getGeminiModel, isGeminiConfigured } from "../../server/loadEnv";
+import type { Handler } from "@netlify/functions";
 
-export default async (): Promise<Response> =>
-  Response.json({
-    status: "ok",
-    geminiConfigured: isGeminiConfigured(),
-    model: getGeminiModel(),
-  });
-
-export const config: Config = {
-  path: "/api/travel-assistant/health",
+const normalize = (value: string | undefined): string | undefined => {
+  if (!value) {
+    return undefined;
+  }
+  const trimmed = value.trim().replace(/^['"]|['"]$/g, "");
+  return trimmed.length > 0 ? trimmed : undefined;
 };
+
+const handler: Handler = async () => ({
+  statusCode: 200,
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    status: "ok",
+    geminiConfigured: Boolean(
+      normalize(process.env.GEMINI_API_KEY) ??
+        normalize(process.env.GOOGLE_API_KEY),
+    ),
+    model: normalize(process.env.GEMINI_MODEL) ?? "gemini-2.5-flash",
+  }),
+});
+
+export { handler };

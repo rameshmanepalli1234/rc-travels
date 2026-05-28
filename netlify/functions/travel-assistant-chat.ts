@@ -1,7 +1,5 @@
-import type { Config } from "@netlify/functions";
-import {
-  getGeminiApiKey,
-} from "../../server/loadEnv";
+import type { Handler } from "@netlify/functions";
+import { getGeminiApiKey } from "../../server/geminiEnv";
 import {
   mapGeminiError,
   streamGeminiReply,
@@ -14,67 +12,68 @@ const sseHeaders = {
   "Cache-Control": "no-cache, no-transform",
 };
 
-const buildSseResponse = (messages: ChatMessage[]): Response => {
-  const encoder = new TextEncoder();
-
-  const stream = new ReadableStream({
-    async start(controller) {
-      try {
-        for await (const text of streamGeminiReply(messages)) {
-          controller.enqueue(
-            encoder.encode(`data: ${JSON.stringify({ text })}\n\n`),
-          );
-        }
-        controller.enqueue(encoder.encode("data: [DONE]\n\n"));
-      } catch (error) {
-        const mapped = mapGeminiError(error);
-        controller.enqueue(
-          encoder.encode(`data: ${JSON.stringify({ error: mapped.message })}\n\n`),
-        );
-      } finally {
-        controller.close();
-      }
-    },
-  });
-
-  return new Response(stream, { headers: sseHeaders });
+const buildSseBody = async (messages: ChatMessage[]): Promise<string> => {
+  let body = "";
+  try {
+    for await (const text of streamGeminiReply(messages)) {
+      body += `data: ${JSON.stringify({ text })}\n\n`;
+    }
+    body += "data: [DONE]\n\n";
+  } catch (error) {
+    const mapped = mapGeminiError(error);
+    body += `data: ${JSON.stringify({ error: mapped.message })}\n\n`;
+  }
+  return body;
 };
 
-export default async (request: Request): Promise<Response> => {
-  if (request.method !== "POST") {
-    return Response.json({ error: "Method not allowed" }, { status: 405 });
+const handler: Handler = async (event) => {
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ error: "Method not allowed" }),
+    };
   }
 
-  let body: { messages?: unknown };
+  let parsed: { messages?: unknown };
   try {
-    body = (await request.json()) as { messages?: unknown };
+    parsed = JSON.parse(event.body ?? "{}") as { messages?: unknown };
   } catch {
-    return Response.json({ error: "Invalid JSON body." }, { status: 400 });
+    return {
+      statusCode: 400,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ error: "Invalid JSON body." }),
+    };
   }
 
-  if (!validateChatMessages(body.messages)) {
-    return Response.json(
-      {
-        error:
-          "messages must be a non-empty array of user/assistant text.",
-      },
-      { status: 400 },
-    );
+  if (!validateChatMessages(parsed.messages)) {
+    return {
+      statusCode: 400,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        error: "messages must be a non-empty array of user/assistant text.",
+      }),
+    };
   }
 
   if (!getGeminiApiKey()) {
-    return Response.json(
-      {
+    return {
+      statusCode: 503,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
         error:
           "GEMINI_API_KEY is not set on the server. Add it in Netlify environment variables and redeploy.",
-      },
-      { status: 503 },
-    );
+      }),
+    };
   }
 
-  return buildSseResponse(body.messages);
+  const body = await buildSseBody(parsed.messages);
+
+  return {
+    statusCode: 200,
+    headers: sseHeaders,
+    body,
+  };
 };
 
-export const config: Config = {
-  path: "/api/travel-assistant/chat",
-};
+export { handler };

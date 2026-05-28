@@ -4,7 +4,7 @@ import {
   type Part,
 } from "@google/generative-ai";
 import { buildSystemInstruction } from "./buildSystemInstruction";
-import { getGeminiApiKey, getGeminiModel } from "./loadEnv";
+import { getGeminiApiKey, getGeminiModel } from "./geminiEnv";
 
 export type ChatRole = "user" | "assistant";
 

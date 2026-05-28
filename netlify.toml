@@ -5,6 +5,7 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+  included_files = ["server/**"]
 
 # Static assets must not be rewritten to index.html
 [[redirects]]
@@ -25,12 +26,16 @@
   status = 200
   force = true
 
-# API must not fall through to SPA index.html
+# Travel Assistant API → Netlify Functions (legacy function URLs)
 [[redirects]]
-  from = "/api/travel-assistant/*"
-  to = "/.netlify/functions/travel-assistant-:splat"
+  from = "/api/travel-assistant/health"
+  to = "/.netlify/functions/travel-assistant-health"
   status = 200
-  force = true
+
+[[redirects]]
+  from = "/api/travel-assistant/chat"
+  to = "/.netlify/functions/travel-assistant-chat"
+  status = 200
 
 # SPA fallback
 [[redirects]]
