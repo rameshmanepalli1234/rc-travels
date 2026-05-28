@@ -2,7 +2,7 @@ import { StyledCarbonCleaning } from "./style";
 import { travelServiceList } from "@utils";
 import ProcessCard from "@components/ProcessCard";
 
-const CarbonCleaning = () => {
+const Services = () => {
   return (
     <StyledCarbonCleaning>
       <div className="carbon-cleaning-container-top">
@@ -23,4 +23,4 @@ const CarbonCleaning = () => {
   );
 };
 
-export default CarbonCleaning;
+export default Services;
