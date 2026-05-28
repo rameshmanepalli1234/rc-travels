@@ -1,4 +1,5 @@
 export * from "./navbarUtils";
+export * from "./scrollUtils";
 export * from "./infobarUtils";
 export * from "./viewPortUtils";
 export * from "./footerUtils";

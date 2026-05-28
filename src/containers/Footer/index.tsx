@@ -4,6 +4,7 @@ import { InfoBarItem } from "@containers/InfoBar/types";
 import { navbarUtils } from "@utils";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { footerUtils } from "@utils";
+import { navigateToSection } from "@/utils/scrollUtils";
 import { FaLocationDot, FaPhone, FaEnvelope, FaClock } from "react-icons/fa6";
 import { IntlShape } from "react-intl";
 
@@ -43,7 +44,15 @@ const Footer = () => {
               {navItems.map((item, index) => (
                 <li key={index} className="footer-top-section-links-list-item">
                   <MdOutlineKeyboardArrowRight className="footer-top-section-links-list-icon" />
-                  <div> {item.name} </div>
+                  <a
+                    href={item.href}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      navigateToSection(item.sectionId);
+                    }}
+                  >
+                    {item.name}
+                  </a>
                 </li>
               ))}
             </ul>

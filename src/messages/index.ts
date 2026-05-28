@@ -37,6 +37,10 @@ const messages = defineMessages({
     id: "nav.contact",
     defaultMessage: "Contact Us",
   },
+  TESTIMONIALS: {
+    id: "nav.testimonials",
+    defaultMessage: "Testimonials",
+  },
   VALIDATING_ACCESS: {
     id: "access.validating",
     defaultMessage: "Validating Access...",

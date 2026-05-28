@@ -11,6 +11,8 @@ import {
   StyledDrawerNav,
 } from "./style";
 import { navbarUtils } from "@/utils";
+import { navigateToSection } from "@/utils/scrollUtils";
+import type { SectionId } from "@/constants/sectionIds";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IntlShape } from "react-intl";
 
@@ -33,6 +35,15 @@ const NavBar: React.FC = () => {
 
   const navItems = navbarUtils(mockIntl);
 
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: SectionId,
+  ) => {
+    event.preventDefault();
+    navigateToSection(sectionId);
+    closeDrawer();
+  };
+
   return (
     <>
       <StyledNavBar data-testid="section-navbar">
@@ -43,7 +54,8 @@ const NavBar: React.FC = () => {
           {navItems.map((item, index) => (
             <a
               key={index}
-              href="#"
+              href={item.href}
+              onClick={(event) => handleNavClick(event, item.sectionId)}
               data-testid={`link-nav-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
             >
               {item.name}
@@ -83,8 +95,8 @@ const NavBar: React.FC = () => {
             {navItems.map((item, index) => (
               <a
                 key={index}
-                href="#"
-                onClick={closeDrawer}
+                href={item.href}
+                onClick={(event) => handleNavClick(event, item.sectionId)}
                 data-testid={`link-drawer-${item.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {item.name}
