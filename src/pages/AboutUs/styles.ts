@@ -194,7 +194,7 @@ export const StyledAboutUs = styled.div`
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding: 0 100px;
+    padding: 0 100px 50px 100px;
 
     @media (max-width: 450px) {
       flex-direction: column;
