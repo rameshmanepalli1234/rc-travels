@@ -4,7 +4,7 @@ import {
   formatPackagePrice,
   type TableTravelPackage,
 } from "@utils";
-import { hashForSection, SECTION_IDS } from "@/constants/sectionIds";
+import BookNowButton from "@components/BookNowButton";
 import { navigateToPackagesTable } from "@/utils/scrollUtils";
 import { StyledPackagesTable } from "./style";
 
@@ -12,7 +12,6 @@ const INITIAL_VISIBLE_ROWS = 8;
 const ROWS_INCREMENT = 8;
 
 const PackagesTable = () => {
-  const contactHref = hashForSection(SECTION_IDS.CONTACT_US);
   const totalRows = packagesTableUtils.length;
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_ROWS);
 
@@ -67,19 +66,15 @@ const PackagesTable = () => {
         </span>
       </td>
       <td data-label="Book Now">
-        {pkg.available ? (
-          <a href={contactHref} className="packages-table-book-btn">
-            Book Now
-          </a>
-        ) : (
-          <button
-            type="button"
-            disabled
-            className="packages-table-book-btn packages-table-book-btn-disabled"
-          >
-            Book Now
-          </button>
-        )}
+        <BookNowButton
+          pkg={pkg}
+          className={
+            pkg.available
+              ? "packages-table-book-btn"
+              : "packages-table-book-btn packages-table-book-btn-disabled"
+          }
+          disabled={!pkg.available}
+        />
       </td>
     </tr>
   );

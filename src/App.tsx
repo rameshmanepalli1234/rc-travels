@@ -16,6 +16,8 @@ import Packages from "@pages/Packages";
 import TravelInsights from "@pages/TravelInsights";
 import ContactUs from "@pages/ContactUs";
 import TravelAssistant from "@components/TravelAssistant";
+import { ToastProvider } from "@/context/ToastContext";
+import { BookingProvider } from "@/context/BookingContext";
 import { SECTION_IDS } from "@/constants/sectionIds";
 import { useHashScroll } from "@/hooks/useHashScroll";
 
@@ -25,6 +27,8 @@ const App: React.FC = () => {
   return (
     <IntlProvider locale="en" defaultLocale="en">
       <AccessControl>
+        <ToastProvider>
+        <BookingProvider>
         <StyledMainContainer>
           <InfoBar />
           <MenuBar />
@@ -56,6 +60,8 @@ const App: React.FC = () => {
           <Footer />
           <TravelAssistant />
         </StyledMainContainer>
+        </BookingProvider>
+        </ToastProvider>
       </AccessControl>
     </IntlProvider>
   );

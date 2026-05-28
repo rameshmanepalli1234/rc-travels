@@ -221,6 +221,7 @@ export const StyledPackageCard = styled.article`
     width: 100%;
     padding: 14px 20px;
     border: none;
+    font-family: inherit;
     border-radius: 10px;
     background: linear-gradient(135deg, #4fbd39 0%, #3da82c 100%);
     color: #ffffff;

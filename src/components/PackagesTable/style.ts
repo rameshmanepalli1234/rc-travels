@@ -269,6 +269,9 @@ export const StyledPackagesTable = styled.section`
     justify-content: center;
     min-width: 110px;
     padding: 10px 18px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
     border-radius: 8px;
     background: linear-gradient(135deg, #4fbd39 0%, #3da82c 100%);
     color: #ffffff;
