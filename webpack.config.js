@@ -133,6 +133,12 @@ module.exports = (env, argv) => {
         "process.env.REACT_APP_TRAVEL_ASSISTANT_API": JSON.stringify(
           process.env.REACT_APP_TRAVEL_ASSISTANT_API || "/api/travel-assistant"
         ),
+        "process.env.REACT_APP_BOOKING_API": JSON.stringify(
+          process.env.REACT_APP_BOOKING_API || "/api/booking"
+        ),
+        "process.env.REACT_APP_CONTACT_API": JSON.stringify(
+          process.env.REACT_APP_CONTACT_API || "/api/contact"
+        ),
       }),
     ],
     devServer: {
@@ -156,6 +162,12 @@ module.exports = (env, argv) => {
       // Watch for file changes
       watchFiles: ["src/**/*"],
       proxy: [
+        {
+          context: ["/api/booking", "/api/contact"],
+          target: `http://127.0.0.1:${process.env.ASSISTANT_PORT || "4000"}`,
+          changeOrigin: true,
+          secure: false,
+        },
         {
           context: ["/api/travel-assistant"],
           target: `http://127.0.0.1:${process.env.ASSISTANT_PORT || "4000"}`,

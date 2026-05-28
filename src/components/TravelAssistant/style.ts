@@ -178,8 +178,14 @@ export const StyledInputRow = styled.form`
     border: 1px solid #d0ddd0;
     border-radius: 24px;
     padding: 10px 16px;
-    font-size: 14px;
+    /* 16px prevents iOS Safari auto-zoom on focus (breaks panel layout) */
+    font-size: 16px;
     outline: none;
+    -webkit-text-size-adjust: 100%;
+
+    @media (min-width: 769px) {
+      font-size: 14px;
+    }
 
     &:focus {
       border-color: #4fbd39;

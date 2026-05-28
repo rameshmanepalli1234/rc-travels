@@ -4,13 +4,11 @@ import {
   formatPackagePrice,
   type TravelPackage,
 } from "@utils";
+import BookNowButton from "@components/BookNowButton";
 import PackagesTable from "@components/PackagesTable";
-import { hashForSection, SECTION_IDS } from "@/constants/sectionIds";
 import { StyledPackages, StyledPackageCard } from "./style";
 
 const Packages = () => {
-  const contactHref = hashForSection(SECTION_IDS.CONTACT_US);
-
   return (
     <StyledPackages>
       <header className="packages-header">
@@ -60,9 +58,7 @@ const Packages = () => {
                 ))}
               </ul>
 
-              <a href={contactHref} className="package-card-cta">
-                Book Now
-              </a>
+              <BookNowButton pkg={pkg} className="package-card-cta" />
             </div>
           </StyledPackageCard>
         ))}

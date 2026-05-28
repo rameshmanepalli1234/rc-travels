@@ -6,6 +6,9 @@ import {
   validateChatMessages,
   type ChatMessage,
 } from "./geminiChat";
+import { processBooking } from "./processBooking";
+import { processContact } from "./processContact";
+import { isBookingEmailConfigured } from "./bookingEnv";
 import {
   assistantPort,
   getGeminiApiKey,
@@ -23,6 +26,38 @@ app.use(
   }),
 );
 app.use(express.json({ limit: "1mb" }));
+
+app.post("/api/contact", async (req, res) => {
+  const result = await processContact(req.body);
+  if (!result.ok) {
+    res.status(result.status).json({ error: result.error });
+    return;
+  }
+  res.json({ success: true, message: "Your message was sent successfully." });
+});
+
+app.get("/api/contact/health", (_req, res) => {
+  res.json({
+    status: "ok",
+    emailConfigured: isBookingEmailConfigured(),
+  });
+});
+
+app.get("/api/booking/health", (_req, res) => {
+  res.json({
+    status: "ok",
+    emailConfigured: isBookingEmailConfigured(),
+  });
+});
+
+app.post("/api/booking", async (req, res) => {
+  const result = await processBooking(req.body);
+  if (!result.ok) {
+    res.status(result.status).json({ error: result.error });
+    return;
+  }
+  res.json({ success: true, message: "Booking request sent successfully." });
+});
 
 app.get("/api/travel-assistant/health", (_req, res) => {
   res.json({

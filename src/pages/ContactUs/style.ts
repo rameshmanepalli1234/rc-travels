@@ -268,8 +268,7 @@ export const StyledContactForm = styled.form`
   }
 
   .contact-form-input,
-  .contact-form-textarea,
-  .contact-form-select {
+  .contact-form-textarea {
     width: 100%;
     padding: 12px 14px;
     font-size: 15px;

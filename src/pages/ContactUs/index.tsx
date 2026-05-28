@@ -1,4 +1,6 @@
 import { FormEvent, useState } from "react";
+import { submitContactMessage } from "@/api/contactApi";
+import { useToast } from "@/context/ToastContext";
 import {
   contactInfoUtils,
   sanitizeNameInput,
@@ -8,6 +10,7 @@ import {
   GODAVARI_MAP_DIRECTIONS_URL,
   type ContactInfoItem,
 } from "@utils";
+import EnquiryTypeSelect from "@components/FormFields/EnquiryTypeSelect";
 import {
   StyledContactUs,
   StyledContactInfoCard,
@@ -31,20 +34,38 @@ const initialFormState: FormState = {
 };
 
 const ContactUs = () => {
+  const { showToast } = useToast();
   const [form, setForm] = useState<FormState>(initialFormState);
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (field: keyof FormState, value: string): void => {
     setForm((prev) => ({ ...prev, [field]: value }));
-    if (submitted) {
-      setSubmitted(false);
-    }
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (
+    event: FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault();
-    setSubmitted(true);
-    setForm(initialFormState);
+    setIsSubmitting(true);
+
+    const result = await submitContactMessage(form);
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setForm(initialFormState);
+      showToast(
+        "success",
+        "Message sent!",
+        result.message ?? "Thank you! We will contact you soon.",
+      );
+      return;
+    }
+
+    showToast(
+      "error",
+      "Could not send message",
+      result.error ?? "Please try again or call us directly.",
+    );
   };
 
   const renderContactValue = (item: ContactInfoItem) => {
@@ -103,6 +124,7 @@ const ContactUs = () => {
                 minLength={2}
                 title="Use letters only, e.g. Ramesh Manepalli"
                 value={form.name}
+                disabled={isSubmitting}
                 onChange={(e) =>
                   handleChange("name", sanitizeNameInput(e.target.value))
                 }
@@ -123,6 +145,7 @@ const ContactUs = () => {
                 pattern="\+?[\d\s]{8,}"
                 title="Use numbers and + only, e.g. +91 6363620044"
                 value={form.phone}
+                disabled={isSubmitting}
                 onChange={(e) =>
                   handleChange("phone", sanitizePhoneInput(e.target.value))
                 }
@@ -141,6 +164,7 @@ const ContactUs = () => {
               placeholder="you@example.com"
               required
               value={form.email}
+              disabled={isSubmitting}
               onChange={(e) => handleChange("email", e.target.value)}
             />
           </div>
@@ -149,17 +173,11 @@ const ContactUs = () => {
             <label className="contact-form-label" htmlFor="contact-subject">
               Enquiry Type
             </label>
-            <select
-              id="contact-subject"
-              className="contact-form-select"
+            <EnquiryTypeSelect
               value={form.subject}
-              onChange={(e) => handleChange("subject", e.target.value)}
-            >
-              <option value="general">General Enquiry</option>
-              <option value="package">Tour Package Booking</option>
-              <option value="custom">Custom Itinerary</option>
-              <option value="group">Group Travel</option>
-            </select>
+              isDisabled={isSubmitting}
+              onChange={(subject) => handleChange("subject", subject)}
+            />
           </div>
 
           <div className="contact-form-field">
@@ -171,21 +189,20 @@ const ContactUs = () => {
               className="contact-form-textarea"
               placeholder="Tell us about your travel plans..."
               required
+              minLength={10}
               value={form.message}
+              disabled={isSubmitting}
               onChange={(e) => handleChange("message", e.target.value)}
             />
           </div>
 
-          <button type="submit" className="contact-form-submit">
-            Send Message
+          <button
+            type="submit"
+            className="contact-form-submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending…" : "Send Message"}
           </button>
-
-          {submitted && (
-            <p className="contact-form-success" role="status">
-              Thank you! Your message has been received. We will contact you
-              soon.
-            </p>
-          )}
         </StyledContactForm>
       </div>
 

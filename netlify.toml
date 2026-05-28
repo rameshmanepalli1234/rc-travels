@@ -37,6 +37,26 @@
   to = "/.netlify/functions/travel-assistant-chat"
   status = 200
 
+[[redirects]]
+  from = "/api/booking"
+  to = "/.netlify/functions/booking"
+  status = 200
+
+[[redirects]]
+  from = "/api/booking/health"
+  to = "/.netlify/functions/booking"
+  status = 200
+
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+[[redirects]]
+  from = "/api/contact/health"
+  to = "/.netlify/functions/contact"
+  status = 200
+
 # SPA fallback
 [[redirects]]
   from = "/*"
